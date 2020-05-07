@@ -21,14 +21,13 @@ namespace FitApp
         {
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
-            ZaladujPosilek(); 
+            ZaladujPosilki();
+            PoliczKalorieWPosilkach();
         }
 
-        public void ZaladujPosilek()
+        public void ZaladujPosilki()
         {
-            List<Posilek> posilki = _context.Posilki();
-
-            foreach (var item in posilki)
+            foreach (var item in _context.Posilki())
             {
                 int posilekID = item.PosilekId;
                 int produktID = item.ProduktId;
@@ -41,6 +40,36 @@ namespace FitApp
             }
         }
 
+        public void PoliczKalorieWPosilkach()
+        {
+            int kcalSniad = 0;
+            int kcal2Sniad = 0;
+            int kcalObiad = 0;
+            int kcalDeser = 0;
+            int kcalPrzekaska = 0;
+            int kcalKolacja = 0;
+
+            foreach (var item in _context.Posilki())
+            {
+                int kalorie = (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
+
+                if (item.WKtorym == 1) { kcalSniad += kalorie; }
+                if (item.WKtorym == 2) { kcal2Sniad += kalorie; }
+                if (item.WKtorym == 3) { kcalObiad += kalorie; }
+                if (item.WKtorym == 4) { kcalDeser += kalorie; }
+                if (item.WKtorym == 5) { kcalPrzekaska += kalorie; }
+                if (item.WKtorym == 6) { kcalKolacja += kalorie; }
+            }
+
+            lblSniadanieKcal.Text = kcalSniad + " kcal";
+            lbl2SniadKcal.Text = kcal2Sniad + " kcal";
+            lblObiadKcal.Text = kcalObiad + " kcal";
+            lblDeserKcal.Text = kcalDeser + " kcal";
+            lblPrzekaskaKcal.Text = kcalPrzekaska + " kcal";
+            lblKolacjaKcal.Text = kcalKolacja + " kcal";
+        }
+
+
         public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
             Panel panel = new Panel() { 
@@ -51,11 +80,15 @@ namespace FitApp
                 Text = _context.DajProdukt(produktID).NazwaProduktu, 
                 Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point)
             };
-     
-            Button button = new Button() { 
-                Text = "X", 
+
+            Button button = new Button()
+            {
+                Text = "X",
                 Size = new Size(30, 30),
-                Location = new Point(335, 10)
+                Location = new Point(320, 10),
+                BackColor = Color.OrangeRed,
+                ForeColor = Color.White
+
             };
 
             button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));

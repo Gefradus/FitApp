@@ -63,6 +63,16 @@ namespace FitApp
                 ProduktId = 1,
                 DzienId = 1
             });
+            posilki.Add(new Posilek()
+            {
+                PosilekId = AIPosilki(posilki),
+                Gramatura = 200,
+                WKtorym = 2,
+                ProduktId = 1,
+                DzienId = 1
+            });
+
+
 
             using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\posilek.xml", FileMode.Create, FileAccess.Write))
             {

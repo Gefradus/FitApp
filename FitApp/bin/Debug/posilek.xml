@@ -8,8 +8,15 @@
     <ProduktId>2</ProduktId>
   </Posilek>
   <Posilek>
-    <PosilekId>1</PosilekId>
+    <PosilekId>3</PosilekId>
     <WKtorym>1</WKtorym>
+    <Gramatura>200</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>4</PosilekId>
+    <WKtorym>2</WKtorym>
     <Gramatura>200</Gramatura>
     <DzienId>1</DzienId>
     <ProduktId>1</ProduktId>

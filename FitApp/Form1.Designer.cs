@@ -111,11 +111,11 @@
             this.btnSniadanie.FlatAppearance.BorderSize = 0;
             this.btnSniadanie.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSniadanie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSniadanie.Location = new System.Drawing.Point(458, 22);
+            this.btnSniadanie.Location = new System.Drawing.Point(404, 14);
             this.btnSniadanie.Name = "btnSniadanie";
-            this.btnSniadanie.Size = new System.Drawing.Size(27, 23);
+            this.btnSniadanie.Size = new System.Drawing.Size(81, 36);
             this.btnSniadanie.TabIndex = 10;
-            this.btnSniadanie.Text = "+";
+            this.btnSniadanie.Text = "Dodaj";
             this.btnSniadanie.UseVisualStyleBackColor = false;
             this.btnSniadanie.Click += new System.EventHandler(this.btnSniadanie_Click);
             // 
@@ -168,11 +168,11 @@
             this.btn2Sniad.FlatAppearance.BorderSize = 0;
             this.btn2Sniad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn2Sniad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn2Sniad.Location = new System.Drawing.Point(458, 22);
+            this.btn2Sniad.Location = new System.Drawing.Point(404, 13);
             this.btn2Sniad.Name = "btn2Sniad";
-            this.btn2Sniad.Size = new System.Drawing.Size(27, 23);
+            this.btn2Sniad.Size = new System.Drawing.Size(81, 36);
             this.btn2Sniad.TabIndex = 10;
-            this.btn2Sniad.Text = "+";
+            this.btn2Sniad.Text = "Dodaj";
             this.btn2Sniad.UseVisualStyleBackColor = false;
             this.btn2Sniad.Click += new System.EventHandler(this.btn2Sniad_Click);
             // 
@@ -225,11 +225,11 @@
             this.btnObiad.FlatAppearance.BorderSize = 0;
             this.btnObiad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObiad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnObiad.Location = new System.Drawing.Point(458, 22);
+            this.btnObiad.Location = new System.Drawing.Point(404, 13);
             this.btnObiad.Name = "btnObiad";
-            this.btnObiad.Size = new System.Drawing.Size(27, 23);
+            this.btnObiad.Size = new System.Drawing.Size(81, 36);
             this.btnObiad.TabIndex = 10;
-            this.btnObiad.Text = "+";
+            this.btnObiad.Text = "Dodaj";
             this.btnObiad.UseVisualStyleBackColor = false;
             this.btnObiad.Click += new System.EventHandler(this.btnObiad_Click);
             // 
@@ -282,11 +282,11 @@
             this.btnDeser.FlatAppearance.BorderSize = 0;
             this.btnDeser.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDeser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeser.Location = new System.Drawing.Point(458, 22);
+            this.btnDeser.Location = new System.Drawing.Point(404, 13);
             this.btnDeser.Name = "btnDeser";
-            this.btnDeser.Size = new System.Drawing.Size(27, 23);
+            this.btnDeser.Size = new System.Drawing.Size(81, 36);
             this.btnDeser.TabIndex = 10;
-            this.btnDeser.Text = "+";
+            this.btnDeser.Text = "Dodaj";
             this.btnDeser.UseVisualStyleBackColor = false;
             this.btnDeser.Click += new System.EventHandler(this.btnDeser_Click);
             // 
@@ -339,11 +339,11 @@
             this.btnPrzekaska.FlatAppearance.BorderSize = 0;
             this.btnPrzekaska.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPrzekaska.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrzekaska.Location = new System.Drawing.Point(458, 22);
+            this.btnPrzekaska.Location = new System.Drawing.Point(404, 14);
             this.btnPrzekaska.Name = "btnPrzekaska";
-            this.btnPrzekaska.Size = new System.Drawing.Size(27, 23);
+            this.btnPrzekaska.Size = new System.Drawing.Size(81, 36);
             this.btnPrzekaska.TabIndex = 10;
-            this.btnPrzekaska.Text = "+";
+            this.btnPrzekaska.Text = "Dodaj";
             this.btnPrzekaska.UseVisualStyleBackColor = false;
             this.btnPrzekaska.Click += new System.EventHandler(this.btnPrzekaska_Click);
             // 
@@ -396,11 +396,11 @@
             this.btnKolacja.FlatAppearance.BorderSize = 0;
             this.btnKolacja.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKolacja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKolacja.Location = new System.Drawing.Point(458, 22);
+            this.btnKolacja.Location = new System.Drawing.Point(404, 13);
             this.btnKolacja.Name = "btnKolacja";
-            this.btnKolacja.Size = new System.Drawing.Size(27, 23);
+            this.btnKolacja.Size = new System.Drawing.Size(81, 36);
             this.btnKolacja.TabIndex = 10;
-            this.btnKolacja.Text = "+";
+            this.btnKolacja.Text = "Dodaj";
             this.btnKolacja.UseVisualStyleBackColor = false;
             this.btnKolacja.Click += new System.EventHandler(this.btnKolacja_Click);
             // 
