@@ -10,10 +10,11 @@ namespace FitApp
 {
     public partial class Form1 : Form
     {
-        private readonly ModelXML _context = new ModelXML();
+        private readonly ModelXML _context;
 
         public Form1()
         {
+            _context = new ModelXML();
             InitializeComponent();
         }
 
@@ -74,13 +75,12 @@ namespace FitApp
         {
             Panel panel = new Panel() { 
                 Size = new Size(369, 50), 
-                BackColor = Color.WhiteSmoke, Visible = true };
-
+                BackColor = Color.WhiteSmoke, Visible = true 
+            };
             Label label = new Label { 
                 Text = _context.DajProdukt(produktID).NazwaProduktu, 
                 Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point)
             };
-
             Button button = new Button()
             {
                 Text = "X",
@@ -92,7 +92,6 @@ namespace FitApp
             };
 
             button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));
-
             panel.Controls.Add(label);
             panel.Controls.Add(button);
             panelPos.Controls.Add(panel);
@@ -102,7 +101,6 @@ namespace FitApp
         {
             Button btnClicked = (Button) sender;
             btnClicked.Controls.Owner.Parent.Dispose();
-
             List<Posilek> posilki = _context.Posilki();
 
             int i = 0;
@@ -117,6 +115,7 @@ namespace FitApp
             }
 
             _context.ZapiszPosilki(posilki);
+            PoliczKalorieWPosilkach();
         }
 
         public void DodajDzisiajJesliNieMa()
@@ -152,9 +151,6 @@ namespace FitApp
             return false;
         }
 
-        
-
-
         public void OtworzOknoDodawania(int ktoryPosilek)
         {
             var frm = new FormDodawania
@@ -163,11 +159,13 @@ namespace FitApp
                 Location = Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { Show(); };
+
             frm.Show();
+            frm.FormClosing += Frm_FormClosing;
             Hide();
         }
 
+        private void Frm_FormClosing(object sender, FormClosingEventArgs e){ new Form1().Show(); }
         private void btnSniadanie_Click(object sender, EventArgs e){ OtworzOknoDodawania(1);}
         private void btn2Sniad_Click(object sender, EventArgs e){ OtworzOknoDodawania(2); }
         private void btnObiad_Click(object sender, EventArgs e){ OtworzOknoDodawania(3); }
