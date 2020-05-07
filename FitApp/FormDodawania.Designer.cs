@@ -28,60 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NazwaPosilku = new System.Windows.Forms.Label();
+            this.panelGlowny = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelGorny = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelSearch = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtBoxSearch = new System.Windows.Forms.TextBox();
+            this.btnHidden = new System.Windows.Forms.Button();
+            this.panelGorny.SuspendLayout();
+            this.panelSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // NazwaPosilku
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.NazwaPosilku.AutoSize = true;
+            this.NazwaPosilku.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NazwaPosilku.Location = new System.Drawing.Point(200, 5);
+            this.NazwaPosilku.Margin = new System.Windows.Forms.Padding(200, 5, 0, 0);
+            this.NazwaPosilku.Name = "NazwaPosilku";
+            this.NazwaPosilku.Size = new System.Drawing.Size(181, 35);
+            this.NazwaPosilku.TabIndex = 0;
+            this.NazwaPosilku.Text = "Nazwa posiłku";
             // 
-            // comboBox1
+            // panelGlowny
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(241, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
+            this.panelGlowny.Location = new System.Drawing.Point(0, 149);
+            this.panelGlowny.Name = "panelGlowny";
+            this.panelGlowny.Size = new System.Drawing.Size(589, 499);
+            this.panelGlowny.TabIndex = 0;
             // 
-            // button1
+            // panelGorny
             // 
-            this.button1.Location = new System.Drawing.Point(228, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 72);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panelGorny.Controls.Add(this.NazwaPosilku);
+            this.panelGorny.Location = new System.Drawing.Point(0, 0);
+            this.panelGorny.Name = "panelGorny";
+            this.panelGorny.Size = new System.Drawing.Size(589, 78);
+            this.panelGorny.TabIndex = 1;
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.Controls.Add(this.txtBoxSearch);
+            this.panelSearch.Controls.Add(this.btnHidden);
+            this.panelSearch.Location = new System.Drawing.Point(0, 75);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Size = new System.Drawing.Size(589, 76);
+            this.panelSearch.TabIndex = 2;
+            // 
+            // txtBoxSearch
+            // 
+            this.txtBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxSearch.Location = new System.Drawing.Point(106, 23);
+            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(106, 23, 3, 3);
+            this.txtBoxSearch.Name = "txtBoxSearch";
+            this.txtBoxSearch.Size = new System.Drawing.Size(378, 30);
+            this.txtBoxSearch.TabIndex = 1;
+            // 
+            // btnHidden
+            // 
+            this.btnHidden.Location = new System.Drawing.Point(490, 3);
+            this.btnHidden.Name = "btnHidden";
+            this.btnHidden.Size = new System.Drawing.Size(1, 0);
+            this.btnHidden.TabIndex = 0;
+            this.btnHidden.Text = "button1";
+            this.btnHidden.UseVisualStyleBackColor = true;
             // 
             // FormDodawania
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 595);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(589, 646);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelGorny);
+            this.Controls.Add(this.panelGlowny);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDodawania";
             this.Text = "FormDodawania";
             this.Load += new System.EventHandler(this.FormDodawania_Load);
+            this.panelGorny.ResumeLayout(false);
+            this.panelGorny.PerformLayout();
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label NazwaPosilku;
+        private System.Windows.Forms.FlowLayoutPanel panelGlowny;
+        private System.Windows.Forms.FlowLayoutPanel panelGorny;
+        private System.Windows.Forms.FlowLayoutPanel panelSearch;
+        private System.Windows.Forms.TextBox txtBoxSearch;
+        private System.Windows.Forms.Button btnHidden;
     }
 }

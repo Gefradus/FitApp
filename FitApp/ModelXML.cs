@@ -115,6 +115,18 @@ namespace FitApp
             return i;
         }
 
+        public int AutoIncrementPosilki(List<Posilek> listaPosilkow)
+        {
+            int i = 0;
+            foreach (var item in listaPosilkow)
+            {
+                i++;
+            }
+
+            return i;
+        }
+
+
         public List<Produkt> Produkty()
         {
             List<Produkt> produkty = new List<Produkt>();

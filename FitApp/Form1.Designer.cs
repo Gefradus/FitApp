@@ -458,6 +458,7 @@
             this.Controls.Add(this.panelGlowny);
             this.Controls.Add(this.panelDnia);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

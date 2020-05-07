@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Timers;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -155,7 +154,7 @@ namespace FitApp
         {
             var frm = new FormDodawania
             {
-                ktoryPosilekDnia = ktoryPosilek,
+                WKtorym = ktoryPosilek,
                 Location = Location,
                 StartPosition = FormStartPosition.Manual
             };
