@@ -16,7 +16,7 @@ namespace FitApp
     public partial class FormDodawania : Form
     {
         private readonly ModelXML _context = new ModelXML();
-        private StyleOfFormDodawania _style = new StyleOfFormDodawania();
+        private readonly StyleOfFormDodawania _style = new StyleOfFormDodawania();
 
         public int WKtorym { get; set; }
 
@@ -75,5 +75,56 @@ namespace FitApp
 
             _context.ZapiszPosilki(posilki);
         }
+
+        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string wyszukiwanaFraza = txtBoxSearch.Text;
+
+            List<Produkt> wyszukaneProdukty = new List<Produkt>();
+            foreach (var produkt in _context.Produkty()){
+                if (produkt.NazwaProduktu.ToLower().StartsWith(wyszukiwanaFraza.ToLower()) && !string.IsNullOrWhiteSpace(wyszukiwanaFraza))
+                {
+                    wyszukaneProdukty.Add(produkt);
+                }
+            }
+
+            panelGlowny.Controls.Clear();
+            foreach (var item in wyszukaneProdukty)
+            {
+                UtworzPanelProduktu(item.ProduktId);
+            }
+        }
+
+        private void UtworzPanelProduktu(int produktID)
+        {
+            Panel panel = new Panel()
+            {
+                Size = new Size(369, 50),
+                BackColor = Color.White,
+                Margin = new Padding(40, 0, 0, 0),
+                Visible = true
+            };
+            Label label = new Label
+            {
+                Text = _context.DajProdukt(produktID).NazwaProduktu,
+                Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point)
+            };
+            Button button = new Button()
+            {
+                Text = "Dodaj",
+                Size = new Size(30, 30),
+                Location = new Point(320, 10),
+                BackColor = Color.Green,
+                ForeColor = Color.White
+
+            };
+
+           // button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));
+            panel.Controls.Add(label);
+            panel.Controls.Add(button);
+            panelGlowny.Controls.Add(panel);
+        }
+
+
     }
 }
