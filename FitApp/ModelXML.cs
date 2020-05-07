@@ -27,7 +27,7 @@ namespace FitApp
                 }
             }
 
-            List<Produkt> produkts = Produkty();
+/*            List<Produkt> produkts = Produkty();
             produkts.Add(new Produkt() {
                 NazwaProduktu = "Ziemniak", 
                 Kalorie = 70, ProduktId = 2,
@@ -40,17 +40,56 @@ namespace FitApp
                 Weglowodany = 1,
                 Bialko = 2,
                 Tluszcze = 3
-            });
+            });*/
 
             path = Environment.CurrentDirectory + "\\produkt.xml";
             if (!File.Exists(path))
             {
                 using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write))
                 {
-                    new XmlSerializer(typeof(List<Produkt>)).Serialize(fs, produkts);
+                    new XmlSerializer(typeof(List<Produkt>)).Serialize(fs, new List<Produkt>());
                 }
             }
         }
+
+        public void ZapiszDni(List<Dzien> dni)
+        {
+            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\dzien.xml", FileMode.Create, FileAccess.Write))
+            {
+                new XmlSerializer(typeof(List<Dzien>)).Serialize(fs, dni);
+            }
+        }
+
+        public void ZapiszPosilki(List<Posilek> posilki)
+        {
+            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\posilek.xml", FileMode.Create, FileAccess.Write))
+            {
+                new XmlSerializer(typeof(List<Posilek>)).Serialize(fs, posilki);
+            }
+        }
+
+        public void ZapiszProdukty(List<Produkt> produkty)
+        {
+            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\produkt.xml", FileMode.Create, FileAccess.Write))
+            {
+                new XmlSerializer(typeof(List<Produkt>)).Serialize(fs, produkty);
+            }
+        }
+
+
+        public Posilek DajPosilek(int posilekID)
+        {
+            foreach (var item in Posilki())
+            {
+                if (item.PosilekId == posilekID)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
 
         public Produkt DajProdukt(int produktID)
         {
@@ -65,6 +104,16 @@ namespace FitApp
             return null;
         }
 
+        public int AutoIncrementDni(List<Dzien> listaDni)
+        {
+            int i = 0;
+            foreach (var item in listaDni)
+            {
+                i++;
+            }
+
+            return i;
+        }
 
         public List<Produkt> Produkty()
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Timers;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -29,18 +30,18 @@ namespace FitApp
 
             foreach (var item in posilki)
             {
+                int posilekID = item.PosilekId;
                 int produktID = item.ProduktId;
-                if (item.WKtorym == 1) { StworzPanelPosilku(produktID, panelSniadanie); }
-                if (item.WKtorym == 2) { StworzPanelPosilku(produktID, panel2Sniadanie); }
-                if (item.WKtorym == 3) { StworzPanelPosilku(produktID, panelObiad); }
-                if (item.WKtorym == 4) { StworzPanelPosilku(produktID, panelDeser); }
-                if (item.WKtorym == 5) { StworzPanelPosilku(produktID, panelPrzekaska); }
-                if (item.WKtorym == 6) { StworzPanelPosilku(produktID, panelKolacja); }
+                if (item.WKtorym == 1) { StworzPanelPosilku(produktID, posilekID, panelSniadanie); }
+                if (item.WKtorym == 2) { StworzPanelPosilku(produktID, posilekID, panel2Sniadanie); }
+                if (item.WKtorym == 3) { StworzPanelPosilku(produktID, posilekID, panelObiad); }
+                if (item.WKtorym == 4) { StworzPanelPosilku(produktID, posilekID, panelDeser); }
+                if (item.WKtorym == 5) { StworzPanelPosilku(produktID, posilekID, panelPrzekaska); }
+                if (item.WKtorym == 6) { StworzPanelPosilku(produktID, posilekID, panelKolacja); }
             }
         }
 
-
-        public void StworzPanelPosilku(int produktID, FlowLayoutPanel panelPos)
+        public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
             Panel panel = new Panel() { 
                 Size = new Size(369, 50), 
@@ -57,19 +58,32 @@ namespace FitApp
                 Location = new Point(335, 10)
             };
 
-            button.Click += new EventHandler(BtnClick);
+            button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));
 
             panel.Controls.Add(label);
             panel.Controls.Add(button);
             panelPos.Controls.Add(panel);
         }
 
-        public void BtnClick(object sender, EventArgs e)
+        public void BtnClick(object sender, int posilekID)
         {
             Button btnClicked = (Button) sender;
             btnClicked.Controls.Owner.Parent.Dispose();
 
-            
+            List<Posilek> posilki = _context.Posilki();
+
+            int i = 0;
+            foreach (var item in posilki)
+            {
+                if (item.PosilekId == posilekID)
+                {
+                    posilki.RemoveAt(i);
+                    break;
+                }
+                i++;
+            }
+
+            _context.ZapiszPosilki(posilki);
         }
 
         public void DodajDzisiajJesliNieMa()
@@ -77,14 +91,19 @@ namespace FitApp
             List<Dzien> dni = _context.Dni();
             if (!CzyJestDzisiaj(dni))
             {
-                dni.Add(new Dzien() { DzienId = AutoIncrement(dni), Dzien1 = DateTime.Now.Date, 
-                    Sniadanie = true, IISniadanie = true, Obiad = true, Deser = true, Kolacja = true, Przekaska = true }) ;
+                dni.Add(new Dzien() { 
+                    DzienId = _context.AutoIncrementDni(dni), 
+                    Dzien1 = DateTime.Now.Date, 
+                    Sniadanie = true, 
+                    IISniadanie = true, 
+                    Obiad = true, 
+                    Deser = true, 
+                    Kolacja = true, 
+                    Przekaska = true 
+                }) ;
             }
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\dzien.xml", FileMode.Create, FileAccess.Write))
-            {
-                new XmlSerializer(typeof(List<Dzien>)).Serialize(fs, dni);
-            }
+            _context.ZapiszDni(dni);
         }
 
         public bool CzyJestDzisiaj(List<Dzien> dni)
@@ -100,16 +119,7 @@ namespace FitApp
             return false;
         }
 
-        public int AutoIncrement(List<Dzien> lista)
-        {
-            int i = 0;
-            foreach (var item in lista)
-            {
-                i++;
-            }
-
-            return i;
-        }
+        
 
 
         public void OtworzOknoDodawania(int ktoryPosilek)
