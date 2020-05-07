@@ -49,6 +49,7 @@ namespace FitApp
             int kcalPrzekaska = 0;
             int kcalKolacja = 0;
 
+
             foreach (var item in _context.Posilki())
             {
                 int kalorie = (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
@@ -67,8 +68,30 @@ namespace FitApp
             lblDeserKcal.Text = kcalDeser + " kcal";
             lblPrzekaskaKcal.Text = kcalPrzekaska + " kcal";
             lblKolacjaKcal.Text = kcalKolacja + " kcal";
+
+            PoliczMakroWPosilach();
         }
 
+        public void PoliczMakroWPosilach()
+        {
+            double bialko = 0;
+            double tluszcze = 0;
+            double wegle = 0;
+            int kcal = 0;
+
+            foreach (var item in _context.Posilki())
+            {
+                kcal += (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
+                bialko += (item.Gramatura * _context.DajProdukt(item.ProduktId).Bialko) / 100;
+                wegle += (item.Gramatura * _context.DajProdukt(item.ProduktId).Weglowodany) / 100;
+                tluszcze += (item.Gramatura * _context.DajProdukt(item.ProduktId).Tluszcze) / 100;
+            }
+
+            lblKcalOd.Text = kcal + " kcal";
+            lblBialkoOd.Text = bialko + " g";
+            lblWeglOd.Text = wegle + " g";
+            lblTluszczeOd.Text = tluszcze + " g";
+        }
 
         public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
@@ -180,12 +203,20 @@ namespace FitApp
             };
 
             frm.Show();
-            frm.FormClosing += Frm_FormClosing;
+            frm.FormClosing += new FormClosingEventHandler((sender, e) => Frm_FormClosing(sender));
             Hide();
         }
 
 
-        private void Frm_FormClosing(object sender, FormClosingEventArgs e) { new Form1().Show(); }
+        private void Frm_FormClosing(object sender) {
+
+            Form form1 = new Form1
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            form1.Show();
+        }
 
         //--------------------------------- OTWIERANIE OKNA DODAWANIA --------------------------------
 
@@ -218,6 +249,5 @@ namespace FitApp
         {
             panel.Visible = !panel.Visible;
         }
-
     }
 }

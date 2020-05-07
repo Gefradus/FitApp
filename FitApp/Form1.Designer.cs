@@ -60,6 +60,22 @@
             this.lblKolacja = new System.Windows.Forms.Label();
             this.panelKolacja = new System.Windows.Forms.FlowLayoutPanel();
             this.panelGlowny = new System.Windows.Forms.Panel();
+            this.lblTluszczeDo = new System.Windows.Forms.Label();
+            this.lblWeglDo = new System.Windows.Forms.Label();
+            this.lblBialkoDo = new System.Windows.Forms.Label();
+            this.lblKcalDo = new System.Windows.Forms.Label();
+            this.lblTluszczeOd = new System.Windows.Forms.Label();
+            this.lblWeglOd = new System.Windows.Forms.Label();
+            this.lblBialkoOd = new System.Windows.Forms.Label();
+            this.lblKcalOd = new System.Windows.Forms.Label();
+            this.pasekTluszcze = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pasekWegl = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pasekBialko = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pasekKcal = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelDnia = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.Sniadanie.SuspendLayout();
@@ -68,6 +84,11 @@
             this.Deser.SuspendLayout();
             this.Przekaska.SuspendLayout();
             this.Kolacja.SuspendLayout();
+            this.panelGlowny.SuspendLayout();
+            this.pasekTluszcze.SuspendLayout();
+            this.pasekWegl.SuspendLayout();
+            this.pasekBialko.SuspendLayout();
+            this.pasekKcal.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -448,11 +469,176 @@
             // 
             // panelGlowny
             // 
-            this.panelGlowny.BackColor = System.Drawing.SystemColors.Window;
+            this.panelGlowny.BackColor = System.Drawing.Color.White;
+            this.panelGlowny.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGlowny.Controls.Add(this.lblTluszczeDo);
+            this.panelGlowny.Controls.Add(this.lblWeglDo);
+            this.panelGlowny.Controls.Add(this.lblBialkoDo);
+            this.panelGlowny.Controls.Add(this.lblKcalDo);
+            this.panelGlowny.Controls.Add(this.lblTluszczeOd);
+            this.panelGlowny.Controls.Add(this.lblWeglOd);
+            this.panelGlowny.Controls.Add(this.lblBialkoOd);
+            this.panelGlowny.Controls.Add(this.lblKcalOd);
+            this.panelGlowny.Controls.Add(this.pasekTluszcze);
+            this.panelGlowny.Controls.Add(this.pasekWegl);
+            this.panelGlowny.Controls.Add(this.pasekBialko);
+            this.panelGlowny.Controls.Add(this.pasekKcal);
             this.panelGlowny.Location = new System.Drawing.Point(1, 560);
             this.panelGlowny.Name = "panelGlowny";
             this.panelGlowny.Size = new System.Drawing.Size(586, 81);
             this.panelGlowny.TabIndex = 6;
+            // 
+            // lblTluszczeDo
+            // 
+            this.lblTluszczeDo.AutoSize = true;
+            this.lblTluszczeDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTluszczeDo.Location = new System.Drawing.Point(455, 24);
+            this.lblTluszczeDo.Name = "lblTluszczeDo";
+            this.lblTluszczeDo.Size = new System.Drawing.Size(35, 20);
+            this.lblTluszczeDo.TabIndex = 11;
+            this.lblTluszczeDo.Text = "0 g";
+            // 
+            // lblWeglDo
+            // 
+            this.lblWeglDo.AutoSize = true;
+            this.lblWeglDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWeglDo.Location = new System.Drawing.Point(313, 24);
+            this.lblWeglDo.Name = "lblWeglDo";
+            this.lblWeglDo.Size = new System.Drawing.Size(35, 20);
+            this.lblWeglDo.TabIndex = 10;
+            this.lblWeglDo.Text = "0 g";
+            // 
+            // lblBialkoDo
+            // 
+            this.lblBialkoDo.AutoSize = true;
+            this.lblBialkoDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBialkoDo.Location = new System.Drawing.Point(174, 24);
+            this.lblBialkoDo.Name = "lblBialkoDo";
+            this.lblBialkoDo.Size = new System.Drawing.Size(35, 20);
+            this.lblBialkoDo.TabIndex = 9;
+            this.lblBialkoDo.Text = "0 g";
+            // 
+            // lblKcalDo
+            // 
+            this.lblKcalDo.AutoSize = true;
+            this.lblKcalDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKcalDo.Location = new System.Drawing.Point(31, 24);
+            this.lblKcalDo.Name = "lblKcalDo";
+            this.lblKcalDo.Size = new System.Drawing.Size(59, 20);
+            this.lblKcalDo.TabIndex = 8;
+            this.lblKcalDo.Text = "0 kcal";
+            // 
+            // lblTluszczeOd
+            // 
+            this.lblTluszczeOd.AutoSize = true;
+            this.lblTluszczeOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTluszczeOd.Location = new System.Drawing.Point(432, 4);
+            this.lblTluszczeOd.Name = "lblTluszczeOd";
+            this.lblTluszczeOd.Size = new System.Drawing.Size(64, 20);
+            this.lblTluszczeOd.TabIndex = 7;
+            this.lblTluszczeOd.Text = "Tł.: 0 /";
+            // 
+            // lblWeglOd
+            // 
+            this.lblWeglOd.AutoSize = true;
+            this.lblWeglOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWeglOd.Location = new System.Drawing.Point(291, 4);
+            this.lblWeglOd.Name = "lblWeglOd";
+            this.lblWeglOd.Size = new System.Drawing.Size(90, 20);
+            this.lblWeglOd.TabIndex = 6;
+            this.lblWeglOd.Text = "Węgl.: 0 /";
+            // 
+            // lblBialkoOd
+            // 
+            this.lblBialkoOd.AutoSize = true;
+            this.lblBialkoOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBialkoOd.Location = new System.Drawing.Point(150, 4);
+            this.lblBialkoOd.Name = "lblBialkoOd";
+            this.lblBialkoOd.Size = new System.Drawing.Size(95, 20);
+            this.lblBialkoOd.TabIndex = 5;
+            this.lblBialkoOd.Text = "Białko: 0 /";
+            // 
+            // lblKcalOd
+            // 
+            this.lblKcalOd.AutoSize = true;
+            this.lblKcalOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKcalOd.Location = new System.Drawing.Point(12, 4);
+            this.lblKcalOd.Name = "lblKcalOd";
+            this.lblKcalOd.Size = new System.Drawing.Size(80, 20);
+            this.lblKcalOd.TabIndex = 4;
+            this.lblKcalOd.Text = "Kcal: 0 /";
+            // 
+            // pasekTluszcze
+            // 
+            this.pasekTluszcze.BackColor = System.Drawing.Color.Silver;
+            this.pasekTluszcze.Controls.Add(this.panel4);
+            this.pasekTluszcze.Location = new System.Drawing.Point(435, 49);
+            this.pasekTluszcze.Name = "pasekTluszcze";
+            this.pasekTluszcze.Size = new System.Drawing.Size(135, 23);
+            this.pasekTluszcze.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gold;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(48, 23);
+            this.panel4.TabIndex = 12;
+            // 
+            // pasekWegl
+            // 
+            this.pasekWegl.BackColor = System.Drawing.Color.Silver;
+            this.pasekWegl.Controls.Add(this.panel3);
+            this.pasekWegl.Location = new System.Drawing.Point(294, 49);
+            this.pasekWegl.Name = "pasekWegl";
+            this.pasekWegl.Size = new System.Drawing.Size(135, 23);
+            this.pasekWegl.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Crimson;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(48, 23);
+            this.panel3.TabIndex = 12;
+            // 
+            // pasekBialko
+            // 
+            this.pasekBialko.BackColor = System.Drawing.Color.Silver;
+            this.pasekBialko.Controls.Add(this.panel2);
+            this.pasekBialko.Location = new System.Drawing.Point(153, 49);
+            this.pasekBialko.Name = "pasekBialko";
+            this.pasekBialko.Size = new System.Drawing.Size(135, 23);
+            this.pasekBialko.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(48, 23);
+            this.panel2.TabIndex = 12;
+            // 
+            // pasekKcal
+            // 
+            this.pasekKcal.BackColor = System.Drawing.Color.Silver;
+            this.pasekKcal.Controls.Add(this.panel1);
+            this.pasekKcal.Location = new System.Drawing.Point(12, 49);
+            this.pasekKcal.Name = "pasekKcal";
+            this.pasekKcal.Size = new System.Drawing.Size(135, 23);
+            this.pasekKcal.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(48, 23);
+            this.panel1.TabIndex = 0;
             // 
             // panelDnia
             // 
@@ -472,6 +658,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -488,6 +675,12 @@
             this.Przekaska.PerformLayout();
             this.Kolacja.ResumeLayout(false);
             this.Kolacja.PerformLayout();
+            this.panelGlowny.ResumeLayout(false);
+            this.panelGlowny.PerformLayout();
+            this.pasekTluszcze.ResumeLayout(false);
+            this.pasekWegl.ResumeLayout(false);
+            this.pasekBialko.ResumeLayout(false);
+            this.pasekKcal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -527,6 +720,22 @@
         private System.Windows.Forms.FlowLayoutPanel panelPrzekaska;
         private System.Windows.Forms.FlowLayoutPanel panelKolacja;
         private System.Windows.Forms.Label lbl2Sniadanie;
+        private System.Windows.Forms.Label lblKcalOd;
+        private System.Windows.Forms.Panel pasekTluszcze;
+        private System.Windows.Forms.Panel pasekWegl;
+        private System.Windows.Forms.Panel pasekBialko;
+        private System.Windows.Forms.Panel pasekKcal;
+        private System.Windows.Forms.Label lblBialkoOd;
+        private System.Windows.Forms.Label lblTluszczeDo;
+        private System.Windows.Forms.Label lblWeglDo;
+        private System.Windows.Forms.Label lblBialkoDo;
+        private System.Windows.Forms.Label lblKcalDo;
+        private System.Windows.Forms.Label lblTluszczeOd;
+        private System.Windows.Forms.Label lblWeglOd;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
