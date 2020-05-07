@@ -119,12 +119,36 @@ namespace FitApp
 
             };
 
-           // button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));
+            button.Click += new EventHandler((sender, e) => BtnAddClick(sender, produktID));
             panel.Controls.Add(label);
             panel.Controls.Add(button);
             panelGlowny.Controls.Add(panel);
         }
 
+        private void BtnAddClick(object sender, int produktID)
+        {
+            int dodawanyProduktID = 0;
 
+            foreach (var produkt in _context.Produkty())
+            {
+                if (produkt.ProduktId == produktID)
+                {
+                    dodawanyProduktID = produktID;
+                }
+            }
+
+
+            List<Posilek> posilki = _context.Posilki();
+            posilki.Add(new Posilek()
+            {
+                DzienId = 1,
+                Gramatura = 100,
+                PosilekId = _context.AutoIncrementPosilki(_context.Posilki()),
+                ProduktId = dodawanyProduktID,
+                WKtorym = WKtorym
+            });
+
+            _context.ZapiszPosilki(posilki);
+        }
     }
 }
