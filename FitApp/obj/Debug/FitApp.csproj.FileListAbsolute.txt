@@ -1,0 +1,11 @@
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.csprojAssemblyReference.cache
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.Form1.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.Properties.Resources.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.csproj.GenerateResource.cache
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.csproj.CoreCompileInputs.cache
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\bin\Debug\FitApp.exe.config
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\bin\Debug\FitApp.exe
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\bin\Debug\FitApp.pdb
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.exe
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.pdb
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormDodawania.resources

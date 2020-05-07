@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitApp", "FitApp\FitApp.csproj", "{2E8BC282-B739-488D-A429-65F872495E57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E8BC282-B739-488D-A429-65F872495E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8BC282-B739-488D-A429-65F872495E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8BC282-B739-488D-A429-65F872495E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8BC282-B739-488D-A429-65F872495E57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C653C2E6-1129-4AAB-8EB1-ED4494C2FFA9}
+	EndGlobalSection
+EndGlobal

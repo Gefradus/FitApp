@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ArrayOfDzien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Dzien>
+    <DzienId>0</DzienId>
+    <Dzien1>2020-05-07T00:00:00+02:00</Dzien1>
+    <Sniadanie>true</Sniadanie>
+    <IISniadanie>true</IISniadanie>
+    <Obiad>true</Obiad>
+    <Deser>true</Deser>
+    <Przekaska>true</Przekaska>
+    <Kolacja>true</Kolacja>
+  </Dzien>
+</ArrayOfDzien>

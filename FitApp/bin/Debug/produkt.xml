@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ArrayOfProdukt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Produkt>
+    <ProduktId>1</ProduktId>
+    <NazwaProduktu>Banan</NazwaProduktu>
+    <Kalorie>0</Kalorie>
+    <Bialko>0</Bialko>
+    <Tluszcze>0</Tluszcze>
+    <Weglowodany>0</Weglowodany>
+  </Produkt>
+  <Produkt>
+    <ProduktId>2</ProduktId>
+    <NazwaProduktu>Ziemniak</NazwaProduktu>
+    <Kalorie>70</Kalorie>
+    <Bialko>2</Bialko>
+    <Tluszcze>3</Tluszcze>
+    <Weglowodany>1</Weglowodany>
+  </Produkt>
+
+</ArrayOfProdukt>
