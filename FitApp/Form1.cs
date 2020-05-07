@@ -184,12 +184,40 @@ namespace FitApp
             Hide();
         }
 
-        private void Frm_FormClosing(object sender, FormClosingEventArgs e){ new Form1().Show(); }
+
+        private void Frm_FormClosing(object sender, FormClosingEventArgs e) { new Form1().Show(); }
+
+        //--------------------------------- OTWIERANIE OKNA DODAWANIA --------------------------------
+
         private void btnSniadanie_Click(object sender, EventArgs e){ OtworzOknoDodawania(1);}
         private void btn2Sniad_Click(object sender, EventArgs e){ OtworzOknoDodawania(2); }
         private void btnObiad_Click(object sender, EventArgs e){ OtworzOknoDodawania(3); }
         private void btnDeser_Click(object sender, EventArgs e) {OtworzOknoDodawania(4); }
         private void btnPrzekaska_Click(object sender, EventArgs e){ OtworzOknoDodawania(5); }
         private void btnKolacja_Click(object sender, EventArgs e){ OtworzOknoDodawania(6); }
+
+        //------------------------------ UKRYJ / POKAŻ PANEL NA KLIKNIĘCIE --------------------------
+
+        private void Sniadanie_Click(object sender, EventArgs e) { UkryjPokazPanel(panelSniadanie); }
+        private void IISniadanie_Click(object sender, EventArgs e) { UkryjPokazPanel(panel2Sniadanie); }
+        private void Obiad_Click(object sender, EventArgs e) { UkryjPokazPanel(panelObiad); }
+        private void Deser_Click(object sender, EventArgs e) { UkryjPokazPanel(panelDeser); }
+        private void Przekaska_Click(object sender, EventArgs e) { UkryjPokazPanel(panelPrzekaska); }
+        private void Kolacja_Click(object sender, EventArgs e) { UkryjPokazPanel(panelKolacja); }
+
+        //------------------------ ZMIANA KURSORA NA 'RĄCZKĘ' PO NAJECHANIU ------------------------------
+
+        private void MouseHand_Sniadanie(object sender, EventArgs e){ Sniadanie.Cursor = Cursors.Hand; }
+        private void MouseHand_2Sniadanie(object sender, EventArgs e) { IISniadanie.Cursor = Cursors.Hand; }
+        private void MouseHand_Obiad(object sender, EventArgs e) { Obiad.Cursor = Cursors.Hand; }
+        private void MouseHand_Deser(object sender, EventArgs e) { Deser.Cursor = Cursors.Hand; }
+        private void MouseHand_Przekaska(object sender, EventArgs e) { Przekaska.Cursor = Cursors.Hand; }
+        private void MouseHand_Kolacja(object sender, EventArgs e) { Kolacja.Cursor = Cursors.Hand; }
+
+        private void UkryjPokazPanel(Panel panel)
+        {
+            panel.Visible = !panel.Visible;
+        }
+
     }
 }

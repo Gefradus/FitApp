@@ -14,4 +14,11 @@
     <DzienId>1</DzienId>
     <ProduktId>2</ProduktId>
   </Posilek>
+  <Posilek>
+    <PosilekId>2</PosilekId>
+    <WKtorym>2</WKtorym>
+    <Gramatura>100</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
 </ArrayOfPosilek>

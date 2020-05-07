@@ -104,6 +104,8 @@
             this.Sniadanie.Name = "Sniadanie";
             this.Sniadanie.Size = new System.Drawing.Size(500, 63);
             this.Sniadanie.TabIndex = 16;
+            this.Sniadanie.Click += new System.EventHandler(this.Sniadanie_Click);
+            this.Sniadanie.MouseHover += new System.EventHandler(this.MouseHand_Sniadanie);
             // 
             // btnSniadanie
             // 
@@ -161,6 +163,8 @@
             this.IISniadanie.Name = "IISniadanie";
             this.IISniadanie.Size = new System.Drawing.Size(500, 63);
             this.IISniadanie.TabIndex = 18;
+            this.IISniadanie.Click += new System.EventHandler(this.IISniadanie_Click);
+            this.IISniadanie.MouseHover += new System.EventHandler(this.MouseHand_2Sniadanie);
             // 
             // btn2Sniad
             // 
@@ -218,6 +222,8 @@
             this.Obiad.Name = "Obiad";
             this.Obiad.Size = new System.Drawing.Size(500, 63);
             this.Obiad.TabIndex = 20;
+            this.Obiad.Click += new System.EventHandler(this.Obiad_Click);
+            this.Obiad.MouseHover += new System.EventHandler(this.MouseHand_Obiad);
             // 
             // btnObiad
             // 
@@ -275,6 +281,8 @@
             this.Deser.Name = "Deser";
             this.Deser.Size = new System.Drawing.Size(500, 63);
             this.Deser.TabIndex = 22;
+            this.Deser.Click += new System.EventHandler(this.Deser_Click);
+            this.Deser.MouseHover += new System.EventHandler(this.MouseHand_Deser);
             // 
             // btnDeser
             // 
@@ -332,6 +340,8 @@
             this.Przekaska.Name = "Przekaska";
             this.Przekaska.Size = new System.Drawing.Size(500, 63);
             this.Przekaska.TabIndex = 24;
+            this.Przekaska.Click += new System.EventHandler(this.Przekaska_Click);
+            this.Przekaska.MouseHover += new System.EventHandler(this.MouseHand_Przekaska);
             // 
             // btnPrzekaska
             // 
@@ -389,6 +399,8 @@
             this.Kolacja.Name = "Kolacja";
             this.Kolacja.Size = new System.Drawing.Size(500, 63);
             this.Kolacja.TabIndex = 26;
+            this.Kolacja.Click += new System.EventHandler(this.Kolacja_Click);
+            this.Kolacja.MouseHover += new System.EventHandler(this.MouseHand_Kolacja);
             // 
             // btnKolacja
             // 
