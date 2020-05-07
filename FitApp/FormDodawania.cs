@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace FitApp
 {
@@ -119,13 +111,13 @@ namespace FitApp
 
             };
 
-            button.Click += new EventHandler((sender, e) => BtnAddClick(sender, produktID));
+            button.Click += new EventHandler((sender, e) => BtnAddClick(produktID));
             panel.Controls.Add(label);
             panel.Controls.Add(button);
             panelGlowny.Controls.Add(panel);
         }
 
-        private void BtnAddClick(object sender, int produktID)
+        private void BtnAddClick(int produktID)
         {
             int dodawanyProduktID = 0;
 
@@ -136,7 +128,6 @@ namespace FitApp
                     dodawanyProduktID = produktID;
                 }
             }
-
 
             List<Posilek> posilki = _context.Posilki();
             posilki.Add(new Posilek()

@@ -11,9 +11,9 @@ namespace FitApp
         public int ProduktId { get; set; }
         public string NazwaProduktu { get; set; }
         public int Kalorie { get; set; }
-        public int Bialko { get; set; }
-        public int Tluszcze { get; set; }
-        public int Weglowodany { get; set; }
+        public double Bialko { get; set; }
+        public double Tluszcze { get; set; }
+        public double Weglowodany { get; set; }
 
     }
 }

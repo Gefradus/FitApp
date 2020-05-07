@@ -2,10 +2,10 @@
 <ArrayOfPosilek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Posilek>
     <PosilekId>0</PosilekId>
-    <WKtorym>4</WKtorym>
+    <WKtorym>1</WKtorym>
     <Gramatura>100</Gramatura>
     <DzienId>1</DzienId>
-    <ProduktId>2</ProduktId>
+    <ProduktId>1</ProduktId>
   </Posilek>
   <Posilek>
     <PosilekId>1</PosilekId>

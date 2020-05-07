@@ -73,7 +73,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(128)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.flowLayoutPanel1.Controls.Add(this.Sniadanie);
             this.flowLayoutPanel1.Controls.Add(this.panelSniadanie);
             this.flowLayoutPanel1.Controls.Add(this.IISniadanie);
@@ -107,7 +107,7 @@
             // 
             // btnSniadanie
             // 
-            this.btnSniadanie.BackColor = System.Drawing.Color.Lime;
+            this.btnSniadanie.BackColor = System.Drawing.Color.LimeGreen;
             this.btnSniadanie.FlatAppearance.BorderSize = 0;
             this.btnSniadanie.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSniadanie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -164,7 +164,7 @@
             // 
             // btn2Sniad
             // 
-            this.btn2Sniad.BackColor = System.Drawing.Color.Lime;
+            this.btn2Sniad.BackColor = System.Drawing.Color.LimeGreen;
             this.btn2Sniad.FlatAppearance.BorderSize = 0;
             this.btn2Sniad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn2Sniad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -221,7 +221,7 @@
             // 
             // btnObiad
             // 
-            this.btnObiad.BackColor = System.Drawing.Color.Lime;
+            this.btnObiad.BackColor = System.Drawing.Color.LimeGreen;
             this.btnObiad.FlatAppearance.BorderSize = 0;
             this.btnObiad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObiad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -278,7 +278,7 @@
             // 
             // btnDeser
             // 
-            this.btnDeser.BackColor = System.Drawing.Color.Lime;
+            this.btnDeser.BackColor = System.Drawing.Color.LimeGreen;
             this.btnDeser.FlatAppearance.BorderSize = 0;
             this.btnDeser.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDeser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -335,7 +335,7 @@
             // 
             // btnPrzekaska
             // 
-            this.btnPrzekaska.BackColor = System.Drawing.Color.Lime;
+            this.btnPrzekaska.BackColor = System.Drawing.Color.LimeGreen;
             this.btnPrzekaska.FlatAppearance.BorderSize = 0;
             this.btnPrzekaska.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPrzekaska.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -392,7 +392,7 @@
             // 
             // btnKolacja
             // 
-            this.btnKolacja.BackColor = System.Drawing.Color.Lime;
+            this.btnKolacja.BackColor = System.Drawing.Color.LimeGreen;
             this.btnKolacja.FlatAppearance.BorderSize = 0;
             this.btnKolacja.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKolacja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

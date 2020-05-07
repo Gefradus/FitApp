@@ -72,14 +72,27 @@ namespace FitApp
 
         public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
+            Produkt prod = _context.DajProdukt(produktID);
+            int gram = _context.DajPosilek(posilekID).Gramatura;
+
             Panel panel = new Panel() { 
                 Size = new Size(369, 50), 
                 BackColor = Color.WhiteSmoke, Visible = true 
             };
-            Label label = new Label { 
-                Text = _context.DajProdukt(produktID).NazwaProduktu, 
-                Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point)
+            Label lblNazwaIlosc = new Label { 
+                AutoSize = true,
+                Text = prod.NazwaProduktu + ", " + gram + "g", 
+                Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point)
             };
+            Label lblParametry = new Label
+            {
+                AutoSize = true,
+                Text = PoliczParametr(gram, prod.Kalorie) + " kcal,  " + PoliczParametr(gram, prod.Bialko) + "g B,  " 
+                + PoliczParametr(gram,prod.Weglowodany) + "g W,  " + PoliczParametr(gram, prod.Tluszcze) + "g T" ,
+                Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point),
+                Location = new Point(0, 30)
+            };
+
             Button button = new Button()
             {
                 Text = "X",
@@ -87,14 +100,21 @@ namespace FitApp
                 Location = new Point(320, 10),
                 BackColor = Color.OrangeRed,
                 ForeColor = Color.White
-
             };
 
             button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));
-            panel.Controls.Add(label);
+            panel.Controls.Add(lblParametry);
+            panel.Controls.Add(lblNazwaIlosc);
             panel.Controls.Add(button);
             panelPos.Controls.Add(panel);
         }
+
+        public double PoliczParametr(int gramatura, double parametr)
+        {
+            decimal kalorie = ((decimal)(gramatura * parametr)) / 100;
+            return (double)Math.Round(kalorie, 1, MidpointRounding.AwayFromZero);      
+        }
+
 
         public void BtnClick(object sender, int posilekID)
         {
