@@ -9,3 +9,4 @@ C:\Users\Krzysiek\source\repos\FitApp\FitApp\bin\Debug\FitApp.pdb
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.exe
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.pdb
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormDodawania.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormPodajIlosc.resources

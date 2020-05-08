@@ -571,6 +571,7 @@
             // pasekTluszcze
             // 
             this.pasekTluszcze.BackColor = System.Drawing.Color.Silver;
+            this.pasekTluszcze.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pasekTluszcze.Controls.Add(this.panel4);
             this.pasekTluszcze.Location = new System.Drawing.Point(435, 49);
             this.pasekTluszcze.Name = "pasekTluszcze";
@@ -580,7 +581,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gold;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(48, 23);
@@ -589,6 +589,7 @@
             // pasekWegl
             // 
             this.pasekWegl.BackColor = System.Drawing.Color.Silver;
+            this.pasekWegl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pasekWegl.Controls.Add(this.panel3);
             this.pasekWegl.Location = new System.Drawing.Point(294, 49);
             this.pasekWegl.Name = "pasekWegl";
@@ -598,7 +599,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Crimson;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(48, 23);
@@ -607,6 +607,7 @@
             // pasekBialko
             // 
             this.pasekBialko.BackColor = System.Drawing.Color.Silver;
+            this.pasekBialko.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pasekBialko.Controls.Add(this.panel2);
             this.pasekBialko.Location = new System.Drawing.Point(153, 49);
             this.pasekBialko.Name = "pasekBialko";
@@ -616,7 +617,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(48, 23);
@@ -625,6 +625,7 @@
             // pasekKcal
             // 
             this.pasekKcal.BackColor = System.Drawing.Color.Silver;
+            this.pasekKcal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pasekKcal.Controls.Add(this.panel1);
             this.pasekKcal.Location = new System.Drawing.Point(12, 49);
             this.pasekKcal.Name = "pasekKcal";
@@ -634,7 +635,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LimeGreen;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(48, 23);

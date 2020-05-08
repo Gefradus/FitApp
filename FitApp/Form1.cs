@@ -15,6 +15,7 @@ namespace FitApp
         {
             _context = new ModelXML();
             InitializeComponent();
+            FormClosing += new FormClosingEventHandler((sender, e) => CloseApplication());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -87,10 +88,10 @@ namespace FitApp
                 tluszcze += (item.Gramatura * _context.DajProdukt(item.ProduktId).Tluszcze) / 100;
             }
 
-            lblKcalOd.Text = kcal + " kcal";
-            lblBialkoOd.Text = bialko + " g";
-            lblWeglOd.Text = wegle + " g";
-            lblTluszczeOd.Text = tluszcze + " g";
+            lblKcalOd.Text = "Kcal: "+ kcal + " /";
+            lblBialkoOd.Text = "Białko: "+ Zaokraglij((decimal)bialko, 0) + " /";
+            lblWeglOd.Text = "Węgl.: "+ Zaokraglij((decimal)wegle, 0) + " /";
+            lblTluszczeOd.Text = "Tł.: "+ Zaokraglij((decimal)tluszcze, 0) + " /";
         }
 
         public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
@@ -132,12 +133,15 @@ namespace FitApp
             panelPos.Controls.Add(panel);
         }
 
-        public double PoliczParametr(int gramatura, double parametr)
+        public double Zaokraglij(decimal liczba, int ilePoPrzecinku)
         {
-            decimal kalorie = ((decimal)(gramatura * parametr)) / 100;
-            return (double)Math.Round(kalorie, 1, MidpointRounding.AwayFromZero);      
+            return (double)Math.Round(liczba, ilePoPrzecinku, MidpointRounding.AwayFromZero);
         }
 
+        public double PoliczParametr(int gramatura, double parametr)
+        {
+            return Zaokraglij(((decimal)(gramatura * parametr)) / 100, 1);      
+        }
 
         public void BtnClick(object sender, int posilekID)
         {
@@ -195,20 +199,30 @@ namespace FitApp
 
         public void OtworzOknoDodawania(int ktoryPosilek)
         {
-            var frm = new FormDodawania
+            var formDodawania = new FormDodawania
             {
                 WKtorym = ktoryPosilek,
                 Location = Location,
                 StartPosition = FormStartPosition.Manual
             };
 
-            frm.Show();
-            frm.FormClosing += new FormClosingEventHandler((sender, e) => Frm_FormClosing(sender));
+            formDodawania.Show();
+            formDodawania.FormClosing += new FormClosingEventHandler((sender, e) => Frm_FormClosing());
             Hide();
         }
 
+        private void CloseApplication()
+        {
+            try
+            {
+                Application.ExitThread();
+            }
+            catch { }
+        }
 
-        private void Frm_FormClosing(object sender) {
+
+
+        private void Frm_FormClosing() {
 
             Form form1 = new Form1
             {
@@ -217,6 +231,7 @@ namespace FitApp
 
             form1.Show();
         }
+
 
         //--------------------------------- OTWIERANIE OKNA DODAWANIA --------------------------------
 

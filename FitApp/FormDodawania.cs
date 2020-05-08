@@ -37,37 +37,6 @@ namespace FitApp
             NazwaPosilku.Margin = new Padding((panelGorny.Width - NazwaPosilku.Width)/2,5,0,0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            List<Posilek> posilki = _context.Posilki();
-
-            posilki.Add(new Posilek() { 
-                PosilekId = _context.AutoIncrementPosilki(posilki), 
-                Gramatura = 200, 
-                WKtorym = 1, 
-                ProduktId = 2, 
-                DzienId = 1 
-            });
-            posilki.Add(new Posilek()
-            {
-                PosilekId = _context.AutoIncrementPosilki(posilki),
-                Gramatura = 200,
-                WKtorym = 1,
-                ProduktId = 1,
-                DzienId = 1
-            });
-            posilki.Add(new Posilek()
-            {
-                PosilekId = _context.AutoIncrementPosilki(posilki),
-                Gramatura = 200,
-                WKtorym = 2,
-                ProduktId = 1,
-                DzienId = 1
-            });
-
-            _context.ZapiszPosilki(posilki);
-        }
-
         private void txtBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string wyszukiwanaFraza = txtBoxSearch.Text;
@@ -104,7 +73,7 @@ namespace FitApp
             Button button = new Button()
             {
                 Text = "Dodaj",
-                Size = new Size(30, 30),
+                Size = new Size(75, 30),
                 Location = new Point(320, 10),
                 BackColor = Color.Green,
                 ForeColor = Color.White
@@ -119,27 +88,22 @@ namespace FitApp
 
         private void BtnAddClick(int produktID)
         {
-            int dodawanyProduktID = 0;
-
-            foreach (var produkt in _context.Produkty())
+            FormPodajIlosc formPodaj = new FormPodajIlosc
             {
-                if (produkt.ProduktId == produktID)
-                {
-                    dodawanyProduktID = produktID;
-                }
-            }
-
-            List<Posilek> posilki = _context.Posilki();
-            posilki.Add(new Posilek()
-            {
-                DzienId = 1,
-                Gramatura = 100,
-                PosilekId = _context.AutoIncrementPosilki(_context.Posilki()),
-                ProduktId = dodawanyProduktID,
+                ProduktID = produktID,
                 WKtorym = WKtorym
-            });
+            };
 
-            _context.ZapiszPosilki(posilki);
+            formPodaj.Show();
+            Hide();
+            
+        }
+
+        public void ZamknijForme()
+        {
+            Form form1 = new Form1 { StartPosition = FormStartPosition.CenterScreen };
+            form1.Show();
+            Hide();
         }
     }
 }
