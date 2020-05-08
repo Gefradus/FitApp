@@ -35,6 +35,8 @@
             this.lblNazwa = new System.Windows.Forms.Label();
             this.lblKcal = new System.Windows.Forms.Label();
             this.lblMakro = new System.Windows.Forms.Label();
+            this.panelParametrow = new System.Windows.Forms.Panel();
+            this.panelParametrow.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDodaj
@@ -42,7 +44,8 @@
             this.btnDodaj.BackColor = System.Drawing.Color.LimeGreen;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDodaj.Location = new System.Drawing.Point(104, 149);
+            this.btnDodaj.Location = new System.Drawing.Point(129, 149);
+            this.btnDodaj.Margin = new System.Windows.Forms.Padding(0);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(139, 34);
             this.btnDodaj.TabIndex = 0;
@@ -85,7 +88,7 @@
             // 
             this.lblNazwa.AutoSize = true;
             this.lblNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwa.Location = new System.Drawing.Point(99, 9);
+            this.lblNazwa.Location = new System.Drawing.Point(115, 9);
             this.lblNazwa.Name = "lblNazwa";
             this.lblNazwa.Size = new System.Drawing.Size(153, 25);
             this.lblNazwa.TabIndex = 4;
@@ -95,7 +98,7 @@
             // 
             this.lblKcal.AutoSize = true;
             this.lblKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKcal.Location = new System.Drawing.Point(217, 58);
+            this.lblKcal.Location = new System.Drawing.Point(3, 4);
             this.lblKcal.Name = "lblKcal";
             this.lblKcal.Size = new System.Drawing.Size(80, 18);
             this.lblKcal.TabIndex = 5;
@@ -105,28 +108,38 @@
             // 
             this.lblMakro.AutoSize = true;
             this.lblMakro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMakro.Location = new System.Drawing.Point(202, 87);
+            this.lblMakro.Location = new System.Drawing.Point(178, 85);
             this.lblMakro.Name = "lblMakro";
             this.lblMakro.Size = new System.Drawing.Size(130, 18);
             this.lblMakro.TabIndex = 6;
             this.lblMakro.Text = "B: 0g, W: 0g, T: 0g";
             // 
+            // panelParametrow
+            // 
+            this.panelParametrow.Controls.Add(this.lblKcal);
+            this.panelParametrow.Location = new System.Drawing.Point(173, 58);
+            this.panelParametrow.Name = "panelParametrow";
+            this.panelParametrow.Size = new System.Drawing.Size(206, 49);
+            this.panelParametrow.TabIndex = 7;
+            // 
             // FormPodajIlosc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 195);
+            this.ClientSize = new System.Drawing.Size(379, 195);
             this.Controls.Add(this.lblMakro);
-            this.Controls.Add(this.lblKcal);
             this.Controls.Add(this.lblNazwa);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDodaj);
+            this.Controls.Add(this.panelParametrow);
             this.Name = "FormPodajIlosc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPodajIlosc";
             this.Load += new System.EventHandler(this.FormPodajIlosc_Load);
+            this.panelParametrow.ResumeLayout(false);
+            this.panelParametrow.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +154,6 @@
         private System.Windows.Forms.Label lblNazwa;
         private System.Windows.Forms.Label lblKcal;
         private System.Windows.Forms.Label lblMakro;
+        private System.Windows.Forms.Panel panelParametrow;
     }
 }

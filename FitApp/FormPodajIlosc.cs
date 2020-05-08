@@ -27,11 +27,12 @@ namespace FitApp
         private void WyswietlNazweProduktu()
         {
             lblNazwa.Text = _context.DajProdukt(ProduktID).NazwaProduktu;
+            lblNazwa.Location = new Point((Width - lblNazwa.Width)/2,10);
         }
 
         private void PodajLiczbeTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((!int.TryParse(e.KeyChar+"", out _) || textBox1.Text.Length > 4) && !char.IsControl(e.KeyChar))
+            if ((!int.TryParse(e.KeyChar+"", out _) || (textBox1.Text.Length == 0 || textBox1.Text.Length > 3 ) && e.KeyChar == '0') && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -51,21 +52,28 @@ namespace FitApp
 
             if (int.TryParse(textBox1.Text, out _))
             {
-                List<Posilek> posilki = _context.Posilki();
-                posilki.Add(new Posilek()
+                if (!(int.Parse(textBox1.Text) == 0))
                 {
-                    DzienId = 1,
-                    Gramatura = int.Parse(textBox1.Text),
-                    PosilekId = _context.AutoIncrementPosilki(_context.Posilki()),
-                    ProduktId = dodawanyProduktID,
-                    WKtorym = WKtorym
-                });
+                    List<Posilek> posilki = _context.Posilki();
+                    posilki.Add(new Posilek()
+                    {
+                        DzienId = 1,
+                        Gramatura = int.Parse(textBox1.Text),
+                        PosilekId = _context.AutoIncrementPosilki(_context.Posilki()),
+                        ProduktId = dodawanyProduktID,
+                        WKtorym = WKtorym
+                    });
 
-                _context.ZapiszPosilki(posilki);
+                    _context.ZapiszPosilki(posilki);
 
-                Form form1 = new Form1 { StartPosition = FormStartPosition.CenterScreen };
-                form1.Show();
-                Hide();
+                    Form form1 = new Form1 { StartPosition = FormStartPosition.CenterScreen };
+                    form1.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Należy podać ilość produktu w gramach!");
+                }
             }
             else
             {
@@ -100,9 +108,15 @@ namespace FitApp
             }
 
             string textPoWal = "";
+            int ileWypisano = 0;
             foreach (var znak in textPoWalidacji)
             {
                 textPoWal += znak;
+                ileWypisano++;
+                if (ileWypisano >= 4)
+                {
+                    break;
+                }
             }
 
             textBox1.Text = textPoWal;
@@ -130,5 +144,14 @@ namespace FitApp
         {
             WyswietlNazweProduktu();
         }
+
+        private void WycentrujNazwe()
+        {
+
+        }
+
+
+
+
     }
 }
