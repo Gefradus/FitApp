@@ -24,13 +24,18 @@ namespace FitApp
             FormClosing += new FormClosingEventHandler((sender, e) => Powrot());
         }
 
-    private void PodajLiczbeTextBox_KeyPress(object sender, KeyPressEventArgs e)
-    {
-        if ((!int.TryParse(e.KeyChar+"", out _) || textBox1.Text.Length > 5) && !char.IsControl(e.KeyChar))
+        private void WyswietlNazweProduktu()
         {
-            e.Handled = true;
+            lblNazwa.Text = _context.DajProdukt(ProduktID).NazwaProduktu;
         }
-    }
+
+        private void PodajLiczbeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!int.TryParse(e.KeyChar+"", out _) || textBox1.Text.Length > 4) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
@@ -77,24 +82,53 @@ namespace FitApp
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            WalidacjaTextBoxa();
+            WyswietlKcalIMakro();
+        }
+
+        private void WalidacjaTextBoxa()
+        {
             char[] text = textBox1.Text.ToCharArray();
             List<char> textPoWalidacji = new List<char>();
 
-            for(int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
-                if (int.TryParse(text[i]+"", out _))
+                if (int.TryParse(text[i] + "", out _))
                 {
                     textPoWalidacji.Add(text[i]);
                 }
             }
 
             string textPoWal = "";
-            foreach(var znak in textPoWalidacji)
+            foreach (var znak in textPoWalidacji)
             {
                 textPoWal += znak;
             }
 
             textBox1.Text = textPoWal;
+        }
+
+        private void WyswietlKcalIMakro()
+        {
+            int kalorie = 0, bialko = 0, wegle = 0, tluszcze = 0;
+            try
+            {
+                Produkt produkt = _context.DajProdukt(ProduktID);
+                int podanaIlosc = int.Parse(textBox1.Text);
+                kalorie = (produkt.Kalorie * podanaIlosc) / 100;
+                bialko = (int)(produkt.Bialko * podanaIlosc / 100);
+                tluszcze = (int)(produkt.Tluszcze * podanaIlosc / 100);
+                wegle = (int)(produkt.Weglowodany * podanaIlosc / 100);
+            }
+            catch {}
+
+            lblKcal.Text = "Kcal: " + kalorie + " kcal";
+            lblMakro.Text = "B: " + bialko + "g, W: " + wegle + "g, T: " + tluszcze + "g";
+        }
+
+        private void FormPodajIlosc_Load(object sender, EventArgs e)
+        {
+            WyswietlNazweProduktu();
         }
     }
 }

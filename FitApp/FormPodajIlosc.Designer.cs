@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblNazwa = new System.Windows.Forms.Label();
+            this.lblKcal = new System.Windows.Forms.Label();
+            this.lblMakro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnDodaj
@@ -81,51 +81,52 @@
             this.label2.Text = "g";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label3
+            // lblNazwa
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(99, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Nazwa produktu";
+            this.lblNazwa.AutoSize = true;
+            this.lblNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwa.Location = new System.Drawing.Point(99, 9);
+            this.lblNazwa.Name = "lblNazwa";
+            this.lblNazwa.Size = new System.Drawing.Size(153, 25);
+            this.lblNazwa.TabIndex = 4;
+            this.lblNazwa.Text = "Nazwa produktu";
             // 
-            // label4
+            // lblKcal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(217, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Kcal: 0kcal";
+            this.lblKcal.AutoSize = true;
+            this.lblKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKcal.Location = new System.Drawing.Point(217, 58);
+            this.lblKcal.Name = "lblKcal";
+            this.lblKcal.Size = new System.Drawing.Size(80, 18);
+            this.lblKcal.TabIndex = 5;
+            this.lblKcal.Text = "Kcal: 0kcal";
             // 
-            // label5
+            // lblMakro
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(202, 87);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 18);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "B: 0g, W: 0g, T: 0g";
+            this.lblMakro.AutoSize = true;
+            this.lblMakro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMakro.Location = new System.Drawing.Point(202, 87);
+            this.lblMakro.Name = "lblMakro";
+            this.lblMakro.Size = new System.Drawing.Size(130, 18);
+            this.lblMakro.TabIndex = 6;
+            this.lblMakro.Text = "B: 0g, W: 0g, T: 0g";
             // 
             // FormPodajIlosc
             // 
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 195);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMakro);
+            this.Controls.Add(this.lblKcal);
+            this.Controls.Add(this.lblNazwa);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDodaj);
             this.Name = "FormPodajIlosc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPodajIlosc";
+            this.Load += new System.EventHandler(this.FormPodajIlosc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,8 +138,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblNazwa;
+        private System.Windows.Forms.Label lblKcal;
+        private System.Windows.Forms.Label lblMakro;
     }
 }
