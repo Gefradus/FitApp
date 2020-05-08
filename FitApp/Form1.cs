@@ -22,12 +22,33 @@ namespace FitApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            KlientID = 1;
+            KlientID = 0;
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
             DzienID = _context.DajDzisiajID(KlientID);
             ZaladujPosilki();
             PoliczKalorieWPosilkach();
+        }
+
+        public void NarysujPaski(int kcal, double bialko, double wegle, double tluszcze)
+        {
+            Dzien dzien = _context.DajDzien(DzienID);
+            pnlKcal.Width = DlugoscPaska(pasekKcal, kcal, dzien.CelKalorii);
+            pnlBialko.Width = DlugoscPaska(pasekBialko, bialko, dzien.CelBialko);
+            pnlWegle.Width = DlugoscPaska(pasekWegl, wegle, dzien.CelWegle);
+            pnlTluszcze.Width = DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze);
+        }
+
+        public int DlugoscPaska(Panel pasek, double parametr, int cel)
+        {
+            if (!(cel == 0))
+            {
+                return (int)(pasek.Width * (parametr / cel));
+            }
+            else
+            {
+                return pasek.Width;
+            }
         }
 
 
@@ -98,6 +119,8 @@ namespace FitApp
             lblBialkoOd.Text = "Białko: "+ Zaokraglij((decimal)bialko, 0) + " /";
             lblWeglOd.Text = "Węgl.: "+ Zaokraglij((decimal)wegle, 0) + " /";
             lblTluszczeOd.Text = "Tł.: "+ Zaokraglij((decimal)tluszcze, 0) + " /";
+
+            NarysujPaski(kcal, Zaokraglij((decimal)bialko, 0), Zaokraglij((decimal)wegle, 0), Zaokraglij((decimal)tluszcze, 0));
         }
 
         public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
@@ -187,12 +210,12 @@ namespace FitApp
                     DzienId = _context.AutoIncrementDni(dni),
                     Dzien1 = DateTime.Now.Date,
                     KlientId = KlientID,
-                    Sniadanie = true,
+                /*    Sniadanie = true,
                     IISniadanie = true,
                     Obiad = true,
                     Deser = true,
                     Kolacja = true,
-                    Przekaska = true
+                    Przekaska = true*/
                 });
             }
 

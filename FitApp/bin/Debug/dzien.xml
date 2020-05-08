@@ -2,35 +2,11 @@
 <ArrayOfDzien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Dzien>
     <DzienId>1</DzienId>
-    <KlientId>1</KlientId>
-    <Dzien1>2020-05-08T00:00:00+02:00</Dzien1>
-    <Sniadanie>true</Sniadanie>
-    <IISniadanie>true</IISniadanie>
-    <Obiad>true</Obiad>
-    <Deser>true</Deser>
-    <Przekaska>true</Przekaska>
-    <Kolacja>true</Kolacja>
-  </Dzien>
-  <Dzien>
-    <DzienId>2</DzienId>
     <KlientId>0</KlientId>
     <Dzien1>2020-05-08T00:00:00+02:00</Dzien1>
-    <Sniadanie>true</Sniadanie>
-    <IISniadanie>true</IISniadanie>
-    <Obiad>true</Obiad>
-    <Deser>true</Deser>
-    <Przekaska>true</Przekaska>
-    <Kolacja>true</Kolacja>
-  </Dzien>
-  <Dzien>
-    <DzienId>3</DzienId>
-    <KlientId>3</KlientId>
-    <Dzien1>2020-05-08T00:00:00+02:00</Dzien1>
-    <Sniadanie>true</Sniadanie>
-    <IISniadanie>true</IISniadanie>
-    <Obiad>true</Obiad>
-    <Deser>true</Deser>
-    <Przekaska>true</Przekaska>
-    <Kolacja>true</Kolacja>
+    <CelKalorii>1000</CelKalorii>
+    <CelBialko>125</CelBialko>
+    <CelWegle>400</CelWegle>
+    <CelTluszcze>70</CelTluszcze>
   </Dzien>
 </ArrayOfDzien>

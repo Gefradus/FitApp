@@ -69,13 +69,13 @@
             this.lblBialkoOd = new System.Windows.Forms.Label();
             this.lblKcalOd = new System.Windows.Forms.Label();
             this.pasekTluszcze = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlTluszcze = new System.Windows.Forms.Panel();
             this.pasekWegl = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlWegle = new System.Windows.Forms.Panel();
             this.pasekBialko = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlBialko = new System.Windows.Forms.Panel();
             this.pasekKcal = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlKcal = new System.Windows.Forms.Panel();
             this.panelDnia = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.Sniadanie.SuspendLayout();
@@ -572,73 +572,73 @@
             // 
             this.pasekTluszcze.BackColor = System.Drawing.Color.Silver;
             this.pasekTluszcze.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pasekTluszcze.Controls.Add(this.panel4);
+            this.pasekTluszcze.Controls.Add(this.pnlTluszcze);
             this.pasekTluszcze.Location = new System.Drawing.Point(435, 49);
             this.pasekTluszcze.Name = "pasekTluszcze";
             this.pasekTluszcze.Size = new System.Drawing.Size(135, 23);
             this.pasekTluszcze.TabIndex = 3;
             // 
-            // panel4
+            // pnlTluszcze
             // 
-            this.panel4.BackColor = System.Drawing.Color.Gold;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(48, 23);
-            this.panel4.TabIndex = 12;
+            this.pnlTluszcze.BackColor = System.Drawing.Color.Gold;
+            this.pnlTluszcze.Location = new System.Drawing.Point(0, 0);
+            this.pnlTluszcze.Name = "pnlTluszcze";
+            this.pnlTluszcze.Size = new System.Drawing.Size(48, 23);
+            this.pnlTluszcze.TabIndex = 12;
             // 
             // pasekWegl
             // 
             this.pasekWegl.BackColor = System.Drawing.Color.Silver;
             this.pasekWegl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pasekWegl.Controls.Add(this.panel3);
+            this.pasekWegl.Controls.Add(this.pnlWegle);
             this.pasekWegl.Location = new System.Drawing.Point(294, 49);
             this.pasekWegl.Name = "pasekWegl";
             this.pasekWegl.Size = new System.Drawing.Size(135, 23);
             this.pasekWegl.TabIndex = 2;
             // 
-            // panel3
+            // pnlWegle
             // 
-            this.panel3.BackColor = System.Drawing.Color.Crimson;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(48, 23);
-            this.panel3.TabIndex = 12;
+            this.pnlWegle.BackColor = System.Drawing.Color.Crimson;
+            this.pnlWegle.Location = new System.Drawing.Point(0, 0);
+            this.pnlWegle.Name = "pnlWegle";
+            this.pnlWegle.Size = new System.Drawing.Size(48, 23);
+            this.pnlWegle.TabIndex = 12;
             // 
             // pasekBialko
             // 
             this.pasekBialko.BackColor = System.Drawing.Color.Silver;
             this.pasekBialko.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pasekBialko.Controls.Add(this.panel2);
+            this.pasekBialko.Controls.Add(this.pnlBialko);
             this.pasekBialko.Location = new System.Drawing.Point(153, 49);
             this.pasekBialko.Name = "pasekBialko";
             this.pasekBialko.Size = new System.Drawing.Size(135, 23);
             this.pasekBialko.TabIndex = 1;
             // 
-            // panel2
+            // pnlBialko
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(48, 23);
-            this.panel2.TabIndex = 12;
+            this.pnlBialko.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlBialko.Location = new System.Drawing.Point(0, 0);
+            this.pnlBialko.Name = "pnlBialko";
+            this.pnlBialko.Size = new System.Drawing.Size(48, 23);
+            this.pnlBialko.TabIndex = 12;
             // 
             // pasekKcal
             // 
             this.pasekKcal.BackColor = System.Drawing.Color.Silver;
             this.pasekKcal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pasekKcal.Controls.Add(this.panel1);
+            this.pasekKcal.Controls.Add(this.pnlKcal);
             this.pasekKcal.Location = new System.Drawing.Point(12, 49);
             this.pasekKcal.Name = "pasekKcal";
             this.pasekKcal.Size = new System.Drawing.Size(135, 23);
             this.pasekKcal.TabIndex = 0;
             // 
-            // panel1
+            // pnlKcal
             // 
-            this.panel1.BackColor = System.Drawing.Color.LimeGreen;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(48, 23);
-            this.panel1.TabIndex = 0;
+            this.pnlKcal.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlKcal.Location = new System.Drawing.Point(0, 0);
+            this.pnlKcal.Name = "pnlKcal";
+            this.pnlKcal.Size = new System.Drawing.Size(48, 23);
+            this.pnlKcal.TabIndex = 0;
             // 
             // panelDnia
             // 
@@ -732,10 +732,10 @@
         private System.Windows.Forms.Label lblKcalDo;
         private System.Windows.Forms.Label lblTluszczeOd;
         private System.Windows.Forms.Label lblWeglOd;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTluszcze;
+        private System.Windows.Forms.Panel pnlWegle;
+        private System.Windows.Forms.Panel pnlBialko;
+        private System.Windows.Forms.Panel pnlKcal;
     }
 }
 

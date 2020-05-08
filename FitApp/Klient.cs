@@ -15,6 +15,10 @@ namespace FitApp
         public int CelBialko { get; set; }
         public int CelWegle { get; set; }
         public int CelTluszcze { get; set; }
+        public bool Plec { get; set; }
+        public int Wzrost { get; set; }
+        public int Waga { get; set; }
+        
 
 /*      public bool Sniadanie { get; set; }
         public bool IISniadanie { get; set; }
