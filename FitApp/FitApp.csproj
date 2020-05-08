@@ -66,6 +66,7 @@
     <Compile Include="FormPodajIlosc.Designer.cs">
       <DependentUpon>FormPodajIlosc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klient.cs" />
     <Compile Include="ModelXML.cs" />
     <Compile Include="Posilek.cs" />
     <Compile Include="Produkt.cs" />

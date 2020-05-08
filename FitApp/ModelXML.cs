@@ -9,7 +9,16 @@ namespace FitApp
     {
         public void CreateXMLIfNotExists()
         {
-            string path = Environment.CurrentDirectory + "\\dzien.xml";
+            string path = Environment.CurrentDirectory + "\\klient.xml";
+            if (!File.Exists(path))
+            {
+                using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write))
+                {
+                    new XmlSerializer(typeof(List<Klient>)).Serialize(fs, new List<Klient>());
+                }
+            }
+
+            path = Environment.CurrentDirectory + "\\dzien.xml";
             if (!File.Exists(path))
             {
                 using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write))
@@ -38,6 +47,14 @@ namespace FitApp
             }
         }
 
+        public void ZapiszKlientow(List<Klient> klienci)
+        {
+            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\klient.xml", FileMode.Create, FileAccess.Write))
+            {
+                new XmlSerializer(typeof(List<Klient>)).Serialize(fs, klienci);
+            }
+        }
+
         public void ZapiszDni(List<Dzien> dni)
         {
             using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\dzien.xml", FileMode.Create, FileAccess.Write))
@@ -62,6 +79,19 @@ namespace FitApp
             }
         }
 
+        public Klient DajKlienta(int klientID)
+        {
+            foreach (var item in Klienci())
+            {
+                if (item.KlientID == klientID)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
 
         public Posilek DajPosilek(int posilekID)
         {
@@ -76,6 +106,17 @@ namespace FitApp
             return null;
         }
 
+        public Dzien DajDzien(int dzienID)
+        {
+            foreach (var item in Dni())
+            {
+                if (item.DzienId == dzienID)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
 
         public Produkt DajProdukt(int produktID)
         {
@@ -86,14 +127,26 @@ namespace FitApp
                     return item;
                 }
             }
-
             return null;
+        }
+
+        public int AutoIncrementKlientow(List<Klient> listaKlientow)
+        {
+            int aktualnyID = 1;
+            foreach (var item in listaKlientow)
+            {
+                if (aktualnyID <= item.KlientID)
+                {
+                    aktualnyID = item.KlientID + 1;
+                }
+            }
+
+            return aktualnyID;
         }
 
         public int AutoIncrementDni(List<Dzien> listaDni)
         {
             int aktualnyID = 1;
-
             foreach (var item in listaDni)
             {
                 if (aktualnyID <= item.DzienId)
@@ -108,7 +161,6 @@ namespace FitApp
         public int AutoIncrementPosilki(List<Posilek> listaPosilkow)
         {
             int aktualnyID = 1;
-
             foreach (var item in listaPosilkow)
             {
                 if (aktualnyID <= item.PosilekId)
@@ -120,11 +172,27 @@ namespace FitApp
             return aktualnyID;
         }
 
-        public bool CzyPosilekWDanymDniu(int posilekID, DateTime dzien)
+        public int AutoIncrementProdukty(List<Produkt> listaProduktow)
+        {
+            int aktualnyID = 1;
+            foreach (var item in listaProduktow)
+            {
+                if (aktualnyID <= item.ProduktId)
+                {
+                    aktualnyID = item.ProduktId + 1;
+                }
+            }
+
+            return aktualnyID;
+        }
+
+
+
+        public bool CzyPosilekWDanymDniu(int posilekID, int dzienID)
         {
             foreach (var item in Dni())
             {
-                if (item.Dzien1 == dzien)
+                if (item.DzienId == dzienID)
                 {
                     if (DajPosilek(posilekID).DzienId == item.DzienId)
                     {
@@ -175,11 +243,37 @@ namespace FitApp
             return dni;
         }
 
-        public bool CzyJestDzisiaj(List<Dzien> dni)
+        public List<Klient> Klienci()
         {
-            foreach (var item in dni)
+            List<Klient> dni = new List<Klient>();
+            XmlSerializer dniSerial = new XmlSerializer(typeof(List<Klient>));
+            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\klient.xml", FileMode.Open, FileAccess.Read))
             {
-                if (item.Dzien1.Date == DateTime.Now.Date)
+                dni = dniSerial.Deserialize(fs) as List<Klient>;
+            }
+
+            return dni;
+        }
+
+        public int DajDzisiajID(int klientID)
+        {
+            foreach (var item in Dni())
+            {
+                if (item.KlientId == klientID && item.Dzien1 == DateTime.Now.Date)
+                {
+                    return item.DzienId;
+                }
+            }
+
+            return -1;
+        }
+
+
+        public bool CzyJestDzisiaj(int klientID)
+        {
+            foreach (var item in Dni())
+            {
+                if (item.KlientId == klientID && item.Dzien1 == DateTime.Now.Date)
                 {
                     return true;
                 }

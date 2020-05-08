@@ -10,6 +10,8 @@ namespace FitApp
     public partial class Form1 : Form
     {
         private readonly ModelXML _context;
+        public int KlientID { get; set; }
+        public int DzienID { get; set; }
 
         public Form1()
         {
@@ -20,17 +22,20 @@ namespace FitApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            KlientID = 1;
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
+            DzienID = _context.DajDzisiajID(KlientID);
             ZaladujPosilki();
             PoliczKalorieWPosilkach();
         }
+
 
         public void ZaladujPosilki()
         {
             foreach (var item in _context.Posilki())
             {
-                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DateTime.Now.Date))
+                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DzienID))
                 {
                     int posilekID = item.PosilekId;
                     int produktID = item.ProduktId;
@@ -46,17 +51,11 @@ namespace FitApp
 
         public void PoliczKalorieWPosilkach()
         {
-            int kcalSniad = 0;
-            int kcal2Sniad = 0;
-            int kcalObiad = 0;
-            int kcalDeser = 0;
-            int kcalPrzekaska = 0;
-            int kcalKolacja = 0;
-
+            int kcalSniad = 0, kcal2Sniad = 0, kcalObiad = 0, kcalDeser = 0, kcalPrzekaska = 0, kcalKolacja = 0;
 
             foreach (var item in _context.Posilki())
             {
-                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DateTime.Now.Date))
+                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DzienID))
                 {
                     int kalorie = (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
 
@@ -81,14 +80,12 @@ namespace FitApp
 
         public void PoliczMakroWPosilach()
         {
-            double bialko = 0;
-            double tluszcze = 0;
-            double wegle = 0;
+            double bialko = 0, tluszcze = 0, wegle = 0;
             int kcal = 0;
 
             foreach (var item in _context.Posilki())
             {
-                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DateTime.Now.Date))
+                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DzienID))
                 {
                     kcal += (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
                     bialko += (item.Gramatura * _context.DajProdukt(item.ProduktId).Bialko) / 100;
@@ -183,23 +180,25 @@ namespace FitApp
         public void DodajDzisiajJesliNieMa()
         {
             List<Dzien> dni = _context.Dni();
-            if (!_context.CzyJestDzisiaj(dni))
-            {
-                dni.Add(new Dzien() { 
-                    DzienId = _context.AutoIncrementDni(dni), 
-                    Dzien1 = DateTime.Now.Date, 
-                    Sniadanie = true, 
-                    IISniadanie = true, 
-                    Obiad = true, 
-                    Deser = true, 
-                    Kolacja = true, 
-                    Przekaska = true 
-                }) ;
+            if (!_context.CzyJestDzisiaj(KlientID))
+            { 
+                dni.Add(new Dzien()
+                {
+                    DzienId = _context.AutoIncrementDni(dni),
+                    Dzien1 = DateTime.Now.Date,
+                    KlientId = KlientID,
+                    Sniadanie = true,
+                    IISniadanie = true,
+                    Obiad = true,
+                    Deser = true,
+                    Kolacja = true,
+                    Przekaska = true
+                });
             }
 
             _context.ZapiszDni(dni);
         }
- 
+
 
         public void OtworzOknoDodawania(int ktoryPosilek)
         {
