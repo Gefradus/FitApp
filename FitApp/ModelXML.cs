@@ -92,24 +92,32 @@ namespace FitApp
 
         public int AutoIncrementDni(List<Dzien> listaDni)
         {
-            int i = 0;
+            int aktualnyID = 1;
+
             foreach (var item in listaDni)
             {
-                i++;
+                if (aktualnyID <= item.DzienId)
+                {
+                    aktualnyID = item.DzienId + 1;
+                }
             }
 
-            return i;
+            return aktualnyID;
         }
 
         public int AutoIncrementPosilki(List<Posilek> listaPosilkow)
         {
-            int i = 0;
+            int aktualnyID = 1;
+
             foreach (var item in listaPosilkow)
             {
-                i++;
+                if (aktualnyID <= item.PosilekId)
+                {
+                    aktualnyID = item.PosilekId + 1;
+                }
             }
 
-            return i;
+            return aktualnyID;
         }
 
 

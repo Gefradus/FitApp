@@ -2,23 +2,51 @@
 <ArrayOfPosilek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Posilek>
     <PosilekId>1</PosilekId>
-    <WKtorym>3</WKtorym>
-    <Gramatura>158</Gramatura>
-    <DzienId>1</DzienId>
-    <ProduktId>2</ProduktId>
-  </Posilek>
-  <Posilek>
-    <PosilekId>2</PosilekId>
-    <WKtorym>1</WKtorym>
-    <Gramatura>156</Gramatura>
-    <DzienId>1</DzienId>
-    <ProduktId>1</ProduktId>
-  </Posilek>
-  <Posilek>
-    <PosilekId>2</PosilekId>
     <WKtorym>1</WKtorym>
     <Gramatura>150</Gramatura>
     <DzienId>1</DzienId>
     <ProduktId>3</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>3</PosilekId>
+    <WKtorym>3</WKtorym>
+    <Gramatura>175</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>3</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>44</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>44</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>3</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>4</PosilekId>
+    <WKtorym>5</WKtorym>
+    <Gramatura>144</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>2</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>5</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>150</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>6</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>44</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>3</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>45</PosilekId>
+    <WKtorym>2</WKtorym>
+    <Gramatura>69</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>2</ProduktId>
   </Posilek>
 </ArrayOfPosilek>
