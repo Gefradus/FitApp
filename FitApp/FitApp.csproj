@@ -60,6 +60,12 @@
     <Compile Include="FormDodawania.Designer.cs">
       <DependentUpon>FormDodawania.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogowania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogowania.Designer.cs">
+      <DependentUpon>FormLogowania.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPodajIlosc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDodawania.resx">
       <DependentUpon>FormDodawania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogowania.resx">
+      <DependentUpon>FormLogowania.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPodajIlosc.resx">
       <DependentUpon>FormPodajIlosc.cs</DependentUpon>
