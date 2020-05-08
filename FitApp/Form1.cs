@@ -120,8 +120,15 @@ namespace FitApp
             lblWeglOd.Text = "Węgl.: "+ Zaokraglij((decimal)wegle, 0) + " /";
             lblTluszczeOd.Text = "Tł.: "+ Zaokraglij((decimal)tluszcze, 0) + " /";
 
+            Dzien dzien = _context.DajDzien(DzienID);
+            lblKcalDo.Text = dzien.CelKalorii + " kcal";
+            lblBialkoDo.Text = dzien.CelBialko + " g";
+            lblWeglDo.Text = dzien.CelWegle + " g";
+            lblTluszczeDo.Text = dzien.CelTluszcze + " g";
+
             NarysujPaski(kcal, Zaokraglij((decimal)bialko, 0), Zaokraglij((decimal)wegle, 0), Zaokraglij((decimal)tluszcze, 0));
         }
+
 
         public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
