@@ -117,7 +117,7 @@ namespace FitApp
                 Location = new Point(0, 30)
             };
 
-            Button button = new Button()
+            Button btnDelete = new Button()
             {
                 Text = "X",
                 Size = new Size(30, 30),
@@ -126,10 +126,10 @@ namespace FitApp
                 ForeColor = Color.White
             };
 
-            button.Click += new EventHandler((sender, e) => BtnClick(sender, posilekID));
+            btnDelete.Click += new EventHandler((sender, e) => BtnDeleteClick(sender, posilekID));
             panel.Controls.Add(lblParametry);
             panel.Controls.Add(lblNazwaIlosc);
-            panel.Controls.Add(button);
+            panel.Controls.Add(btnDelete);
             panelPos.Controls.Add(panel);
         }
 
@@ -143,31 +143,39 @@ namespace FitApp
             return Zaokraglij(((decimal)(gramatura * parametr)) / 100, 1);      
         }
 
-        public void BtnClick(object sender, int posilekID)
+        public void BtnDeleteClick(object sender, int posilekID)
         {
-            Button btnClicked = (Button) sender;
-            btnClicked.Controls.Owner.Parent.Dispose();
-            List<Posilek> posilki = _context.Posilki();
+            Posilek posilek = _context.DajPosilek(posilekID);
+            string nazwa = _context.DajProdukt(posilek.ProduktId).NazwaProduktu;
+            
 
-            int i = 0;
-            foreach (var item in posilki)
+            if (DialogResult.Yes == MessageBox.Show("Czy na pewno chcesz usunąć "+nazwa+", "+posilek.Gramatura+"g?", 
+                "Potwierdzenie usunięcia", MessageBoxButtons.YesNo))
             {
-                if (item.PosilekId == posilekID)
-                {
-                    posilki.RemoveAt(i);
-                    break;
-                }
-                i++;
-            }
+                Button btnClicked = (Button)sender;
+                btnClicked.Controls.Owner.Parent.Dispose();
+                List<Posilek> posilki = _context.Posilki();
 
-            _context.ZapiszPosilki(posilki);
-            PoliczKalorieWPosilkach();
+                int i = 0;
+                foreach (var item in posilki)
+                {
+                    if (item.PosilekId == posilekID)
+                    {
+                        posilki.RemoveAt(i);
+                        break;
+                    }
+                    i++;
+                }
+
+                _context.ZapiszPosilki(posilki);
+                PoliczKalorieWPosilkach();
+            }
         }
 
         public void DodajDzisiajJesliNieMa()
         {
             List<Dzien> dni = _context.Dni();
-            if (!CzyJestDzisiaj(dni))
+            if (!_context.CzyJestDzisiaj(dni))
             {
                 dni.Add(new Dzien() { 
                     DzienId = _context.AutoIncrementDni(dni), 
@@ -184,18 +192,7 @@ namespace FitApp
             _context.ZapiszDni(dni);
         }
 
-        public bool CzyJestDzisiaj(List<Dzien> dni)
-        {
-            foreach(var item in dni)
-            {
-                if (item.Dzien1.Date == DateTime.Now.Date)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
+       
 
         public void OtworzOknoDodawania(int ktoryPosilek)
         {

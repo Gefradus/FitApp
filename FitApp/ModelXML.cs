@@ -27,20 +27,6 @@ namespace FitApp
                 }
             }
 
-/*            List<Produkt> produkts = Produkty();
-            produkts.Add(new Produkt() {
-                NazwaProduktu = "Ziemniak", 
-                Kalorie = 70, ProduktId = 2,
-                Weglowodany = 1, Bialko = 2, Tluszcze = 3 });
-            produkts.Add(new Produkt()
-            {
-                NazwaProduktu = "Banan",
-                Kalorie = 70,
-                ProduktId = 1,
-                Weglowodany = 1,
-                Bialko = 2,
-                Tluszcze = 3
-            });*/
 
             path = Environment.CurrentDirectory + "\\produkt.xml";
             if (!File.Exists(path))
@@ -164,5 +150,19 @@ namespace FitApp
 
             return dni;
         }
+
+        public bool CzyJestDzisiaj(List<Dzien> dni)
+        {
+            foreach (var item in dni)
+            {
+                if (item.Dzien1.Date == DateTime.Now.Date)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 }

@@ -61,20 +61,22 @@ namespace FitApp
             Panel panel = new Panel()
             {
                 Size = new Size(369, 50),
-                BackColor = Color.White,
+                BackColor = Color.GhostWhite,
                 Margin = new Padding(40, 0, 0, 0),
-                Visible = true
+                Visible = true,
+                BorderStyle = BorderStyle.FixedSingle,
             };
             Label label = new Label
             {
                 Text = _context.DajProdukt(produktID).NazwaProduktu,
-                Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point)
+                Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point),
+                Location = new Point(5, 5)
             };
             Button button = new Button()
             {
                 Text = "Dodaj",
                 Size = new Size(75, 30),
-                Location = new Point(320, 10),
+                Location = new Point(275, 10),
                 BackColor = Color.Green,
                 ForeColor = Color.White
 

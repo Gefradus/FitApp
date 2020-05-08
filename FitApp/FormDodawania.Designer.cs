@@ -36,7 +36,9 @@
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnHidden = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelGlowny.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.panelGorny.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +67,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Window;
+            this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(40, 15);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(40, 0, 3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -114,9 +117,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(589, 50);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // FormDodawania
             // 
-            
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 646);
@@ -129,6 +140,8 @@
             this.Text = "FormDodawania";
             this.Load += new System.EventHandler(this.FormDodawania_Load);
             this.panelGlowny.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.panelGorny.ResumeLayout(false);
             this.panelGorny.PerformLayout();
             this.panelSearch.ResumeLayout(false);
@@ -147,5 +160,6 @@
         private System.Windows.Forms.Button btnHidden;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label1;
     }
 }

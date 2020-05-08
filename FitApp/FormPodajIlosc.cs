@@ -72,14 +72,20 @@ namespace FitApp
                 }
                 else
                 {
-                    MessageBox.Show("Należy podać ilość produktu w gramach!");
+                    PokazBlad();
                 }
             }
             else
             {
-                MessageBox.Show("Należy podać ilość produktu w gramach!");
+                PokazBlad();
             }
         }
+
+        public void PokazBlad()
+        {
+            MessageBox.Show("Należy podać ilość produktu w gramach!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
 
         private void Powrot()
         {
@@ -144,14 +150,5 @@ namespace FitApp
         {
             WyswietlNazweProduktu();
         }
-
-        private void WycentrujNazwe()
-        {
-
-        }
-
-
-
-
     }
 }

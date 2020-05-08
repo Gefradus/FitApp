@@ -4,17 +4,24 @@
     <ProduktId>1</ProduktId>
     <NazwaProduktu>Banan</NazwaProduktu>
     <Kalorie>100</Kalorie>
-    <Bialko>0</Bialko>
+    <Bialko>1</Bialko>
     <Tluszcze>0</Tluszcze>
-    <Weglowodany>0</Weglowodany>
+    <Weglowodany>24</Weglowodany>
   </Produkt>
   <Produkt>
     <ProduktId>2</ProduktId>
     <NazwaProduktu>Ziemniak</NazwaProduktu>
     <Kalorie>70</Kalorie>
-    <Bialko>2</Bialko>
-    <Tluszcze>3</Tluszcze>
-    <Weglowodany>1</Weglowodany>
+    <Bialko>1</Bialko>
+    <Tluszcze>1</Tluszcze>
+    <Weglowodany>21</Weglowodany>
   </Produkt>
-
+  <Produkt>
+    <ProduktId>3</ProduktId>
+    <NazwaProduktu>Bakłażan</NazwaProduktu>
+    <Kalorie>100</Kalorie>
+    <Bialko>1</Bialko>
+    <Tluszcze>0</Tluszcze>
+    <Weglowodany>24</Weglowodany>
+  </Produkt>
 </ArrayOfProdukt>

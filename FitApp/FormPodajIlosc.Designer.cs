@@ -87,10 +87,10 @@
             // lblNazwa
             // 
             this.lblNazwa.AutoSize = true;
-            this.lblNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwa.Font = new System.Drawing.Font("Arimo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNazwa.Location = new System.Drawing.Point(115, 9);
             this.lblNazwa.Name = "lblNazwa";
-            this.lblNazwa.Size = new System.Drawing.Size(153, 25);
+            this.lblNazwa.Size = new System.Drawing.Size(163, 24);
             this.lblNazwa.TabIndex = 4;
             this.lblNazwa.Text = "Nazwa produktu";
             // 
