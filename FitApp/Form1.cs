@@ -30,14 +30,17 @@ namespace FitApp
         {
             foreach (var item in _context.Posilki())
             {
-                int posilekID = item.PosilekId;
-                int produktID = item.ProduktId;
-                if (item.WKtorym == 1) { StworzPanelPosilku(produktID, posilekID, panelSniadanie); }
-                if (item.WKtorym == 2) { StworzPanelPosilku(produktID, posilekID, panel2Sniadanie); }
-                if (item.WKtorym == 3) { StworzPanelPosilku(produktID, posilekID, panelObiad); }
-                if (item.WKtorym == 4) { StworzPanelPosilku(produktID, posilekID, panelDeser); }
-                if (item.WKtorym == 5) { StworzPanelPosilku(produktID, posilekID, panelPrzekaska); }
-                if (item.WKtorym == 6) { StworzPanelPosilku(produktID, posilekID, panelKolacja); }
+                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DateTime.Now.Date))
+                {
+                    int posilekID = item.PosilekId;
+                    int produktID = item.ProduktId;
+                    if (item.WKtorym == 1) { StworzPanelPosilku(produktID, posilekID, panelSniadanie); }
+                    if (item.WKtorym == 2) { StworzPanelPosilku(produktID, posilekID, panel2Sniadanie); }
+                    if (item.WKtorym == 3) { StworzPanelPosilku(produktID, posilekID, panelObiad); }
+                    if (item.WKtorym == 4) { StworzPanelPosilku(produktID, posilekID, panelDeser); }
+                    if (item.WKtorym == 5) { StworzPanelPosilku(produktID, posilekID, panelPrzekaska); }
+                    if (item.WKtorym == 6) { StworzPanelPosilku(produktID, posilekID, panelKolacja); }
+                }
             }
         }
 
@@ -53,14 +56,17 @@ namespace FitApp
 
             foreach (var item in _context.Posilki())
             {
-                int kalorie = (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
+                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DateTime.Now.Date))
+                {
+                    int kalorie = (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
 
-                if (item.WKtorym == 1) { kcalSniad += kalorie; }
-                if (item.WKtorym == 2) { kcal2Sniad += kalorie; }
-                if (item.WKtorym == 3) { kcalObiad += kalorie; }
-                if (item.WKtorym == 4) { kcalDeser += kalorie; }
-                if (item.WKtorym == 5) { kcalPrzekaska += kalorie; }
-                if (item.WKtorym == 6) { kcalKolacja += kalorie; }
+                    if (item.WKtorym == 1) { kcalSniad += kalorie; }
+                    if (item.WKtorym == 2) { kcal2Sniad += kalorie; }
+                    if (item.WKtorym == 3) { kcalObiad += kalorie; }
+                    if (item.WKtorym == 4) { kcalDeser += kalorie; }
+                    if (item.WKtorym == 5) { kcalPrzekaska += kalorie; }
+                    if (item.WKtorym == 6) { kcalKolacja += kalorie; }
+                }
             }
 
             lblSniadanieKcal.Text = kcalSniad + " kcal";
@@ -82,10 +88,13 @@ namespace FitApp
 
             foreach (var item in _context.Posilki())
             {
-                kcal += (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
-                bialko += (item.Gramatura * _context.DajProdukt(item.ProduktId).Bialko) / 100;
-                wegle += (item.Gramatura * _context.DajProdukt(item.ProduktId).Weglowodany) / 100;
-                tluszcze += (item.Gramatura * _context.DajProdukt(item.ProduktId).Tluszcze) / 100;
+                if (_context.CzyPosilekWDanymDniu(item.PosilekId, DateTime.Now.Date))
+                {
+                    kcal += (item.Gramatura * _context.DajProdukt(item.ProduktId).Kalorie) / 100;
+                    bialko += (item.Gramatura * _context.DajProdukt(item.ProduktId).Bialko) / 100;
+                    wegle += (item.Gramatura * _context.DajProdukt(item.ProduktId).Weglowodany) / 100;
+                    tluszcze += (item.Gramatura * _context.DajProdukt(item.ProduktId).Tluszcze) / 100;
+                }
             }
 
             lblKcalOd.Text = "Kcal: "+ kcal + " /";
@@ -148,7 +157,6 @@ namespace FitApp
             Posilek posilek = _context.DajPosilek(posilekID);
             string nazwa = _context.DajProdukt(posilek.ProduktId).NazwaProduktu;
             
-
             if (DialogResult.Yes == MessageBox.Show("Czy na pewno chcesz usunąć "+nazwa+", "+posilek.Gramatura+"g?", 
                 "Potwierdzenie usunięcia", MessageBoxButtons.YesNo))
             {
@@ -191,8 +199,7 @@ namespace FitApp
 
             _context.ZapiszDni(dni);
         }
-
-       
+ 
 
         public void OtworzOknoDodawania(int ktoryPosilek)
         {
@@ -216,8 +223,6 @@ namespace FitApp
             }
             catch { }
         }
-
-
 
         private void Frm_FormClosing() {
 

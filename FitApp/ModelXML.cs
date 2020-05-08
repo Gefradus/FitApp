@@ -120,6 +120,22 @@ namespace FitApp
             return aktualnyID;
         }
 
+        public bool CzyPosilekWDanymDniu(int posilekID, DateTime dzien)
+        {
+            foreach (var item in Dni())
+            {
+                if (item.Dzien1 == dzien)
+                {
+                    if (DajPosilek(posilekID).DzienId == item.DzienId)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
 
         public List<Produkt> Produkty()
         {
