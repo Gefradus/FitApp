@@ -255,6 +255,19 @@ namespace FitApp
             return dni;
         }
 
+        public int DajKlientaPoDniuID(int dzienID)
+        {
+            foreach (var item in Dni())
+            {
+                if (dzienID == item.DzienId)
+                {
+                    return item.KlientId;
+                }
+            }
+
+            return -1;
+        }
+
         public int DajDzisiajID(int klientID)
         {
             foreach (var item in Dni())

@@ -42,6 +42,7 @@
             // 
             this.txtLogin.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtLogin.Location = new System.Drawing.Point(179, 38);
+            this.txtLogin.MaxLength = 15;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(247, 27);
             this.txtLogin.TabIndex = 0;
@@ -50,7 +51,9 @@
             // 
             this.txtHaslo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtHaslo.Location = new System.Drawing.Point(179, 100);
+            this.txtHaslo.MaxLength = 15;
             this.txtHaslo.Name = "txtHaslo";
+            this.txtHaslo.PasswordChar = '*';
             this.txtHaslo.Size = new System.Drawing.Size(247, 27);
             this.txtHaslo.TabIndex = 1;
             // 
@@ -112,10 +115,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegister.BackColor = System.Drawing.Color.ForestGreen;
             this.btnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnRegister.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(182, 244);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(247, 40);
@@ -139,6 +142,7 @@
             this.Controls.Add(this.txtHaslo);
             this.Controls.Add(this.txtLogin);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormLogowania";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FitApp - logowanie";

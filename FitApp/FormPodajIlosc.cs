@@ -13,10 +13,10 @@ namespace FitApp
 {
     public partial class FormPodajIlosc : Form
     {
-
         private readonly ModelXML _context = new ModelXML();
         public int ProduktID { get; set; }
         public int WKtorym { get; set; }
+        public int DzienID { get; set; }
 
         public FormPodajIlosc()
         {
@@ -57,7 +57,7 @@ namespace FitApp
                     List<Posilek> posilki = _context.Posilki();
                     posilki.Add(new Posilek()
                     {
-                        DzienId = 1,
+                        DzienId = DzienID,
                         Gramatura = int.Parse(textBox1.Text),
                         PosilekId = _context.AutoIncrementPosilki(_context.Posilki()),
                         ProduktId = dodawanyProduktID,
@@ -66,7 +66,12 @@ namespace FitApp
 
                     _context.ZapiszPosilki(posilki);
 
-                    Form form1 = new Form1 { StartPosition = FormStartPosition.CenterScreen };
+                    Form form1 = new Form1 { 
+                        StartPosition = FormStartPosition.CenterScreen, 
+                        DzienID = DzienID,
+                        KlientID = _context.DajKlientaPoDniuID(DzienID)
+                    };
+                    
                     form1.Show();
                     Hide();
                 }
@@ -89,7 +94,11 @@ namespace FitApp
 
         private void Powrot()
         {
-            FormDodawania form = new FormDodawania { StartPosition = FormStartPosition.CenterScreen };
+            FormDodawania form = new FormDodawania { 
+                StartPosition = FormStartPosition.CenterScreen,
+                DzienID = DzienID,
+            };
+
             form.FormClosing += new FormClosingEventHandler((sender, e) => form.ZamknijForme());
             form.Show();
         }

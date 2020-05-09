@@ -9,7 +9,7 @@ namespace FitApp
     {
         private readonly ModelXML _context = new ModelXML();
         private readonly StyleOfFormDodawania _style = new StyleOfFormDodawania();
-
+        public int DzienID { get; set; }
         public int WKtorym { get; set; }
 
         public FormDodawania()
@@ -93,7 +93,8 @@ namespace FitApp
             FormPodajIlosc formPodaj = new FormPodajIlosc
             {
                 ProduktID = produktID,
-                WKtorym = WKtorym
+                WKtorym = WKtorym,
+                DzienID = DzienID
             };
 
             formPodaj.Show();
@@ -103,7 +104,11 @@ namespace FitApp
 
         public void ZamknijForme()
         {
-            Form form1 = new Form1 { StartPosition = FormStartPosition.CenterScreen };
+            Form form1 = new Form1 { 
+                StartPosition = FormStartPosition.CenterScreen, 
+                KlientID = _context.DajKlientaPoDniuID(DzienID),
+                DzienID = DzienID
+            };
             form1.Show();
             Hide();
         }

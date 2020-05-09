@@ -32,9 +32,10 @@ namespace FitApp
             {
                 if(txtLogin.Text.ToLower() == klient.Login.ToLower() && txtHaslo.Text == klient.Haslo)
                 {
-                        czyZalogowano = true;
-                        Hide();
-                        new Form1().Show();
+                    czyZalogowano = true;
+                    Hide();
+                    Form1 form1 = new Form1 { KlientID = klient.KlientID };
+                    form1.Show();
                 }
             }
 

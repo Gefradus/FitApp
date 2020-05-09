@@ -21,8 +21,7 @@ namespace FitApp
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            KlientID = 0;
+        {     
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
             DzienID = _context.DajDzisiajID(KlientID);
@@ -235,6 +234,7 @@ namespace FitApp
             var formDodawania = new FormDodawania
             {
                 WKtorym = ktoryPosilek,
+                DzienID = DzienID,
                 Location = Location,
                 StartPosition = FormStartPosition.Manual
             };
@@ -257,7 +257,9 @@ namespace FitApp
 
             Form form1 = new Form1
             {
-                StartPosition = FormStartPosition.CenterScreen
+                StartPosition = FormStartPosition.CenterScreen,
+                KlientID = KlientID,
+                DzienID = DzienID
             };
 
             form1.Show();

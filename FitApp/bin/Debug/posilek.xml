@@ -14,4 +14,32 @@
     <DzienId>1</DzienId>
     <ProduktId>1</ProduktId>
   </Posilek>
+  <Posilek>
+    <PosilekId>3</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>150</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>4</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>150</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>5</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>235</Gramatura>
+    <DzienId>3</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>8</PosilekId>
+    <WKtorym>5</WKtorym>
+    <Gramatura>111</Gramatura>
+    <DzienId>3</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
 </ArrayOfPosilek>

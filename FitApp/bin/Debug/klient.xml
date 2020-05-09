@@ -12,4 +12,28 @@
     <Wzrost>0</Wzrost>
     <Waga>0</Waga>
   </Klient>
+  <Klient>
+    <KlientID>2</KlientID>
+    <Login>aaaaaaa</Login>
+    <Haslo>bbbbbbb</Haslo>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>3</KlientID>
+    <Login>aaaaaaaaaaaaaaa</Login>
+    <Haslo>bbbbbbbbbbbbbbb</Haslo>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
 </ArrayOfKlient>
