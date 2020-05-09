@@ -72,6 +72,18 @@
     <Compile Include="FormPodajIlosc.Designer.cs">
       <DependentUpon>FormPodajIlosc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRejestracji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRejestracji.Designer.cs">
+      <DependentUpon>FormRejestracji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUstawien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUstawien.Designer.cs">
+      <DependentUpon>FormUstawien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klient.cs" />
     <Compile Include="ModelXML.cs" />
     <Compile Include="Posilek.cs" />
@@ -90,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPodajIlosc.resx">
       <DependentUpon>FormPodajIlosc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRejestracji.resx">
+      <DependentUpon>FormRejestracji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUstawien.resx">
+      <DependentUpon>FormUstawien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

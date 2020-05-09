@@ -9,4 +9,13 @@
     <CelWegle>400</CelWegle>
     <CelTluszcze>70</CelTluszcze>
   </Dzien>
+  <Dzien>
+    <DzienId>2</DzienId>
+    <KlientId>0</KlientId>
+    <Dzien1>2020-05-09T00:00:00+02:00</Dzien1>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+  </Dzien>
 </ArrayOfDzien>

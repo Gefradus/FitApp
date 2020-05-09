@@ -10,3 +10,6 @@ C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.exe
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.pdb
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormDodawania.resources
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormPodajIlosc.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormLogowania.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormRejestracji.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormUstawien.resources

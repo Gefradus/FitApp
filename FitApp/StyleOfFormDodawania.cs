@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FitApp
@@ -35,7 +36,6 @@ namespace FitApp
             this.btnHidden = btnHidden;
         }
 
-
         public void LostFocusWhenClickOutside()
         {
             NazwaPosilku.Click += LostFocus;
@@ -53,7 +53,7 @@ namespace FitApp
         {
             if (txtBoxSearch.Text == "Szukaj produktu")
             {
-                txtBoxSearch.ForeColor = System.Drawing.Color.Black;
+                txtBoxSearch.ForeColor = Color.Black;
                 txtBoxSearch.Text = "";
             }
         }
@@ -63,7 +63,7 @@ namespace FitApp
             if (string.IsNullOrWhiteSpace(txtBoxSearch.Text))
             {
                 txtBoxSearch.Text = "Szukaj produktu";
-                txtBoxSearch.ForeColor = System.Drawing.Color.Gray;
+                txtBoxSearch.ForeColor = Color.Gray;
             }   
         }
     }
