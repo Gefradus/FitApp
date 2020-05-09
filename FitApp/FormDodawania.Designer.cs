@@ -31,12 +31,12 @@
             this.NazwaPosilku = new System.Windows.Forms.Label();
             this.panelGlowny = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelGorny = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnHidden = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelGlowny.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panelGorny.SuspendLayout();
@@ -73,6 +73,15 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(500, 69);
             this.flowLayoutPanel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // panelGorny
             // 
@@ -117,15 +126,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(589, 50);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
             // FormDodawania
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,7 +137,7 @@
             this.Controls.Add(this.panelGlowny);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDodawania";
-            this.Text = "FormDodawania";
+            this.Text = "Dodaj posiłek";
             this.Load += new System.EventHandler(this.FormDodawania_Load);
             this.panelGlowny.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);

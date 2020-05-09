@@ -28,113 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblPotwierdz = new System.Windows.Forms.Label();
+            this.txtPass2 = new System.Windows.Forms.TextBox();
+            this.lblHaslo = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPass1 = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(173, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 24);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(173, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 24);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(160, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Załóż konto w FitApp";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label2.Location = new System.Drawing.Point(173, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Login:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label3.Location = new System.Drawing.Point(173, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Hasło:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(173, 220);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 24);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label4.Location = new System.Drawing.Point(173, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Potwierdź hasło:";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.Location = new System.Drawing.Point(173, 283);
+            this.button1.Location = new System.Drawing.Point(176, 313);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 41);
-            this.button1.TabIndex = 7;
+            this.button1.Size = new System.Drawing.Size(249, 51);
+            this.button1.TabIndex = 15;
             this.button1.Text = "Załóż konto";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.BtnRegister_Click);
+            // 
+            // lblPotwierdz
+            // 
+            this.lblPotwierdz.AutoSize = true;
+            this.lblPotwierdz.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPotwierdz.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblPotwierdz.Location = new System.Drawing.Point(172, 222);
+            this.lblPotwierdz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPotwierdz.Name = "lblPotwierdz";
+            this.lblPotwierdz.Size = new System.Drawing.Size(128, 19);
+            this.lblPotwierdz.TabIndex = 14;
+            this.lblPotwierdz.Text = "Potwierdź hasło:";
+            // 
+            // txtPass2
+            // 
+            this.txtPass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPass2.Location = new System.Drawing.Point(176, 244);
+            this.txtPass2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass2.Name = "txtPass2";
+            this.txtPass2.Size = new System.Drawing.Size(249, 30);
+            this.txtPass2.TabIndex = 13;
+            // 
+            // lblHaslo
+            // 
+            this.lblHaslo.AutoSize = true;
+            this.lblHaslo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblHaslo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblHaslo.Location = new System.Drawing.Point(173, 158);
+            this.lblHaslo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHaslo.Name = "lblHaslo";
+            this.lblHaslo.Size = new System.Drawing.Size(54, 19);
+            this.lblHaslo.TabIndex = 12;
+            this.lblHaslo.Text = "Hasło:";
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLogin.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblLogin.Location = new System.Drawing.Point(172, 95);
+            this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(54, 19);
+            this.lblLogin.TabIndex = 11;
+            this.lblLogin.Text = "Login:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(153, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 36);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Załóż konto w FitApp";
+            // 
+            // txtPass1
+            // 
+            this.txtPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPass1.Location = new System.Drawing.Point(176, 181);
+            this.txtPass1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass1.Name = "txtPass1";
+            this.txtPass1.Size = new System.Drawing.Size(249, 30);
+            this.txtPass1.TabIndex = 9;
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtLogin.Location = new System.Drawing.Point(176, 118);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(249, 30);
+            this.txtLogin.TabIndex = 8;
             // 
             // FormRejestracji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(562, 368);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(604, 423);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPotwierdz);
+            this.Controls.Add(this.txtPass2);
+            this.Controls.Add(this.lblHaslo);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPass1);
+            this.Controls.Add(this.txtLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormRejestracji";
-            this.Text = "FormRejestracji";
-            this.Load += new System.EventHandler(this.FormRejestracji_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FitApp - załóż konto";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,13 +152,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblPotwierdz;
+        private System.Windows.Forms.TextBox txtPass2;
+        private System.Windows.Forms.Label lblHaslo;
+        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPass1;
+        private System.Windows.Forms.TextBox txtLogin;
     }
 }

@@ -136,7 +136,7 @@
             this.Controls.Add(this.panelParametrow);
             this.Name = "FormPodajIlosc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormPodajIlosc";
+            this.Text = "Podaj ilość produktu";
             this.Load += new System.EventHandler(this.FormPodajIlosc_Load);
             this.panelParametrow.ResumeLayout(false);
             this.panelParametrow.PerformLayout();

@@ -1,2 +1,15 @@
 <?xml version="1.0"?>
-<ArrayOfKlient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfKlient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Klient>
+    <KlientID>1</KlientID>
+    <Login>1111333</Login>
+    <Haslo>1111222</Haslo>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+</ArrayOfKlient>
