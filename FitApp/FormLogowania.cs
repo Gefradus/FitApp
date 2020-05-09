@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FitApp
@@ -22,7 +15,7 @@ namespace FitApp
 
         private void FormLogowania_Load(object sender, EventArgs e)
         {
-
+            WypiszZapamietanych();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -30,9 +23,10 @@ namespace FitApp
             bool czyZalogowano = false;
             foreach(var klient in _context.Klienci())
             {
-                if(txtLogin.Text.ToLower() == klient.Login.ToLower() && txtHaslo.Text == klient.Haslo)
+                if(cmbLogin.Text.ToLower() == klient.Login.ToLower() && txtHaslo.Text == klient.Haslo)
                 {
                     czyZalogowano = true;
+                    ZapamietajMnie(klient.KlientID);
                     Hide();
                     Form1 form1 = new Form1 { KlientID = klient.KlientID };
                     form1.Show();
@@ -43,7 +37,7 @@ namespace FitApp
             {
                 if (string.IsNullOrEmpty(txtHaslo.Text))
                 {
-                    if (string.IsNullOrEmpty(txtLogin.Text))
+                    if (string.IsNullOrEmpty(cmbLogin.Text))
                     {
                         MessageBox.Show("Podaj login i hasło!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -53,7 +47,7 @@ namespace FitApp
                     }
                     
                 }
-                else if (string.IsNullOrEmpty(txtLogin.Text))
+                else if (string.IsNullOrEmpty(cmbLogin.Text))
                 {
                     MessageBox.Show("Podaj login!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -65,7 +59,44 @@ namespace FitApp
         }
 
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void ZapamietajMnie(int klientID)
+        {
+
+            List<Klient> klienci = _context.Klienci();
+            foreach (var item in klienci)
+            {
+                if (item.KlientID == klientID)
+                {
+                    item.CzyPamietac = rememberMe.Checked;
+                }
+            }
+
+            _context.ZapiszKlientow(klienci);
+        }
+
+
+        private void WypiszZapamietanych()
+        {
+            foreach (var klient in _context.Klienci())
+            {
+                if (klient.CzyPamietac)
+                {
+                    cmbLogin.Items.Add(klient.Login);
+                }
+            }
+
+            if (cmbLogin.Items.Count > 0)
+            {
+                cmbLogin.SelectedIndex = 0;
+            }
+            else
+            {
+                cmbLogin.DropDownStyle = ComboBoxStyle.Simple;
+                cmbLogin.Height = 24;
+            }
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
         {
             Hide();
             new FormRejestracji().Show();

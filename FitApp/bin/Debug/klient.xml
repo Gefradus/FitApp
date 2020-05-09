@@ -4,6 +4,7 @@
     <KlientID>1</KlientID>
     <Login>1111333</Login>
     <Haslo>1111222</Haslo>
+    <CzyPamietac>false</CzyPamietac>
     <CelKalorii>0</CelKalorii>
     <CelBialko>0</CelBialko>
     <CelWegle>0</CelWegle>
@@ -16,6 +17,7 @@
     <KlientID>2</KlientID>
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
+    <CzyPamietac>false</CzyPamietac>
     <CelKalorii>0</CelKalorii>
     <CelBialko>0</CelBialko>
     <CelWegle>0</CelWegle>
@@ -28,6 +30,20 @@
     <KlientID>3</KlientID>
     <Login>aaaaaaaaaaaaaaa</Login>
     <Haslo>bbbbbbbbbbbbbbb</Haslo>
+    <CzyPamietac>true</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>4</KlientID>
+    <Login>PatrykK</Login>
+    <Haslo>Kosiński</Haslo>
+    <CzyPamietac>false</CzyPamietac>
     <CelKalorii>0</CelKalorii>
     <CelBialko>0</CelBialko>
     <CelWegle>0</CelWegle>

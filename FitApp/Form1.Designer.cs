@@ -77,6 +77,15 @@
             this.pasekKcal = new System.Windows.Forms.Panel();
             this.pnlKcal = new System.Windows.Forms.Panel();
             this.panelDnia = new System.Windows.Forms.Panel();
+            this.pnlNastepny = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNastepny1 = new System.Windows.Forms.Label();
+            this.lblNastepny2 = new System.Windows.Forms.Label();
+            this.pnlObecny = new System.Windows.Forms.TableLayoutPanel();
+            this.lblObecny1 = new System.Windows.Forms.Label();
+            this.lblObecny2 = new System.Windows.Forms.Label();
+            this.pnlPoprzedni = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPoprzedni1 = new System.Windows.Forms.Label();
+            this.lblPoprzedni2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.Sniadanie.SuspendLayout();
             this.IISniadanie.SuspendLayout();
@@ -89,6 +98,10 @@
             this.pasekWegl.SuspendLayout();
             this.pasekBialko.SuspendLayout();
             this.pasekKcal.SuspendLayout();
+            this.panelDnia.SuspendLayout();
+            this.pnlNastepny.SuspendLayout();
+            this.pnlObecny.SuspendLayout();
+            this.pnlPoprzedni.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -643,10 +656,112 @@
             // panelDnia
             // 
             this.panelDnia.BackColor = System.Drawing.SystemColors.Window;
+            this.panelDnia.Controls.Add(this.pnlNastepny);
+            this.panelDnia.Controls.Add(this.pnlObecny);
+            this.panelDnia.Controls.Add(this.pnlPoprzedni);
             this.panelDnia.Location = new System.Drawing.Point(1, 6);
             this.panelDnia.Name = "panelDnia";
             this.panelDnia.Size = new System.Drawing.Size(586, 81);
             this.panelDnia.TabIndex = 5;
+            // 
+            // pnlNastepny
+            // 
+            this.pnlNastepny.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNastepny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlNastepny.Controls.Add(this.lblNastepny1);
+            this.pnlNastepny.Controls.Add(this.lblNastepny2);
+            this.pnlNastepny.Location = new System.Drawing.Point(389, 25);
+            this.pnlNastepny.Name = "pnlNastepny";
+            this.pnlNastepny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlNastepny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlNastepny.Size = new System.Drawing.Size(197, 54);
+            this.pnlNastepny.TabIndex = 5;
+            // 
+            // lblNastepny1
+            // 
+            this.lblNastepny1.AutoSize = true;
+            this.lblNastepny1.Location = new System.Drawing.Point(75, 5);
+            this.lblNastepny1.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
+            this.lblNastepny1.Name = "lblNastepny1";
+            this.lblNastepny1.Size = new System.Drawing.Size(46, 15);
+            this.lblNastepny1.TabIndex = 0;
+            this.lblNastepny1.Text = "label3";
+            // 
+            // lblNastepny2
+            // 
+            this.lblNastepny2.AutoSize = true;
+            this.lblNastepny2.Location = new System.Drawing.Point(75, 25);
+            this.lblNastepny2.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
+            this.lblNastepny2.Name = "lblNastepny2";
+            this.lblNastepny2.Size = new System.Drawing.Size(46, 17);
+            this.lblNastepny2.TabIndex = 1;
+            this.lblNastepny2.Text = "label6";
+            // 
+            // pnlObecny
+            // 
+            this.pnlObecny.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlObecny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlObecny.Controls.Add(this.lblObecny1);
+            this.pnlObecny.Controls.Add(this.lblObecny2);
+            this.pnlObecny.Location = new System.Drawing.Point(196, 25);
+            this.pnlObecny.Name = "pnlObecny";
+            this.pnlObecny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlObecny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlObecny.Size = new System.Drawing.Size(197, 54);
+            this.pnlObecny.TabIndex = 4;
+            // 
+            // lblObecny1
+            // 
+            this.lblObecny1.AutoSize = true;
+            this.lblObecny1.Location = new System.Drawing.Point(75, 5);
+            this.lblObecny1.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
+            this.lblObecny1.Name = "lblObecny1";
+            this.lblObecny1.Size = new System.Drawing.Size(46, 15);
+            this.lblObecny1.TabIndex = 0;
+            this.lblObecny1.Text = "label2";
+            // 
+            // lblObecny2
+            // 
+            this.lblObecny2.AutoSize = true;
+            this.lblObecny2.Location = new System.Drawing.Point(75, 25);
+            this.lblObecny2.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
+            this.lblObecny2.Name = "lblObecny2";
+            this.lblObecny2.Size = new System.Drawing.Size(46, 17);
+            this.lblObecny2.TabIndex = 1;
+            this.lblObecny2.Text = "label5";
+            // 
+            // pnlPoprzedni
+            // 
+            this.pnlPoprzedni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPoprzedni.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlPoprzedni.Controls.Add(this.lblPoprzedni1);
+            this.pnlPoprzedni.Controls.Add(this.lblPoprzedni2);
+            this.pnlPoprzedni.Location = new System.Drawing.Point(0, 25);
+            this.pnlPoprzedni.Name = "pnlPoprzedni";
+            this.pnlPoprzedni.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlPoprzedni.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlPoprzedni.Size = new System.Drawing.Size(197, 54);
+            this.pnlPoprzedni.TabIndex = 3;
+            // 
+            // lblPoprzedni1
+            // 
+            this.lblPoprzedni1.AutoSize = true;
+            this.lblPoprzedni1.Location = new System.Drawing.Point(75, 5);
+            this.lblPoprzedni1.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
+            this.lblPoprzedni1.Name = "lblPoprzedni1";
+            this.lblPoprzedni1.Size = new System.Drawing.Size(46, 15);
+            this.lblPoprzedni1.TabIndex = 0;
+            this.lblPoprzedni1.Text = "label1";
+            // 
+            // lblPoprzedni2
+            // 
+            this.lblPoprzedni2.AutoSize = true;
+            this.lblPoprzedni2.Location = new System.Drawing.Point(75, 25);
+            this.lblPoprzedni2.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
+            this.lblPoprzedni2.Name = "lblPoprzedni2";
+            this.lblPoprzedni2.Size = new System.Drawing.Size(46, 17);
+            this.lblPoprzedni2.TabIndex = 1;
+            this.lblPoprzedni2.Text = "label4";
             // 
             // Form1
             // 
@@ -681,6 +796,13 @@
             this.pasekWegl.ResumeLayout(false);
             this.pasekBialko.ResumeLayout(false);
             this.pasekKcal.ResumeLayout(false);
+            this.panelDnia.ResumeLayout(false);
+            this.pnlNastepny.ResumeLayout(false);
+            this.pnlNastepny.PerformLayout();
+            this.pnlObecny.ResumeLayout(false);
+            this.pnlObecny.PerformLayout();
+            this.pnlPoprzedni.ResumeLayout(false);
+            this.pnlPoprzedni.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -736,6 +858,15 @@
         private System.Windows.Forms.Panel pnlWegle;
         private System.Windows.Forms.Panel pnlBialko;
         private System.Windows.Forms.Panel pnlKcal;
+        private System.Windows.Forms.TableLayoutPanel pnlNastepny;
+        private System.Windows.Forms.TableLayoutPanel pnlObecny;
+        private System.Windows.Forms.TableLayoutPanel pnlPoprzedni;
+        private System.Windows.Forms.Label lblNastepny1;
+        private System.Windows.Forms.Label lblNastepny2;
+        private System.Windows.Forms.Label lblObecny1;
+        private System.Windows.Forms.Label lblObecny2;
+        private System.Windows.Forms.Label lblPoprzedni1;
+        private System.Windows.Forms.Label lblPoprzedni2;
     }
 }
 

@@ -27,9 +27,26 @@ namespace FitApp
             DzienID = _context.DajDzisiajID(KlientID);
             ZaladujPosilki();
             PoliczKalorieWPosilkach();
+            WysrodkujLabele();
         }
 
-        public void NarysujPaski(int kcal, double bialko, double wegle, double tluszcze)
+
+        private void WysrodkujLabele()
+        {
+            WysrodkujLabelWPanelu(pnlPoprzedni, lblPoprzedni1);
+            WysrodkujLabelWPanelu(pnlPoprzedni, lblPoprzedni2);
+            WysrodkujLabelWPanelu(pnlObecny, lblObecny1);
+            WysrodkujLabelWPanelu(pnlObecny, lblObecny2);
+            WysrodkujLabelWPanelu(pnlNastepny, lblNastepny1);
+            WysrodkujLabelWPanelu(pnlNastepny, lblNastepny2);
+        }
+
+        private void WysrodkujLabelWPanelu(TableLayoutPanel panel, Label label)
+        {
+            label.Margin = new Padding((panel.Width - label.Width) / 2, 5, 0, 0);
+        }
+
+        private void NarysujPaski(int kcal, double bialko, double wegle, double tluszcze)
         {
             Dzien dzien = _context.DajDzien(DzienID);
             pnlKcal.Width = DlugoscPaska(pasekKcal, kcal, dzien.CelKalorii);
@@ -38,7 +55,7 @@ namespace FitApp
             pnlTluszcze.Width = DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze);
         }
 
-        public int DlugoscPaska(Panel pasek, double parametr, int cel)
+        private int DlugoscPaska(Panel pasek, double parametr, int cel)
         {
             if (!(cel == 0))
             {
@@ -51,7 +68,7 @@ namespace FitApp
         }
 
 
-        public void ZaladujPosilki()
+        private void ZaladujPosilki()
         {
             foreach (var item in _context.Posilki())
             {
@@ -69,7 +86,7 @@ namespace FitApp
             }
         }
 
-        public void PoliczKalorieWPosilkach()
+        private void PoliczKalorieWPosilkach()
         {
             int kcalSniad = 0, kcal2Sniad = 0, kcalObiad = 0, kcalDeser = 0, kcalPrzekaska = 0, kcalKolacja = 0;
 
@@ -98,7 +115,7 @@ namespace FitApp
             PoliczMakroWPosilach();
         }
 
-        public void PoliczMakroWPosilach()
+        private void PoliczMakroWPosilach()
         {
             double bialko = 0, tluszcze = 0, wegle = 0;
             int kcal = 0;
@@ -129,7 +146,7 @@ namespace FitApp
         }
 
 
-        public void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
+        private void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
             Produkt prod = _context.DajProdukt(produktID);
             int gram = _context.DajPosilek(posilekID).Gramatura;
@@ -168,17 +185,17 @@ namespace FitApp
             panelPos.Controls.Add(panel);
         }
 
-        public double Zaokraglij(decimal liczba, int ilePoPrzecinku)
+        private double Zaokraglij(decimal liczba, int ilePoPrzecinku)
         {
             return (double)Math.Round(liczba, ilePoPrzecinku, MidpointRounding.AwayFromZero);
         }
 
-        public double PoliczParametr(int gramatura, double parametr)
+        private double PoliczParametr(int gramatura, double parametr)
         {
             return Zaokraglij(((decimal)(gramatura * parametr)) / 100, 1);      
         }
 
-        public void BtnDeleteClick(object sender, int posilekID)
+        private void BtnDeleteClick(object sender, int posilekID)
         {
             Posilek posilek = _context.DajPosilek(posilekID);
             string nazwa = _context.DajProdukt(posilek.ProduktId).NazwaProduktu;
@@ -206,7 +223,7 @@ namespace FitApp
             }
         }
 
-        public void DodajDzisiajJesliNieMa()
+        private void DodajDzisiajJesliNieMa()
         {
             List<Dzien> dni = _context.Dni();
             if (!_context.CzyJestDzisiaj(KlientID))
@@ -229,7 +246,7 @@ namespace FitApp
         }
 
 
-        public void OtworzOknoDodawania(int ktoryPosilek)
+        private void OtworzOknoDodawania(int ktoryPosilek)
         {
             var formDodawania = new FormDodawania
             {

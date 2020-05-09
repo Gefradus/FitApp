@@ -11,6 +11,7 @@ namespace FitApp
         public int KlientID { get; set; }
         public string Login { get; set; }
         public string Haslo { get; set; }
+        public bool CzyPamietac { get; set; }
         public int CelKalorii { get; set; }
         public int CelBialko { get; set; }
         public int CelWegle { get; set; }
