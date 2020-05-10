@@ -24,9 +24,26 @@ namespace FitApp
         {
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
-            DzienID = _context.DajDzisiajID(KlientID);
+            if (DzienID == 0)
+            {
+                DzienID = _context.DajDzisiajID(KlientID);
+            }
+            
             Zaladuj();
         }
+
+        private void PrzejdzDoUstawien()
+        {
+            FormUstawien formUstawien = new FormUstawien
+            {
+                DzienID = DzienID,
+                KlientID = KlientID
+            };
+
+            Hide();
+            formUstawien.Show();
+        }
+
 
         private void Zaladuj()
         {
@@ -89,7 +106,7 @@ namespace FitApp
             return "";
         }
 
-        private string DajMiesiac(int month)
+        static public string DajMiesiac(int month)
         {
             if (month == 1) { return "sty"; }
             if (month == 2) { return "lut"; }
@@ -392,23 +409,35 @@ namespace FitApp
         private void MouseHand_Poprzedni(object sender, EventArgs e) {
             pnlPoprzedni.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
-            pnlPoprzedni.BackColor = Color.GhostWhite;
+            pnlPoprzedni.BackColor = Color.LightGray;
         }
         private void MouseHand_Obecny(object sender, EventArgs e) { 
             pnlObecny.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
-            pnlObecny.BackColor = Color.GhostWhite;
+            pnlObecny.BackColor = Color.LightGray;
         }
         private void MouseHand_Nastepny(object sender, EventArgs e) { 
             pnlNastepny.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
-            pnlNastepny.BackColor = Color.GhostWhite;
+            pnlNastepny.BackColor = Color.LightGray;
         }
         private void WyczyscZaznaczenie(object sender, EventArgs e)
         {
             pnlPoprzedni.BackColor = Color.White;
             pnlObecny.BackColor = Color.White;
             pnlNastepny.BackColor = Color.White;
+        }
+
+        private void MouseHand_Settings(object sender, EventArgs e) { 
+            panelUstawien.Cursor = Cursors.Hand;
+            panelUstawien.BackColor = Color.LightGray;
+            btnSettings.BackColor = Color.LightGray;
+        }
+
+        private void MouseLeave_Settings(object sender, EventArgs e)
+        {
+            panelUstawien.BackColor = Color.White;
+            btnSettings.BackColor = Color.White;
         }
 
 
@@ -467,6 +496,21 @@ namespace FitApp
             }
 
             Zaladuj();
+        }
+
+        private void panelDnia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblSettings_Click(object sender, EventArgs e)
+        {
+            PrzejdzDoUstawien();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            PrzejdzDoUstawien();
         }
     }
 }

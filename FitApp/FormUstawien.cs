@@ -12,9 +12,17 @@ namespace FitApp
 {
     public partial class FormUstawien : Form
     {
+        private readonly ModelXML _context;
+        public int KlientID { get; set; }
+        public int DzienID { get; set; }
+
         public FormUstawien()
         {
+            _context = new ModelXML();
             InitializeComponent();
         }
+
+
+
     }
 }

@@ -17,7 +17,7 @@
     <KlientID>2</KlientID>
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
-    <CzyPamietac>false</CzyPamietac>
+    <CzyPamietac>true</CzyPamietac>
     <CelKalorii>0</CelKalorii>
     <CelBialko>0</CelBialko>
     <CelWegle>0</CelWegle>

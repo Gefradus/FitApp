@@ -30,32 +30,26 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Sniadanie = new System.Windows.Forms.Panel();
-            this.btnSniadanie = new System.Windows.Forms.Button();
             this.lblSniadanieKcal = new System.Windows.Forms.Label();
             this.lblSniadanie = new System.Windows.Forms.Label();
             this.panelSniadanie = new System.Windows.Forms.FlowLayoutPanel();
             this.IISniadanie = new System.Windows.Forms.Panel();
-            this.btn2Sniad = new System.Windows.Forms.Button();
             this.lbl2SniadKcal = new System.Windows.Forms.Label();
             this.lbl2Sniadanie = new System.Windows.Forms.Label();
             this.panel2Sniadanie = new System.Windows.Forms.FlowLayoutPanel();
             this.Obiad = new System.Windows.Forms.Panel();
-            this.btnObiad = new System.Windows.Forms.Button();
             this.lblObiadKcal = new System.Windows.Forms.Label();
             this.lblObiad = new System.Windows.Forms.Label();
             this.panelObiad = new System.Windows.Forms.FlowLayoutPanel();
             this.Deser = new System.Windows.Forms.Panel();
-            this.btnDeser = new System.Windows.Forms.Button();
             this.lblDeserKcal = new System.Windows.Forms.Label();
             this.lblDeser = new System.Windows.Forms.Label();
             this.panelDeser = new System.Windows.Forms.FlowLayoutPanel();
             this.Przekaska = new System.Windows.Forms.Panel();
-            this.btnPrzekaska = new System.Windows.Forms.Button();
             this.lblPrzekaskaKcal = new System.Windows.Forms.Label();
             this.lblPrzekaska = new System.Windows.Forms.Label();
             this.panelPrzekaska = new System.Windows.Forms.FlowLayoutPanel();
             this.Kolacja = new System.Windows.Forms.Panel();
-            this.btnKolacja = new System.Windows.Forms.Button();
             this.lblKolacjaKcal = new System.Windows.Forms.Label();
             this.lblKolacja = new System.Windows.Forms.Label();
             this.panelKolacja = new System.Windows.Forms.FlowLayoutPanel();
@@ -79,7 +73,6 @@
             this.panelDnia = new System.Windows.Forms.Panel();
             this.pnlNastepny = new System.Windows.Forms.Panel();
             this.lblNastepny1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblNastepny2 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.pnlObecny = new System.Windows.Forms.Panel();
@@ -87,9 +80,20 @@
             this.lblObecny1 = new System.Windows.Forms.Label();
             this.lblObecny2 = new System.Windows.Forms.Label();
             this.pnlPoprzedni = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPoprzedni1 = new System.Windows.Forms.Label();
             this.lblPoprzedni2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSniadanie = new System.Windows.Forms.Button();
+            this.btn2Sniad = new System.Windows.Forms.Button();
+            this.btnObiad = new System.Windows.Forms.Button();
+            this.btnDeser = new System.Windows.Forms.Button();
+            this.btnPrzekaska = new System.Windows.Forms.Button();
+            this.btnKolacja = new System.Windows.Forms.Button();
+            this.lblSettings = new System.Windows.Forms.Label();
+            this.panelUstawien = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.Sniadanie.SuspendLayout();
             this.IISniadanie.SuspendLayout();
@@ -104,10 +108,11 @@
             this.pasekKcal.SuspendLayout();
             this.panelDnia.SuspendLayout();
             this.pnlNastepny.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlObecny.SuspendLayout();
             this.pnlPoprzedni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelUstawien.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -126,10 +131,10 @@
             this.flowLayoutPanel1.Controls.Add(this.panelPrzekaska);
             this.flowLayoutPanel1.Controls.Add(this.Kolacja);
             this.flowLayoutPanel1.Controls.Add(this.panelKolacja);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 122);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 129);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(40, 3, 21, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 442);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 433);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // Sniadanie
@@ -139,31 +144,14 @@
             this.Sniadanie.Controls.Add(this.btnSniadanie);
             this.Sniadanie.Controls.Add(this.lblSniadanieKcal);
             this.Sniadanie.Controls.Add(this.lblSniadanie);
-            this.Sniadanie.Location = new System.Drawing.Point(40, 25);
-            this.Sniadanie.Margin = new System.Windows.Forms.Padding(40, 25, 0, 3);
+            this.Sniadanie.Location = new System.Drawing.Point(40, 20);
+            this.Sniadanie.Margin = new System.Windows.Forms.Padding(40, 20, 0, 3);
             this.Sniadanie.Name = "Sniadanie";
             this.Sniadanie.Size = new System.Drawing.Size(500, 63);
             this.Sniadanie.TabIndex = 16;
             this.Sniadanie.Click += new System.EventHandler(this.Sniadanie_Click);
             this.Sniadanie.MouseEnter += new System.EventHandler(this.MouseHand_Sniadanie);
             this.Sniadanie.MouseHover += new System.EventHandler(this.MouseHand_Sniadanie);
-            // 
-            // btnSniadanie
-            // 
-            this.btnSniadanie.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSniadanie.BackgroundImage = global::FitApp.Properties.Resources.add;
-            this.btnSniadanie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSniadanie.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSniadanie.FlatAppearance.BorderSize = 0;
-            this.btnSniadanie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSniadanie.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSniadanie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSniadanie.Location = new System.Drawing.Point(444, 11);
-            this.btnSniadanie.Name = "btnSniadanie";
-            this.btnSniadanie.Size = new System.Drawing.Size(43, 40);
-            this.btnSniadanie.TabIndex = 10;
-            this.btnSniadanie.UseVisualStyleBackColor = false;
-            this.btnSniadanie.Click += new System.EventHandler(this.btnSniadanie_Click);
             // 
             // lblSniadanieKcal
             // 
@@ -202,7 +190,7 @@
             this.IISniadanie.Controls.Add(this.btn2Sniad);
             this.IISniadanie.Controls.Add(this.lbl2SniadKcal);
             this.IISniadanie.Controls.Add(this.lbl2Sniadanie);
-            this.IISniadanie.Location = new System.Drawing.Point(40, 91);
+            this.IISniadanie.Location = new System.Drawing.Point(40, 86);
             this.IISniadanie.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.IISniadanie.Name = "IISniadanie";
             this.IISniadanie.Size = new System.Drawing.Size(500, 63);
@@ -210,22 +198,6 @@
             this.IISniadanie.Click += new System.EventHandler(this.IISniadanie_Click);
             this.IISniadanie.MouseEnter += new System.EventHandler(this.MouseHand_2Sniadanie);
             this.IISniadanie.MouseHover += new System.EventHandler(this.MouseHand_2Sniadanie);
-            // 
-            // btn2Sniad
-            // 
-            this.btn2Sniad.BackColor = System.Drawing.SystemColors.Window;
-            this.btn2Sniad.BackgroundImage = global::FitApp.Properties.Resources.add;
-            this.btn2Sniad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn2Sniad.FlatAppearance.BorderSize = 0;
-            this.btn2Sniad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2Sniad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn2Sniad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn2Sniad.Location = new System.Drawing.Point(444, 11);
-            this.btn2Sniad.Name = "btn2Sniad";
-            this.btn2Sniad.Size = new System.Drawing.Size(43, 40);
-            this.btn2Sniad.TabIndex = 10;
-            this.btn2Sniad.UseVisualStyleBackColor = false;
-            this.btn2Sniad.Click += new System.EventHandler(this.btn2Sniad_Click);
             // 
             // lbl2SniadKcal
             // 
@@ -251,7 +223,7 @@
             // 
             this.panel2Sniadanie.AutoSize = true;
             this.panel2Sniadanie.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2Sniadanie.Location = new System.Drawing.Point(580, 91);
+            this.panel2Sniadanie.Location = new System.Drawing.Point(580, 86);
             this.panel2Sniadanie.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panel2Sniadanie.Name = "panel2Sniadanie";
             this.panel2Sniadanie.Size = new System.Drawing.Size(0, 0);
@@ -264,7 +236,7 @@
             this.Obiad.Controls.Add(this.btnObiad);
             this.Obiad.Controls.Add(this.lblObiadKcal);
             this.Obiad.Controls.Add(this.lblObiad);
-            this.Obiad.Location = new System.Drawing.Point(40, 157);
+            this.Obiad.Location = new System.Drawing.Point(40, 152);
             this.Obiad.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Obiad.Name = "Obiad";
             this.Obiad.Size = new System.Drawing.Size(500, 63);
@@ -272,22 +244,6 @@
             this.Obiad.Click += new System.EventHandler(this.Obiad_Click);
             this.Obiad.MouseEnter += new System.EventHandler(this.MouseHand_Obiad);
             this.Obiad.MouseHover += new System.EventHandler(this.MouseHand_Obiad);
-            // 
-            // btnObiad
-            // 
-            this.btnObiad.BackColor = System.Drawing.SystemColors.Window;
-            this.btnObiad.BackgroundImage = global::FitApp.Properties.Resources.add;
-            this.btnObiad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnObiad.FlatAppearance.BorderSize = 0;
-            this.btnObiad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnObiad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnObiad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnObiad.Location = new System.Drawing.Point(444, 11);
-            this.btnObiad.Name = "btnObiad";
-            this.btnObiad.Size = new System.Drawing.Size(43, 40);
-            this.btnObiad.TabIndex = 10;
-            this.btnObiad.UseVisualStyleBackColor = false;
-            this.btnObiad.Click += new System.EventHandler(this.btnObiad_Click);
             // 
             // lblObiadKcal
             // 
@@ -313,7 +269,7 @@
             // 
             this.panelObiad.AutoSize = true;
             this.panelObiad.BackColor = System.Drawing.SystemColors.Window;
-            this.panelObiad.Location = new System.Drawing.Point(580, 157);
+            this.panelObiad.Location = new System.Drawing.Point(580, 152);
             this.panelObiad.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelObiad.Name = "panelObiad";
             this.panelObiad.Size = new System.Drawing.Size(0, 0);
@@ -326,7 +282,7 @@
             this.Deser.Controls.Add(this.btnDeser);
             this.Deser.Controls.Add(this.lblDeserKcal);
             this.Deser.Controls.Add(this.lblDeser);
-            this.Deser.Location = new System.Drawing.Point(40, 223);
+            this.Deser.Location = new System.Drawing.Point(40, 218);
             this.Deser.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Deser.Name = "Deser";
             this.Deser.Size = new System.Drawing.Size(500, 63);
@@ -334,22 +290,6 @@
             this.Deser.Click += new System.EventHandler(this.Deser_Click);
             this.Deser.MouseEnter += new System.EventHandler(this.MouseHand_Deser);
             this.Deser.MouseHover += new System.EventHandler(this.MouseHand_Deser);
-            // 
-            // btnDeser
-            // 
-            this.btnDeser.BackColor = System.Drawing.SystemColors.Window;
-            this.btnDeser.BackgroundImage = global::FitApp.Properties.Resources.add;
-            this.btnDeser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeser.FlatAppearance.BorderSize = 0;
-            this.btnDeser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeser.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDeser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeser.Location = new System.Drawing.Point(444, 11);
-            this.btnDeser.Name = "btnDeser";
-            this.btnDeser.Size = new System.Drawing.Size(43, 40);
-            this.btnDeser.TabIndex = 10;
-            this.btnDeser.UseVisualStyleBackColor = false;
-            this.btnDeser.Click += new System.EventHandler(this.btnDeser_Click);
             // 
             // lblDeserKcal
             // 
@@ -375,7 +315,7 @@
             // 
             this.panelDeser.AutoSize = true;
             this.panelDeser.BackColor = System.Drawing.SystemColors.Window;
-            this.panelDeser.Location = new System.Drawing.Point(580, 223);
+            this.panelDeser.Location = new System.Drawing.Point(580, 218);
             this.panelDeser.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelDeser.Name = "panelDeser";
             this.panelDeser.Size = new System.Drawing.Size(0, 0);
@@ -388,7 +328,7 @@
             this.Przekaska.Controls.Add(this.btnPrzekaska);
             this.Przekaska.Controls.Add(this.lblPrzekaskaKcal);
             this.Przekaska.Controls.Add(this.lblPrzekaska);
-            this.Przekaska.Location = new System.Drawing.Point(40, 289);
+            this.Przekaska.Location = new System.Drawing.Point(40, 284);
             this.Przekaska.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Przekaska.Name = "Przekaska";
             this.Przekaska.Size = new System.Drawing.Size(500, 63);
@@ -396,22 +336,6 @@
             this.Przekaska.Click += new System.EventHandler(this.Przekaska_Click);
             this.Przekaska.MouseEnter += new System.EventHandler(this.MouseHand_Przekaska);
             this.Przekaska.MouseHover += new System.EventHandler(this.MouseHand_Przekaska);
-            // 
-            // btnPrzekaska
-            // 
-            this.btnPrzekaska.BackColor = System.Drawing.SystemColors.Window;
-            this.btnPrzekaska.BackgroundImage = global::FitApp.Properties.Resources.add;
-            this.btnPrzekaska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrzekaska.FlatAppearance.BorderSize = 0;
-            this.btnPrzekaska.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrzekaska.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPrzekaska.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrzekaska.Location = new System.Drawing.Point(444, 12);
-            this.btnPrzekaska.Name = "btnPrzekaska";
-            this.btnPrzekaska.Size = new System.Drawing.Size(43, 40);
-            this.btnPrzekaska.TabIndex = 10;
-            this.btnPrzekaska.UseVisualStyleBackColor = false;
-            this.btnPrzekaska.Click += new System.EventHandler(this.btnPrzekaska_Click);
             // 
             // lblPrzekaskaKcal
             // 
@@ -437,7 +361,7 @@
             // 
             this.panelPrzekaska.AutoSize = true;
             this.panelPrzekaska.BackColor = System.Drawing.SystemColors.Window;
-            this.panelPrzekaska.Location = new System.Drawing.Point(580, 289);
+            this.panelPrzekaska.Location = new System.Drawing.Point(580, 284);
             this.panelPrzekaska.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelPrzekaska.Name = "panelPrzekaska";
             this.panelPrzekaska.Size = new System.Drawing.Size(0, 0);
@@ -450,7 +374,7 @@
             this.Kolacja.Controls.Add(this.btnKolacja);
             this.Kolacja.Controls.Add(this.lblKolacjaKcal);
             this.Kolacja.Controls.Add(this.lblKolacja);
-            this.Kolacja.Location = new System.Drawing.Point(40, 355);
+            this.Kolacja.Location = new System.Drawing.Point(40, 350);
             this.Kolacja.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Kolacja.Name = "Kolacja";
             this.Kolacja.Size = new System.Drawing.Size(500, 63);
@@ -458,25 +382,6 @@
             this.Kolacja.Click += new System.EventHandler(this.Kolacja_Click);
             this.Kolacja.MouseEnter += new System.EventHandler(this.MouseHand_Kolacja);
             this.Kolacja.MouseHover += new System.EventHandler(this.MouseHand_Kolacja);
-            // 
-            // btnKolacja
-            // 
-            this.btnKolacja.BackColor = System.Drawing.SystemColors.Window;
-            this.btnKolacja.BackgroundImage = global::FitApp.Properties.Resources.add;
-            this.btnKolacja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKolacja.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnKolacja.FlatAppearance.BorderSize = 0;
-            this.btnKolacja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnKolacja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnKolacja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKolacja.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnKolacja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKolacja.Location = new System.Drawing.Point(444, 11);
-            this.btnKolacja.Name = "btnKolacja";
-            this.btnKolacja.Size = new System.Drawing.Size(43, 40);
-            this.btnKolacja.TabIndex = 10;
-            this.btnKolacja.UseVisualStyleBackColor = false;
-            this.btnKolacja.Click += new System.EventHandler(this.btnKolacja_Click);
             // 
             // lblKolacjaKcal
             // 
@@ -502,7 +407,7 @@
             // 
             this.panelKolacja.AutoSize = true;
             this.panelKolacja.BackColor = System.Drawing.SystemColors.Window;
-            this.panelKolacja.Location = new System.Drawing.Point(580, 355);
+            this.panelKolacja.Location = new System.Drawing.Point(580, 350);
             this.panelKolacja.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelKolacja.Name = "panelKolacja";
             this.panelKolacja.Size = new System.Drawing.Size(0, 0);
@@ -684,21 +589,24 @@
             // panelDnia
             // 
             this.panelDnia.BackColor = System.Drawing.SystemColors.Window;
+            this.panelDnia.Controls.Add(this.panelUstawien);
             this.panelDnia.Controls.Add(this.pnlNastepny);
             this.panelDnia.Controls.Add(this.splitter1);
             this.panelDnia.Controls.Add(this.pnlObecny);
             this.panelDnia.Controls.Add(this.pnlPoprzedni);
+            this.panelDnia.Controls.Add(this.label1);
             this.panelDnia.Location = new System.Drawing.Point(1, 6);
             this.panelDnia.Name = "panelDnia";
-            this.panelDnia.Size = new System.Drawing.Size(586, 113);
+            this.panelDnia.Size = new System.Drawing.Size(586, 126);
             this.panelDnia.TabIndex = 5;
+            this.panelDnia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDnia_Paint);
             // 
             // pnlNastepny
             // 
             this.pnlNastepny.Controls.Add(this.lblNastepny1);
             this.pnlNastepny.Controls.Add(this.pictureBox2);
             this.pnlNastepny.Controls.Add(this.lblNastepny2);
-            this.pnlNastepny.Location = new System.Drawing.Point(392, 48);
+            this.pnlNastepny.Location = new System.Drawing.Point(392, 60);
             this.pnlNastepny.Name = "pnlNastepny";
             this.pnlNastepny.Size = new System.Drawing.Size(197, 65);
             this.pnlNastepny.TabIndex = 7;
@@ -721,19 +629,6 @@
             this.lblNastepny1.MouseEnter += new System.EventHandler(this.MouseHand_Nastepny);
             this.lblNastepny1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FitApp.Properties.Resources.next;
-            this.pictureBox2.Location = new System.Drawing.Point(156, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PnlNastepny_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.MouseHand_Nastepny);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
-            // 
             // lblNastepny2
             // 
             this.lblNastepny2.AutoSize = true;
@@ -752,7 +647,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 113);
+            this.splitter1.Size = new System.Drawing.Size(3, 126);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
             // 
@@ -762,7 +657,7 @@
             this.pnlObecny.Controls.Add(this.panel1);
             this.pnlObecny.Controls.Add(this.lblObecny1);
             this.pnlObecny.Controls.Add(this.lblObecny2);
-            this.pnlObecny.Location = new System.Drawing.Point(196, 48);
+            this.pnlObecny.Location = new System.Drawing.Point(196, 60);
             this.pnlObecny.Name = "pnlObecny";
             this.pnlObecny.Size = new System.Drawing.Size(197, 65);
             this.pnlObecny.TabIndex = 4;
@@ -815,7 +710,7 @@
             this.pnlPoprzedni.Controls.Add(this.pictureBox1);
             this.pnlPoprzedni.Controls.Add(this.lblPoprzedni1);
             this.pnlPoprzedni.Controls.Add(this.lblPoprzedni2);
-            this.pnlPoprzedni.Location = new System.Drawing.Point(1, 48);
+            this.pnlPoprzedni.Location = new System.Drawing.Point(1, 60);
             this.pnlPoprzedni.Name = "pnlPoprzedni";
             this.pnlPoprzedni.Size = new System.Drawing.Size(197, 65);
             this.pnlPoprzedni.TabIndex = 3;
@@ -823,19 +718,6 @@
             this.pnlPoprzedni.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
             this.pnlPoprzedni.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             this.pnlPoprzedni.MouseHover += new System.EventHandler(this.MouseHand_Poprzedni);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FitApp.Properties.Resources.prev;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PnlPoprzedni_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // lblPoprzedni1
             // 
@@ -864,6 +746,184 @@
             this.lblPoprzedni2.Click += new System.EventHandler(this.PnlPoprzedni_Click);
             this.lblPoprzedni2.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
             this.lblPoprzedni2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Location = new System.Drawing.Point(235, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 39);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "FitApp";
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.White;
+            this.btnSettings.BackgroundImage = global::FitApp.Properties.Resources.settings_black;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSettings.Location = new System.Drawing.Point(3, 2);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(26, 24);
+            this.btnSettings.TabIndex = 8;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.MouseEnter += new System.EventHandler(this.MouseHand_Settings);
+            this.btnSettings.MouseLeave += new System.EventHandler(this.MouseLeave_Settings);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FitApp.Properties.Resources.next;
+            this.pictureBox2.Location = new System.Drawing.Point(156, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PnlNastepny_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.MouseHand_Nastepny);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FitApp.Properties.Resources.prev;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PnlPoprzedni_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
+            // 
+            // btnSniadanie
+            // 
+            this.btnSniadanie.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSniadanie.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.btnSniadanie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSniadanie.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSniadanie.FlatAppearance.BorderSize = 0;
+            this.btnSniadanie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSniadanie.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSniadanie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSniadanie.Location = new System.Drawing.Point(444, 11);
+            this.btnSniadanie.Name = "btnSniadanie";
+            this.btnSniadanie.Size = new System.Drawing.Size(43, 40);
+            this.btnSniadanie.TabIndex = 10;
+            this.btnSniadanie.UseVisualStyleBackColor = false;
+            this.btnSniadanie.Click += new System.EventHandler(this.btnSniadanie_Click);
+            // 
+            // btn2Sniad
+            // 
+            this.btn2Sniad.BackColor = System.Drawing.SystemColors.Window;
+            this.btn2Sniad.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.btn2Sniad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn2Sniad.FlatAppearance.BorderSize = 0;
+            this.btn2Sniad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2Sniad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn2Sniad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn2Sniad.Location = new System.Drawing.Point(444, 11);
+            this.btn2Sniad.Name = "btn2Sniad";
+            this.btn2Sniad.Size = new System.Drawing.Size(43, 40);
+            this.btn2Sniad.TabIndex = 10;
+            this.btn2Sniad.UseVisualStyleBackColor = false;
+            this.btn2Sniad.Click += new System.EventHandler(this.btn2Sniad_Click);
+            // 
+            // btnObiad
+            // 
+            this.btnObiad.BackColor = System.Drawing.SystemColors.Window;
+            this.btnObiad.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.btnObiad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnObiad.FlatAppearance.BorderSize = 0;
+            this.btnObiad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnObiad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObiad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnObiad.Location = new System.Drawing.Point(444, 11);
+            this.btnObiad.Name = "btnObiad";
+            this.btnObiad.Size = new System.Drawing.Size(43, 40);
+            this.btnObiad.TabIndex = 10;
+            this.btnObiad.UseVisualStyleBackColor = false;
+            this.btnObiad.Click += new System.EventHandler(this.btnObiad_Click);
+            // 
+            // btnDeser
+            // 
+            this.btnDeser.BackColor = System.Drawing.SystemColors.Window;
+            this.btnDeser.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.btnDeser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeser.FlatAppearance.BorderSize = 0;
+            this.btnDeser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeser.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeser.Location = new System.Drawing.Point(444, 11);
+            this.btnDeser.Name = "btnDeser";
+            this.btnDeser.Size = new System.Drawing.Size(43, 40);
+            this.btnDeser.TabIndex = 10;
+            this.btnDeser.UseVisualStyleBackColor = false;
+            this.btnDeser.Click += new System.EventHandler(this.btnDeser_Click);
+            // 
+            // btnPrzekaska
+            // 
+            this.btnPrzekaska.BackColor = System.Drawing.SystemColors.Window;
+            this.btnPrzekaska.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.btnPrzekaska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrzekaska.FlatAppearance.BorderSize = 0;
+            this.btnPrzekaska.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrzekaska.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPrzekaska.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrzekaska.Location = new System.Drawing.Point(444, 12);
+            this.btnPrzekaska.Name = "btnPrzekaska";
+            this.btnPrzekaska.Size = new System.Drawing.Size(43, 40);
+            this.btnPrzekaska.TabIndex = 10;
+            this.btnPrzekaska.UseVisualStyleBackColor = false;
+            this.btnPrzekaska.Click += new System.EventHandler(this.btnPrzekaska_Click);
+            // 
+            // btnKolacja
+            // 
+            this.btnKolacja.BackColor = System.Drawing.SystemColors.Window;
+            this.btnKolacja.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.btnKolacja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKolacja.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnKolacja.FlatAppearance.BorderSize = 0;
+            this.btnKolacja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnKolacja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnKolacja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKolacja.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKolacja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnKolacja.Location = new System.Drawing.Point(444, 11);
+            this.btnKolacja.Name = "btnKolacja";
+            this.btnKolacja.Size = new System.Drawing.Size(43, 40);
+            this.btnKolacja.TabIndex = 10;
+            this.btnKolacja.UseVisualStyleBackColor = false;
+            this.btnKolacja.Click += new System.EventHandler(this.btnKolacja_Click);
+            // 
+            // lblSettings
+            // 
+            this.lblSettings.AutoSize = true;
+            this.lblSettings.Location = new System.Drawing.Point(31, 6);
+            this.lblSettings.Name = "lblSettings";
+            this.lblSettings.Size = new System.Drawing.Size(76, 17);
+            this.lblSettings.TabIndex = 11;
+            this.lblSettings.Text = "Ustawienia";
+            this.lblSettings.Click += new System.EventHandler(this.lblSettings_Click);
+            this.lblSettings.MouseEnter += new System.EventHandler(this.MouseHand_Settings);
+            this.lblSettings.MouseLeave += new System.EventHandler(this.MouseLeave_Settings);
+            // 
+            // panelUstawien
+            // 
+            this.panelUstawien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelUstawien.Controls.Add(this.lblSettings);
+            this.panelUstawien.Controls.Add(this.btnSettings);
+            this.panelUstawien.Location = new System.Drawing.Point(17, 14);
+            this.panelUstawien.Name = "panelUstawien";
+            this.panelUstawien.Size = new System.Drawing.Size(111, 34);
+            this.panelUstawien.TabIndex = 12;
+            this.panelUstawien.MouseEnter += new System.EventHandler(this.MouseHand_Settings);
+            this.panelUstawien.MouseLeave += new System.EventHandler(this.MouseLeave_Settings);
             // 
             // Form1
             // 
@@ -899,14 +959,17 @@
             this.pasekBialko.ResumeLayout(false);
             this.pasekKcal.ResumeLayout(false);
             this.panelDnia.ResumeLayout(false);
+            this.panelDnia.PerformLayout();
             this.pnlNastepny.ResumeLayout(false);
             this.pnlNastepny.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlObecny.ResumeLayout(false);
             this.pnlObecny.PerformLayout();
             this.pnlPoprzedni.ResumeLayout(false);
             this.pnlPoprzedni.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelUstawien.ResumeLayout(false);
+            this.panelUstawien.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -975,6 +1038,10 @@
         private System.Windows.Forms.Label lblNastepny2;
         private System.Windows.Forms.Panel pnlNastepny;
         private System.Windows.Forms.Label lblNastepny1;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSettings;
+        private System.Windows.Forms.Panel panelUstawien;
     }
 }
 

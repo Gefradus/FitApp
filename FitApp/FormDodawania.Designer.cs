@@ -32,7 +32,8 @@
             this.panelGlowny = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelGorny = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelGorny = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDzien = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnHidden = new System.Windows.Forms.Button();
@@ -85,11 +86,26 @@
             // 
             // panelGorny
             // 
+            this.panelGorny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.panelGorny.Controls.Add(this.NazwaPosilku);
+            this.panelGorny.Controls.Add(this.lblDzien);
             this.panelGorny.Location = new System.Drawing.Point(0, 0);
             this.panelGorny.Name = "panelGorny";
+            this.panelGorny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.panelGorny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.panelGorny.Size = new System.Drawing.Size(589, 78);
             this.panelGorny.TabIndex = 1;
+            // 
+            // lblDzien
+            // 
+            this.lblDzien.AutoSize = true;
+            this.lblDzien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDzien.Location = new System.Drawing.Point(260, 47);
+            this.lblDzien.Margin = new System.Windows.Forms.Padding(260, 5, 3, 0);
+            this.lblDzien.Name = "lblDzien";
+            this.lblDzien.Size = new System.Drawing.Size(69, 25);
+            this.lblDzien.TabIndex = 1;
+            this.lblDzien.Text = "Dzisiaj";
             // 
             // panelSearch
             // 
@@ -154,12 +170,13 @@
 
         private System.Windows.Forms.Label NazwaPosilku;
         private System.Windows.Forms.FlowLayoutPanel panelGlowny;
-        private System.Windows.Forms.FlowLayoutPanel panelGorny;
+        private System.Windows.Forms.TableLayoutPanel panelGorny;
         private System.Windows.Forms.FlowLayoutPanel panelSearch;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.Button btnHidden;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDzien;
     }
 }

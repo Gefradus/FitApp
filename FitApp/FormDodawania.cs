@@ -23,9 +23,10 @@ namespace FitApp
                 panelSearch, NazwaPosilku, btnHidden);
 
             NazwaPosilkuNapisz();
+            NazwaDniaNapisz();
         }
 
-        public void NazwaPosilkuNapisz()
+        private void NazwaPosilkuNapisz()
         {
             if (WKtorym == 1) { NazwaPosilku.Text = "Śniadanie"; }
             if (WKtorym == 2) { NazwaPosilku.Text = "II śniadanie"; }
@@ -36,6 +37,31 @@ namespace FitApp
 
             NazwaPosilku.Margin = new Padding((panelGorny.Width - NazwaPosilku.Width)/2,5,0,0);
         }
+
+        private void NazwaDniaNapisz()
+        {
+            DateTime dzien = _context.DajDzien(DzienID).Dzien1;
+            string miesiac = Form1.DajMiesiac(dzien.Month);
+
+
+            if (dzien == DateTime.Now.Date) {
+                lblDzien.Text = "Dzisiaj";
+            }
+            else if (dzien.Date == DateTime.Now.Date.AddDays(-1)) {
+                lblDzien.Text = "Wczoraj";
+            }
+            else if (dzien.Date == DateTime.Now.Date.AddDays(1)) {
+                lblDzien.Text = "Jutro";
+            }
+            else
+            {
+                lblDzien.Text = dzien.Day + " " + miesiac;
+            }
+
+            lblDzien.Margin = new Padding((panelGorny.Width - lblDzien.Width) / 2, 5, 0, 0);
+        }
+
+
 
         private void txtBoxSearch_TextChanged(object sender, EventArgs e)
         {
