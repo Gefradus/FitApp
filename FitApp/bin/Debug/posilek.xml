@@ -43,24 +43,10 @@
     <ProduktId>1</ProduktId>
   </Posilek>
   <Posilek>
-    <PosilekId>9</PosilekId>
-    <WKtorym>1</WKtorym>
-    <Gramatura>144</Gramatura>
-    <DzienId>5</DzienId>
-    <ProduktId>3</ProduktId>
-  </Posilek>
-  <Posilek>
     <PosilekId>10</PosilekId>
     <WKtorym>1</WKtorym>
     <Gramatura>175</Gramatura>
     <DzienId>3</DzienId>
-    <ProduktId>3</ProduktId>
-  </Posilek>
-  <Posilek>
-    <PosilekId>11</PosilekId>
-    <WKtorym>2</WKtorym>
-    <Gramatura>69</Gramatura>
-    <DzienId>6</DzienId>
     <ProduktId>3</ProduktId>
   </Posilek>
 </ArrayOfPosilek>

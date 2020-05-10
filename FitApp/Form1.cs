@@ -21,29 +21,88 @@ namespace FitApp
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {     
+        {
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
             DzienID = _context.DajDzisiajID(KlientID);
+            Zaladuj();
+        }
+
+        private void Zaladuj()
+        {
             ZaladujPosilki();
             PoliczKalorieWPosilkach();
             WysrodkujLabele();
+            FormatDaty();
         }
-
 
         private void WysrodkujLabele()
         {
-            WysrodkujLabelWPanelu(pnlPoprzedni, lblPoprzedni1);
-            WysrodkujLabelWPanelu(pnlPoprzedni, lblPoprzedni2);
-            WysrodkujLabelWPanelu(pnlObecny, lblObecny1);
-            WysrodkujLabelWPanelu(pnlObecny, lblObecny2);
-            WysrodkujLabelWPanelu(pnlNastepny, lblNastepny1);
-            WysrodkujLabelWPanelu(pnlNastepny, lblNastepny2);
+            WysrodkujLabelGorny(pnlPoprzedni, lblPoprzedni1);
+            WysrodkujLabelDolny(pnlPoprzedni, lblPoprzedni2);
+            WysrodkujLabelGorny(pnlObecny, lblObecny1);
+            WysrodkujLabelDolny(pnlObecny, lblObecny2);
+            WysrodkujLabelGorny(pnlNastepny, lblNastepny1);
+            WysrodkujLabelDolny(pnlNastepny, lblNastepny2);
+            
         }
 
-        private void WysrodkujLabelWPanelu(TableLayoutPanel panel, Label label)
+        private void WysrodkujLabelGorny(Panel panel, Label label)
         {
-            label.Margin = new Padding((panel.Width - label.Width) / 2, 5, 0, 0);
+            label.Location = new Point((panel.Width - label.Width) / 2, 5);
+        }
+
+        private void WysrodkujLabelDolny(Panel panel, Label label)
+        {
+            label.Location = new Point((panel.Width - label.Width) / 2, 30);
+        }
+
+        public void FormatDaty()
+        {
+            DateTime dzienObecny = _context.DajDzien(DzienID).Dzien1.Date;
+            DateTime dzienPoprzedni = dzienObecny.AddDays(-1);
+            DateTime dzienNastepny = dzienObecny.AddDays(1);
+
+            lblPoprzedni1.Text = DajDzienTygodnia(dzienPoprzedni);
+            lblObecny1.Text = DajDzienTygodnia(dzienObecny);
+            lblNastepny1.Text = DajDzienTygodnia(dzienNastepny);
+
+            lblPoprzedni2.Text = dzienPoprzedni.Day + DajMiesiac(dzienPoprzedni.Month);
+            lblObecny2.Text = dzienObecny.Day + DajMiesiac(dzienObecny.Month);
+            lblNastepny2.Text = dzienNastepny.Day + DajMiesiac(dzienNastepny.Month);
+        }
+
+
+        private string DajDzienTygodnia(DateTime dzien)
+        {
+            if (dzien == DateTime.Now.Date) { return "Dzisiaj"; }
+            if (dzien.Date == DateTime.Now.Date.AddDays(-1)) { return "Wczoraj"; }
+            if (dzien.Date == DateTime.Now.Date.AddDays(1)) { return "Jutro"; }
+            if (((int)dzien.DayOfWeek) == 0) { return "Niedziela"; }
+            if (((int)dzien.DayOfWeek) == 1) { return "Pon"; }
+            if (((int)dzien.DayOfWeek) == 2) { return "Wtorek"; }
+            if (((int)dzien.DayOfWeek) == 3) { return "Środa"; }
+            if (((int)dzien.DayOfWeek) == 4) { return "Czwartek"; }
+            if (((int)dzien.DayOfWeek) == 5) { return "Piątek"; }
+            if (((int)dzien.DayOfWeek) == 6) { return "Sobota"; }
+            return "";
+        }
+
+        private string DajMiesiac(int month)
+        {
+            if (month == 1) { return "sty"; }
+            if (month == 2) { return "lut"; }
+            if (month == 3) { return "mar"; }
+            if (month == 4) { return "kwi"; }
+            if (month == 5) { return "maj"; }
+            if (month == 6) { return "czer"; }
+            if (month == 7) { return "lip"; }
+            if (month == 8) { return "sie"; }
+            if (month == 9) { return "wrz"; }
+            if (month == 10) { return "paź"; }
+            if (month == 11) { return "lis"; }
+            if (month == 12) { return "gru"; }
+            return "";
         }
 
         private void NarysujPaski(int kcal, double bialko, double wegle, double tluszcze)
@@ -148,6 +207,8 @@ namespace FitApp
 
         private void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
+            panelPos.Controls.Clear();
+
             Produkt prod = _context.DajProdukt(produktID);
             int gram = _context.DajPosilek(posilekID).Gramatura;
 
@@ -171,13 +232,18 @@ namespace FitApp
 
             Button btnDelete = new Button()
             {
+                // BackgroundImage = Properties.Resources.cancel,
+                // BackgroundImageLayout = ImageLayout.Stretch,
+                Size = new Size(33, 33),
+                Location = new Point(330, 9),
+                //FlatStyle = FlatStyle.Flat,
                 Text = "X",
-                Size = new Size(30, 30),
-                Location = new Point(320, 10),
-                BackColor = Color.OrangeRed,
+                Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point),
+                BackColor = Color.FromArgb(233,32,32),
                 ForeColor = Color.White
             };
 
+            
             btnDelete.Click += new EventHandler((sender, e) => BtnDeleteClick(sender, posilekID));
             panel.Controls.Add(lblParametry);
             panel.Controls.Add(lblNazwaIlosc);
@@ -301,6 +367,11 @@ namespace FitApp
         private void Przekaska_Click(object sender, EventArgs e) { UkryjPokazPanel(panelPrzekaska); }
         private void Kolacja_Click(object sender, EventArgs e) { UkryjPokazPanel(panelKolacja); }
 
+        private void UkryjPokazPanel(Panel panel)
+        {
+            panel.Visible = !panel.Visible;
+        }
+
         //------------------------ ZMIANA KURSORA NA 'RĄCZKĘ' PO NAJECHANIU ------------------------------
 
         private void MouseHand_Sniadanie(object sender, EventArgs e){ Sniadanie.Cursor = Cursors.Hand; }
@@ -309,10 +380,87 @@ namespace FitApp
         private void MouseHand_Deser(object sender, EventArgs e) { Deser.Cursor = Cursors.Hand; }
         private void MouseHand_Przekaska(object sender, EventArgs e) { Przekaska.Cursor = Cursors.Hand; }
         private void MouseHand_Kolacja(object sender, EventArgs e) { Kolacja.Cursor = Cursors.Hand; }
+        private void MouseHand_Poprzedni(object sender, EventArgs e) {
+            pnlPoprzedni.Cursor = Cursors.Hand;
+            WyczyscZaznaczenie(sender, e);
+            pnlPoprzedni.BackColor = Color.GhostWhite;
+        }
+        private void MouseHand_Obecny(object sender, EventArgs e) { 
+            pnlObecny.Cursor = Cursors.Hand;
+            WyczyscZaznaczenie(sender, e);
+            pnlObecny.BackColor = Color.GhostWhite;
+        }
+        private void MouseHand_Nastepny(object sender, EventArgs e) { 
+            pnlNastepny.Cursor = Cursors.Hand;
+            WyczyscZaznaczenie(sender, e);
+            pnlNastepny.BackColor = Color.GhostWhite;
+        }
 
-        private void UkryjPokazPanel(Panel panel)
+        private void WyczyscZaznaczenie(object sender, EventArgs e)
         {
-            panel.Visible = !panel.Visible;
+            pnlPoprzedni.BackColor = Color.White;
+            pnlObecny.BackColor = Color.White;
+            pnlNastepny.BackColor = Color.White;
+        }
+
+
+
+
+        //------------------------------------- ZMIANA DNIA -------------------------------------------
+
+        private void PnlPoprzedni_Click(object sender, EventArgs e) {
+            SprawdzCzyJestDzien(-1);
+        }
+        private void PnlObecny_Click(object sender, EventArgs e) {
+            
+        }
+        private void PnlNastepny_Click(object sender, EventArgs e) {
+            SprawdzCzyJestDzien(1);
+        }
+
+        private void SprawdzCzyJestDzien(int ktory)
+        {
+
+            bool jestDzien = false;
+            foreach (var klient in _context.Klienci())
+            {
+                if (klient.KlientID == _context.DajKlientaPoDniuID(DzienID))
+                {
+                    foreach (var dzien in _context.Dni())
+                    {
+                        if (dzien.KlientId == klient.KlientID)
+                        {
+                            if (dzien.Dzien1 == _context.DajDzien(DzienID).Dzien1.AddDays(ktory))
+                            {
+                                DzienID = dzien.DzienId;
+                                jestDzien = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (!jestDzien)
+            {
+                List<Dzien> dni = _context.Dni();
+                int nowyDzienID = _context.AutoIncrementDni(dni);
+                dni.Add(new Dzien()
+                {
+                    DzienId = nowyDzienID,
+                    KlientId = KlientID,
+                    Dzien1 = _context.DajDzien(DzienID).Dzien1.AddDays(ktory),
+                    CelBialko = _context.DajKlienta(KlientID).CelBialko,
+                    CelWegle = _context.DajKlienta(KlientID).CelWegle,
+                    CelTluszcze = _context.DajKlienta(KlientID).CelTluszcze,
+                    CelKalorii = _context.DajKlienta(KlientID).CelKalorii
+                });
+
+                _context.ZapiszDni(dni);
+                DzienID = nowyDzienID;
+            }
+
+            Zaladuj();
         }
     }
 }
