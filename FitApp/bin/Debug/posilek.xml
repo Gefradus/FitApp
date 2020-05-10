@@ -8,27 +8,6 @@
     <ProduktId>2</ProduktId>
   </Posilek>
   <Posilek>
-    <PosilekId>2</PosilekId>
-    <WKtorym>1</WKtorym>
-    <Gramatura>150</Gramatura>
-    <DzienId>1</DzienId>
-    <ProduktId>1</ProduktId>
-  </Posilek>
-  <Posilek>
-    <PosilekId>3</PosilekId>
-    <WKtorym>1</WKtorym>
-    <Gramatura>150</Gramatura>
-    <DzienId>1</DzienId>
-    <ProduktId>1</ProduktId>
-  </Posilek>
-  <Posilek>
-    <PosilekId>4</PosilekId>
-    <WKtorym>1</WKtorym>
-    <Gramatura>150</Gramatura>
-    <DzienId>1</DzienId>
-    <ProduktId>1</ProduktId>
-  </Posilek>
-  <Posilek>
     <PosilekId>5</PosilekId>
     <WKtorym>1</WKtorym>
     <Gramatura>235</Gramatura>
@@ -47,6 +26,27 @@
     <WKtorym>1</WKtorym>
     <Gramatura>175</Gramatura>
     <DzienId>3</DzienId>
+    <ProduktId>3</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>11</PosilekId>
+    <WKtorym>3</WKtorym>
+    <Gramatura>69</Gramatura>
+    <DzienId>3</DzienId>
+    <ProduktId>2</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>12</PosilekId>
+    <WKtorym>5</WKtorym>
+    <Gramatura>145</Gramatura>
+    <DzienId>1</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>13</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>144</Gramatura>
+    <DzienId>7</DzienId>
     <ProduktId>3</ProduktId>
   </Posilek>
 </ArrayOfPosilek>

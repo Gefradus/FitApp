@@ -30,6 +30,7 @@ namespace FitApp
 
         private void Zaladuj()
         {
+            ResetPosilkow();
             ZaladujPosilki();
             PoliczKalorieWPosilkach();
             WysrodkujLabele();
@@ -207,8 +208,7 @@ namespace FitApp
 
         private void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
-            panelPos.Controls.Clear();
-
+           
             Produkt prod = _context.DajProdukt(produktID);
             int gram = _context.DajPosilek(posilekID).Gramatura;
 
@@ -250,6 +250,18 @@ namespace FitApp
             panel.Controls.Add(btnDelete);
             panelPos.Controls.Add(panel);
         }
+
+
+        private void ResetPosilkow()
+        {
+            panelSniadanie.Controls.Clear();
+            panel2Sniadanie.Controls.Clear();
+            panelObiad.Controls.Clear();
+            panelDeser.Controls.Clear();
+            panelPrzekaska.Controls.Clear();
+            panelKolacja.Controls.Clear();
+        }
+
 
         private double Zaokraglij(decimal liczba, int ilePoPrzecinku)
         {
