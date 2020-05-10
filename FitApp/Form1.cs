@@ -79,13 +79,13 @@ namespace FitApp
             if (dzien == DateTime.Now.Date) { return "Dzisiaj"; }
             if (dzien.Date == DateTime.Now.Date.AddDays(-1)) { return "Wczoraj"; }
             if (dzien.Date == DateTime.Now.Date.AddDays(1)) { return "Jutro"; }
-            if (((int)dzien.DayOfWeek) == 0) { return "Niedziela"; }
+            if (((int)dzien.DayOfWeek) == 0) { return "Nie"; }
             if (((int)dzien.DayOfWeek) == 1) { return "Pon"; }
-            if (((int)dzien.DayOfWeek) == 2) { return "Wtorek"; }
-            if (((int)dzien.DayOfWeek) == 3) { return "Środa"; }
-            if (((int)dzien.DayOfWeek) == 4) { return "Czwartek"; }
-            if (((int)dzien.DayOfWeek) == 5) { return "Piątek"; }
-            if (((int)dzien.DayOfWeek) == 6) { return "Sobota"; }
+            if (((int)dzien.DayOfWeek) == 2) { return "Wto"; }
+            if (((int)dzien.DayOfWeek) == 3) { return "Śro"; }
+            if (((int)dzien.DayOfWeek) == 4) { return "Czw"; }
+            if (((int)dzien.DayOfWeek) == 5) { return "Piąt"; }
+            if (((int)dzien.DayOfWeek) == 6) { return "Sob"; }
             return "";
         }
 
@@ -234,8 +234,8 @@ namespace FitApp
             {
                 // BackgroundImage = Properties.Resources.cancel,
                 // BackgroundImageLayout = ImageLayout.Stretch,
-                Size = new Size(33, 33),
-                Location = new Point(330, 9),
+                Size = new Size(26, 26),
+                Location = new Point(334, 12),
                 //FlatStyle = FlatStyle.Flat,
                 Text = "X",
                 Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point),
@@ -311,12 +311,10 @@ namespace FitApp
                     DzienId = _context.AutoIncrementDni(dni),
                     Dzien1 = DateTime.Now.Date,
                     KlientId = KlientID,
-                /*    Sniadanie = true,
-                    IISniadanie = true,
-                    Obiad = true,
-                    Deser = true,
-                    Kolacja = true,
-                    Przekaska = true*/
+                    CelKalorii = _context.DajKlienta(KlientID).CelKalorii,
+                    CelBialko = _context.DajKlienta(KlientID).CelBialko,
+                    CelTluszcze = _context.DajKlienta(KlientID).CelTluszcze,
+                    CelWegle = _context.DajKlienta(KlientID).CelWegle,  
                 });
             }
 
@@ -341,11 +339,10 @@ namespace FitApp
 
         private void CloseApplication()
         {
-            try
-            {
-                Application.ExitThread();
-            }
-            catch { }
+            Hide();
+            FormLogowania formLogowania = new FormLogowania();
+            formLogowania.Show();
+            formLogowania.FormClosing += new FormClosingEventHandler(formLogowania.CloseApp);
         }
 
         private void Frm_FormClosing() {
@@ -407,15 +404,12 @@ namespace FitApp
             WyczyscZaznaczenie(sender, e);
             pnlNastepny.BackColor = Color.GhostWhite;
         }
-
         private void WyczyscZaznaczenie(object sender, EventArgs e)
         {
             pnlPoprzedni.BackColor = Color.White;
             pnlObecny.BackColor = Color.White;
             pnlNastepny.BackColor = Color.White;
         }
-
-
 
 
         //------------------------------------- ZMIANA DNIA -------------------------------------------

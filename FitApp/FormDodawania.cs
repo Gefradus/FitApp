@@ -96,10 +96,8 @@ namespace FitApp
                 WKtorym = WKtorym,
                 DzienID = DzienID
             };
-
             formPodaj.Show();
             Hide();
-            
         }
 
         public void ZamknijForme()

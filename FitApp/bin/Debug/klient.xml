@@ -31,10 +31,10 @@
     <Login>aaaaaaaaaaaaaaa</Login>
     <Haslo>bbbbbbbbbbbbbbb</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>0</CelKalorii>
-    <CelBialko>0</CelBialko>
-    <CelWegle>0</CelWegle>
-    <CelTluszcze>0</CelTluszcze>
+    <CelKalorii>3000</CelKalorii>
+    <CelBialko>125</CelBialko>
+    <CelWegle>400</CelWegle>
+    <CelTluszcze>75</CelTluszcze>
     <Plec>false</Plec>
     <Wzrost>0</Wzrost>
     <Waga>0</Waga>

@@ -58,6 +58,12 @@ namespace FitApp
             }
         }
 
+        public void CloseApp(object sender, EventArgs e)
+        {
+            try { Application.ExitThread(); }
+            catch { }
+        }
+
 
         private void ZapamietajMnie(int klientID)
         {

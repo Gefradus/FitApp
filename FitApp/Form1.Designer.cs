@@ -113,7 +113,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.flowLayoutPanel1.Controls.Add(this.Sniadanie);
             this.flowLayoutPanel1.Controls.Add(this.panelSniadanie);
             this.flowLayoutPanel1.Controls.Add(this.IISniadanie);
@@ -717,6 +717,9 @@
             this.lblNastepny1.Size = new System.Drawing.Size(59, 22);
             this.lblNastepny1.TabIndex = 8;
             this.lblNastepny1.Text = "Jutro";
+            this.lblNastepny1.Click += new System.EventHandler(this.PnlNastepny_Click);
+            this.lblNastepny1.MouseEnter += new System.EventHandler(this.MouseHand_Nastepny);
+            this.lblNastepny1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // pictureBox2
             // 
@@ -727,6 +730,9 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PnlNastepny_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.MouseHand_Nastepny);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // lblNastepny2
             // 
@@ -738,6 +744,9 @@
             this.lblNastepny2.Size = new System.Drawing.Size(46, 18);
             this.lblNastepny2.TabIndex = 1;
             this.lblNastepny2.Text = "label6";
+            this.lblNastepny2.Click += new System.EventHandler(this.PnlNastepny_Click);
+            this.lblNastepny2.MouseEnter += new System.EventHandler(this.MouseHand_Nastepny);
+            this.lblNastepny2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // splitter1
             // 
@@ -765,10 +774,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.panel1.Location = new System.Drawing.Point(4, 59);
+            this.panel1.Location = new System.Drawing.Point(4, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 3);
             this.panel1.TabIndex = 2;
+            this.panel1.Click += new System.EventHandler(this.PnlObecny_Click);
+            this.panel1.MouseEnter += new System.EventHandler(this.MouseHand_Obecny);
+            this.panel1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // lblObecny1
             // 
@@ -780,6 +792,9 @@
             this.lblObecny1.Size = new System.Drawing.Size(71, 22);
             this.lblObecny1.TabIndex = 0;
             this.lblObecny1.Text = "Dzisiaj";
+            this.lblObecny1.Click += new System.EventHandler(this.PnlObecny_Click);
+            this.lblObecny1.MouseEnter += new System.EventHandler(this.MouseHand_Obecny);
+            this.lblObecny1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // lblObecny2
             // 
@@ -791,6 +806,9 @@
             this.lblObecny2.Size = new System.Drawing.Size(46, 18);
             this.lblObecny2.TabIndex = 1;
             this.lblObecny2.Text = "label5";
+            this.lblObecny2.Click += new System.EventHandler(this.PnlObecny_Click);
+            this.lblObecny2.MouseEnter += new System.EventHandler(this.MouseHand_Obecny);
+            this.lblObecny2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // pnlPoprzedni
             // 
@@ -815,6 +833,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PnlPoprzedni_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // lblPoprzedni1
             // 
@@ -826,6 +847,9 @@
             this.lblPoprzedni1.Size = new System.Drawing.Size(84, 22);
             this.lblPoprzedni1.TabIndex = 0;
             this.lblPoprzedni1.Text = "Wczoraj";
+            this.lblPoprzedni1.Click += new System.EventHandler(this.PnlPoprzedni_Click);
+            this.lblPoprzedni1.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
+            this.lblPoprzedni1.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // lblPoprzedni2
             // 
@@ -837,6 +861,9 @@
             this.lblPoprzedni2.Size = new System.Drawing.Size(46, 18);
             this.lblPoprzedni2.TabIndex = 1;
             this.lblPoprzedni2.Text = "label4";
+            this.lblPoprzedni2.Click += new System.EventHandler(this.PnlPoprzedni_Click);
+            this.lblPoprzedni2.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
+            this.lblPoprzedni2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
             // 
             // Form1
             // 
