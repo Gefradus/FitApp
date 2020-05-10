@@ -710,9 +710,9 @@
             this.pnlPoprzedni.Controls.Add(this.pictureBox1);
             this.pnlPoprzedni.Controls.Add(this.lblPoprzedni1);
             this.pnlPoprzedni.Controls.Add(this.lblPoprzedni2);
-            this.pnlPoprzedni.Location = new System.Drawing.Point(1, 60);
+            this.pnlPoprzedni.Location = new System.Drawing.Point(-2, 60);
             this.pnlPoprzedni.Name = "pnlPoprzedni";
-            this.pnlPoprzedni.Size = new System.Drawing.Size(197, 65);
+            this.pnlPoprzedni.Size = new System.Drawing.Size(200, 65);
             this.pnlPoprzedni.TabIndex = 3;
             this.pnlPoprzedni.Click += new System.EventHandler(this.PnlPoprzedni_Click);
             this.pnlPoprzedni.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
@@ -751,7 +751,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.ForeColor = System.Drawing.Color.DarkKhaki;
             this.label1.Location = new System.Drawing.Point(235, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 39);

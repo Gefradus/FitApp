@@ -20,9 +20,19 @@ namespace FitApp
         {
             _context = new ModelXML();
             InitializeComponent();
+            FormClosing += new FormClosingEventHandler(Form_Closing);
         }
 
+        private void Form_Closing(object sender, EventArgs e)
+        {
+            Hide();
+            Form form1 = new Form1()
+            {
+                KlientID = KlientID,
+                DzienID = DzienID
+            };
 
-
+            form1.Show();
+        }
     }
 }

@@ -231,7 +231,7 @@ namespace FitApp
 
             Panel panel = new Panel() { 
                 Size = new Size(369, 50), 
-                BackColor = Color.WhiteSmoke, Visible = true 
+                BackColor = Color.FromArgb(230, 230, 230), Visible = true 
             };
             Label lblNazwaIlosc = new Label { 
                 AutoSize = true,
