@@ -86,7 +86,7 @@
             // 
             // panelGorny
             // 
-            this.panelGorny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.panelGorny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 589F));
             this.panelGorny.Controls.Add(this.NazwaPosilku);
             this.panelGorny.Controls.Add(this.lblDzien);
             this.panelGorny.Location = new System.Drawing.Point(0, 0);
@@ -153,7 +153,7 @@
             this.Controls.Add(this.panelGlowny);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDodawania";
-            this.Text = "Dodaj posiłek";
+            this.Text = "FItApp - Dodaj posiłek";
             this.Load += new System.EventHandler(this.FormDodawania_Load);
             this.panelGlowny.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);

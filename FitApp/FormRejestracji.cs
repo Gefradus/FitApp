@@ -95,19 +95,28 @@ namespace FitApp
 
 
         private void DodajKlienta()
-        {
+        {    
             List<Klient> klienci = _context.Klienci();
+            int klientID = _context.AutoIncrementKlientow(klienci);
             klienci.Add(new Klient()
             {
-                KlientID = _context.AutoIncrementKlientow(klienci),
+                KlientID = klientID,
                 Login = txtLogin.Text,
                 Haslo = txtPass1.Text,
             });
 
             _context.ZapiszKlientow(klienci);
             MessageBox.Show("Pomyślna rejestracja.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             Hide();
-            new FormLogowania().Show();
+            FormUstawien formUstawien = new FormUstawien
+            {
+                DzienID = _context.DajDzisiajID(klientID),
+                KlientID = klientID,
+                CzyPierwszeUruchomienie = true
+            };
+
+            formUstawien.Show();
         }
 
 

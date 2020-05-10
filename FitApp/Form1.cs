@@ -409,17 +409,17 @@ namespace FitApp
         private void MouseHand_Poprzedni(object sender, EventArgs e) {
             pnlPoprzedni.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
-            pnlPoprzedni.BackColor = Color.LightGray;
+            pnlPoprzedni.BackColor = Color.FromArgb(230, 230, 230);
         }
         private void MouseHand_Obecny(object sender, EventArgs e) { 
             pnlObecny.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
-            pnlObecny.BackColor = Color.LightGray;
+            pnlObecny.BackColor = Color.FromArgb(230, 230, 230);
         }
         private void MouseHand_Nastepny(object sender, EventArgs e) { 
             pnlNastepny.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
-            pnlNastepny.BackColor = Color.LightGray;
+            pnlNastepny.BackColor = Color.FromArgb(230, 230, 230);
         }
         private void WyczyscZaznaczenie(object sender, EventArgs e)
         {

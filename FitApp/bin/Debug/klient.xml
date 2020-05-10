@@ -1,30 +1,20 @@
 <?xml version="1.0"?>
 <ArrayOfKlient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Klient>
-    <KlientID>1</KlientID>
-    <Login>1111333</Login>
-    <Haslo>1111222</Haslo>
-    <CzyPamietac>false</CzyPamietac>
-    <CelKalorii>0</CelKalorii>
-    <CelBialko>0</CelBialko>
-    <CelWegle>0</CelWegle>
-    <CelTluszcze>0</CelTluszcze>
-    <Plec>false</Plec>
-    <Wzrost>0</Wzrost>
-    <Waga>0</Waga>
-  </Klient>
-  <Klient>
     <KlientID>2</KlientID>
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>0</CelKalorii>
-    <CelBialko>0</CelBialko>
-    <CelWegle>0</CelWegle>
-    <CelTluszcze>0</CelTluszcze>
-    <Plec>false</Plec>
-    <Wzrost>0</Wzrost>
-    <Waga>0</Waga>
+    <CelKalorii>3000</CelKalorii>
+    <CelBialko>125</CelBialko>
+    <CelWegle>400</CelWegle>
+    <CelTluszcze>75</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>1998-07-03T00:44:41</DataUrodzenia>
+    <TempoZmian>0.2</TempoZmian>
+    <Plec>true</Plec>
+    <Wzrost>155</Wzrost>
+    <Waga>90</Waga>
   </Klient>
   <Klient>
     <KlientID>3</KlientID>
@@ -35,21 +25,123 @@
     <CelBialko>125</CelBialko>
     <CelWegle>400</CelWegle>
     <CelTluszcze>75</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
     <Plec>false</Plec>
     <Wzrost>0</Wzrost>
     <Waga>0</Waga>
   </Klient>
   <Klient>
     <KlientID>4</KlientID>
-    <Login>PatrykK</Login>
-    <Haslo>Kosiński</Haslo>
+    <Login>KurwaMac</Login>
+    <Haslo>kurwamac</Haslo>
+    <CzyPamietac>true</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>5</KlientID>
+    <Login>ererererererere</Login>
+    <Haslo>ererererererere</Haslo>
     <CzyPamietac>false</CzyPamietac>
     <CelKalorii>0</CelKalorii>
     <CelBialko>0</CelBialko>
     <CelWegle>0</CelWegle>
     <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
     <Plec>false</Plec>
     <Wzrost>0</Wzrost>
     <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>6</KlientID>
+    <Login>344444444444444</Login>
+    <Haslo>333333333333333</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>7</KlientID>
+    <Login>444444444444444</Login>
+    <Haslo>444444444444444</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>8</KlientID>
+    <Login>999999999999999</Login>
+    <Haslo>999999999999999</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>9</KlientID>
+    <Login>44444444444466</Login>
+    <Haslo>555555555555555</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>10</KlientID>
+    <Login>444433333333333</Login>
+    <Haslo>333333333333333</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>2</CelZmianWagi>
+    <DataUrodzenia>2020-05-05T01:23:13</DataUrodzenia>
+    <TempoZmian>0.8</TempoZmian>
+    <Plec>true</Plec>
+    <Wzrost>777</Wzrost>
+    <Waga>666</Waga>
   </Klient>
 </ArrayOfKlient>
