@@ -5,16 +5,16 @@
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>2610</CelKalorii>
-    <CelBialko>72</CelBialko>
-    <CelWegle>355</CelWegle>
-    <CelTluszcze>135</CelTluszcze>
-    <CelZmianWagi>1</CelZmianWagi>
+    <CelKalorii>2851</CelKalorii>
+    <CelBialko>79</CelBialko>
+    <CelWegle>423</CelWegle>
+    <CelTluszcze>112</CelTluszcze>
+    <CelZmianWagi>2</CelZmianWagi>
     <DataUrodzenia>1998-12-03T00:39:33</DataUrodzenia>
-    <TempoZmian>0.5</TempoZmian>
+    <TempoZmian>0.3</TempoZmian>
     <Plec>true</Plec>
     <Wzrost>190</Wzrost>
-    <Waga>90</Waga>
+    <Waga>75</Waga>
   </Klient>
   <Klient>
     <KlientID>3</KlientID>
@@ -133,16 +133,16 @@
     <Login>5666666666</Login>
     <Haslo>5666666666</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>0</CelKalorii>
-    <CelBialko>0</CelBialko>
-    <CelWegle>0</CelWegle>
-    <CelTluszcze>0</CelTluszcze>
-    <CelZmianWagi>1</CelZmianWagi>
-    <DataUrodzenia>1998-04-29T12:14:53</DataUrodzenia>
-    <TempoZmian>0.9</TempoZmian>
-    <Plec>true</Plec>
-    <Wzrost>170</Wzrost>
-    <Waga>90</Waga>
+    <CelKalorii>3085</CelKalorii>
+    <CelBialko>85</CelBialko>
+    <CelWegle>462</CelWegle>
+    <CelTluszcze>118</CelTluszcze>
+    <CelZmianWagi>3</CelZmianWagi>
+    <DataUrodzenia>2020-02-11T14:45:54</DataUrodzenia>
+    <TempoZmian>0.5</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>150</Wzrost>
+    <Waga>79</Waga>
   </Klient>
   <Klient>
     <KlientID>11</KlientID>
@@ -191,5 +191,21 @@
     <Plec>true</Plec>
     <Wzrost>555</Wzrost>
     <Waga>77</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>14</KlientID>
+    <Login>565656565656565</Login>
+    <Haslo>565656565656565</Haslo>
+    <CzyPamietac>true</CzyPamietac>
+    <CelKalorii>120567</CelKalorii>
+    <CelBialko>3349</CelBialko>
+    <CelWegle>14122</CelWegle>
+    <CelTluszcze>8484</CelTluszcze>
+    <CelZmianWagi>2</CelZmianWagi>
+    <DataUrodzenia>2020-05-11T14:48:38.2922459+02:00</DataUrodzenia>
+    <TempoZmian>0.5</TempoZmian>
+    <Plec>true</Plec>
+    <Wzrost>565</Wzrost>
+    <Waga>5656</Waga>
   </Klient>
 </ArrayOfKlient>

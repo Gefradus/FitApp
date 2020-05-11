@@ -117,6 +117,9 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.HorizontalScroll.Maximum = 0;
+            this.flowLayoutPanel1.AutoScroll = false;
+            this.flowLayoutPanel1.VerticalScroll.Visible = false;
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.flowLayoutPanel1.Controls.Add(this.Sniadanie);
@@ -929,7 +932,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 646);
+            this.ClientSize = new System.Drawing.Size(581, 646);
             this.Controls.Add(this.panelGlowny);
             this.Controls.Add(this.panelDnia);
             this.Controls.Add(this.flowLayoutPanel1);

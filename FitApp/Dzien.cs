@@ -16,11 +16,5 @@ namespace FitApp
         public int CelWegle { get; set; }
         public int CelTluszcze { get; set; }
 
-        /*      public bool Sniadanie { get; set; }
-        public bool IISniadanie { get; set; }
-        public bool Obiad { get; set; }
-        public bool Deser { get; set; }
-        public bool Przekaska { get; set; }
-        public bool Kolacja { get; set; }*/
     }
 }

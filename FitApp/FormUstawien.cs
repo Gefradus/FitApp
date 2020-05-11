@@ -164,6 +164,7 @@ namespace FitApp
 
             _context.ZapiszKlientow(klienci);
             ZmienUstawieniaDni(celKalorii, celBialko, celTluszcze, celWegle);
+            CzyPierwszeUruchomienie = false;
             Powrot();
         }
 
@@ -201,5 +202,9 @@ namespace FitApp
             }
         }
 
+        private void rbtnUtrzymanie_CheckedChanged(object sender, EventArgs e)
+        {
+            txtTempo.Enabled = !rbtnUtrzymanie.Checked;
+        }
     }
 }

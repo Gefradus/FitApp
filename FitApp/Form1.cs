@@ -17,7 +17,7 @@ namespace FitApp
         {
             _context = new ModelXML();
             InitializeComponent();
-            FormClosing += new FormClosingEventHandler((sender, e) => CloseApplication());
+            FormClosing += new FormClosingEventHandler((sender, e) => CloseApplication(e));
         }
 
         private void CzyPierwszeUruchomienie()
@@ -261,18 +261,14 @@ namespace FitApp
 
             Button btnDelete = new Button()
             {
-                // BackgroundImage = Properties.Resources.cancel,
-                // BackgroundImageLayout = ImageLayout.Stretch,
                 Size = new Size(26, 26),
                 Location = new Point(334, 12),
-                //FlatStyle = FlatStyle.Flat,
                 Text = "X",
                 Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point),
                 BackColor = Color.FromArgb(233,32,32),
                 ForeColor = Color.White
             };
-
-            
+     
             btnDelete.Click += new EventHandler((sender, e) => BtnDeleteClick(sender, posilekID));
             panel.Controls.Add(lblParametry);
             panel.Controls.Add(lblNazwaIlosc);
@@ -308,7 +304,7 @@ namespace FitApp
             string nazwa = _context.DajProdukt(posilek.ProduktId).NazwaProduktu;
             
             if (DialogResult.Yes == MessageBox.Show("Czy na pewno chcesz usunąć "+nazwa+", "+posilek.Gramatura+"g?", 
-                "Potwierdzenie usunięcia", MessageBoxButtons.YesNo))
+                "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 Button btnClicked = (Button)sender;
                 btnClicked.Controls.Owner.Parent.Dispose();
@@ -362,20 +358,30 @@ namespace FitApp
             };
 
             formDodawania.Show();
-            formDodawania.FormClosing += new FormClosingEventHandler((sender, e) => Frm_FormClosing());
+            formDodawania.FormClosing += new FormClosingEventHandler((sender, e) => FormDodawania_Closing());
             Hide();
         }
 
-        private void CloseApplication()
+        private void CloseApplication(FormClosingEventArgs e)
         {
-            Hide();
-            FormLogowania formLogowania = new FormLogowania();
-            formLogowania.Show();
-            formLogowania.FormClosing += new FormClosingEventHandler(formLogowania.CloseApp);
+            var result = MessageBox.Show("Czy na pewno chcesz zamknąć?", "Potwierdzenie wylogowania",
+                             MessageBoxButtons.YesNo,
+                             MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Hide();
+                FormLogowania formLogowania = new FormLogowania();
+                formLogowania.Show();
+                formLogowania.FormClosing += new FormClosingEventHandler(formLogowania.CloseApp);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
-        private void Frm_FormClosing() {
-
+        private void FormDodawania_Closing() {
             Form form1 = new Form1
             {
                 StartPosition = FormStartPosition.CenterScreen,
@@ -384,6 +390,7 @@ namespace FitApp
             };
 
             form1.Show();
+            
         }
 
 

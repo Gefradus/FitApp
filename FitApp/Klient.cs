@@ -22,13 +22,5 @@ namespace FitApp
         public bool Plec { get; set; }
         public int Wzrost { get; set; }
         public double Waga { get; set; }
-        
-
-/*      public bool Sniadanie { get; set; }
-        public bool IISniadanie { get; set; }
-        public bool Obiad { get; set; }
-        public bool Deser { get; set; }
-        public bool Przekaska { get; set; }
-        public bool Kolacja { get; set; }*/
     }
 }

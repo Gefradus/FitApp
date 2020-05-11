@@ -186,8 +186,6 @@ namespace FitApp
             return aktualnyID;
         }
 
-
-
         public bool CzyPosilekWDanymDniu(int posilekID, int dzienID)
         {
             foreach (var item in Dni())
@@ -282,7 +280,6 @@ namespace FitApp
 
             return -1;
         }
-
 
         public bool CzyJestDzisiaj(int klientID)
         {

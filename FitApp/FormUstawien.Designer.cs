@@ -201,6 +201,7 @@
             this.rbtnUtrzymanie.TabIndex = 18;
             this.rbtnUtrzymanie.Text = "Chcę utrzymać wagę";
             this.rbtnUtrzymanie.UseVisualStyleBackColor = true;
+            this.rbtnUtrzymanie.CheckedChanged += new System.EventHandler(this.rbtnUtrzymanie_CheckedChanged);
             // 
             // rbtnPrzytyj
             // 
@@ -220,7 +221,7 @@
             this.panel1.Controls.Add(this.rbtnSchudnie);
             this.panel1.Location = new System.Drawing.Point(154, 326);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(205, 100);
             this.panel1.TabIndex = 20;
             // 
             // txtTempo
