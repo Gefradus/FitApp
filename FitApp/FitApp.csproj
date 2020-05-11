@@ -86,11 +86,12 @@
     </Compile>
     <Compile Include="Klient.cs" />
     <Compile Include="ModelXML.cs" />
+    <Compile Include="ObliczCele.cs" />
     <Compile Include="Posilek.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StyleOfFormDodawania.cs" />
+    <Compile Include="StylFormDodawania.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace FitApp
 {
-    class StyleOfFormDodawania
+    class StylFormDodawania
     {
         private TextBox txtBoxSearch;
         private Panel panelGlowny;

@@ -8,7 +8,7 @@ namespace FitApp
     public partial class FormDodawania : Form
     {
         private readonly ModelXML _context = new ModelXML();
-        private readonly StyleOfFormDodawania _style = new StyleOfFormDodawania();
+        private readonly StylFormDodawania _style = new StylFormDodawania();
         public int DzienID { get; set; }
         public int WKtorym { get; set; }
 

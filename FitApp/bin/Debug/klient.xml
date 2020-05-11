@@ -5,16 +5,16 @@
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>3000</CelKalorii>
-    <CelBialko>125</CelBialko>
-    <CelWegle>400</CelWegle>
-    <CelTluszcze>75</CelTluszcze>
-    <CelZmianWagi>0</CelZmianWagi>
+    <CelKalorii>2610</CelKalorii>
+    <CelBialko>72</CelBialko>
+    <CelWegle>355</CelWegle>
+    <CelTluszcze>135</CelTluszcze>
+    <CelZmianWagi>1</CelZmianWagi>
     <DataUrodzenia>1998-12-03T00:39:33</DataUrodzenia>
-    <TempoZmian>0.4</TempoZmian>
+    <TempoZmian>0.5</TempoZmian>
     <Plec>true</Plec>
     <Wzrost>190</Wzrost>
-    <Waga>80</Waga>
+    <Waga>90</Waga>
   </Klient>
   <Klient>
     <KlientID>3</KlientID>
@@ -143,5 +143,53 @@
     <Plec>true</Plec>
     <Wzrost>170</Wzrost>
     <Waga>90</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>11</KlientID>
+    <Login>tytytytytytytyt</Login>
+    <Haslo>tytytytytytytyt</Haslo>
+    <CzyPamietac>true</CzyPamietac>
+    <CelKalorii>2499</CelKalorii>
+    <CelBialko>69</CelBialko>
+    <CelWegle>372</CelWegle>
+    <CelTluszcze>97</CelTluszcze>
+    <CelZmianWagi>2</CelZmianWagi>
+    <DataUrodzenia>2003-01-15T13:36:25</DataUrodzenia>
+    <TempoZmian>0.5</TempoZmian>
+    <Plec>true</Plec>
+    <Wzrost>165</Wzrost>
+    <Waga>65</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>12</KlientID>
+    <Login>78787878</Login>
+    <Haslo>787878787878</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>0</CelKalorii>
+    <CelBialko>0</CelBialko>
+    <CelWegle>0</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>0</CelZmianWagi>
+    <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    <TempoZmian>0</TempoZmian>
+    <Plec>false</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>13</KlientID>
+    <Login>777777777777777</Login>
+    <Haslo>777777777777777</Haslo>
+    <CzyPamietac>true</CzyPamietac>
+    <CelKalorii>6491</CelKalorii>
+    <CelBialko>180</CelBialko>
+    <CelWegle>1102</CelWegle>
+    <CelTluszcze>115</CelTluszcze>
+    <CelZmianWagi>3</CelZmianWagi>
+    <DataUrodzenia>2007-07-07T13:51:11</DataUrodzenia>
+    <TempoZmian>0.7</TempoZmian>
+    <Plec>true</Plec>
+    <Wzrost>555</Wzrost>
+    <Waga>77</Waga>
   </Klient>
 </ArrayOfKlient>

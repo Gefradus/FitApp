@@ -70,8 +70,8 @@ namespace FitApp
                 dateTimePicker1.Value = klient.DataUrodzenia;
                 rbtnMezczyzna.Checked = klient.Plec;
 
-                if (klient.CelZmianWagi == 0) { rbtnSchudnie.Checked = true; }
-                else if(klient.CelZmianWagi == 1) { rbtnUtrzymanie.Checked = true; }
+                if (klient.CelZmianWagi == 1) { rbtnSchudnie.Checked = true; }
+                else if(klient.CelZmianWagi == 2) { rbtnUtrzymanie.Checked = true; }
                 else { rbtnPrzytyj.Checked = true; }
             }
         }
@@ -125,26 +125,81 @@ namespace FitApp
         private void UstawieniaKlienta()
         {
             List<Klient> klienci = _context.Klienci();
+            int celKalorii = 0, celBialko = 0, celTluszcze = 0, celWegle = 0;
+
             foreach (var klient in klienci)
             {
                 if (klient.KlientID == KlientID)
                 {
-                    klient.TempoZmian = txtTempo.Value;
-                    klient.DataUrodzenia = dateTimePicker1.Value;
-                    klient.Waga = double.Parse(txtWaga.Text);
-                    klient.Wzrost = int.Parse(txtWzrost.Text);
-                    klient.Plec = rbtnMezczyzna.Checked;
-                    if (rbtnSchudnie.Checked) { klient.CelZmianWagi = 0; }
-                    else if (rbtnUtrzymanie.Checked) { klient.CelZmianWagi = 1; }
-                    else { klient.CelZmianWagi = 2; }
+                    decimal tempo = txtTempo.Value;
+                    DateTime dataUro = dateTimePicker1.Value;
+                    double waga = double.Parse(txtWaga.Text);
+                    int wzrost = int.Parse(txtWzrost.Text);
+                    bool plec = rbtnMezczyzna.Checked;
+                    short celZmianWagi;
+
+                    if (rbtnSchudnie.Checked) { celZmianWagi = 1; }
+                    else if (rbtnUtrzymanie.Checked) { celZmianWagi = 2; }
+                    else { celZmianWagi = 3; }
+
+                    int zapotrzebowanie = ObliczCele.ObliczZapotrzebowanie(plec, dataUro, wzrost, waga);
+                    celKalorii = ObliczCele.ObliczCelKalorii(zapotrzebowanie, celZmianWagi, tempo);
+                    celBialko = ObliczCele.ObliczCelBialko(waga, celKalorii);
+                    celTluszcze = ObliczCele.ObliczCelTluszcze(celKalorii);
+                    celWegle = ObliczCele.ObliczCelWegle(celKalorii, celBialko, celTluszcze);
+
+                    klient.CelWegle = celWegle;
+                    klient.CelTluszcze = celBialko;
+                    klient.CelBialko = celTluszcze;
+                    klient.CelKalorii = celKalorii;
+                    klient.TempoZmian = tempo;
+                    klient.DataUrodzenia = dataUro;
+                    klient.Waga = waga;
+                    klient.Wzrost = wzrost;
+                    klient.Plec = plec;
+                    klient.CelZmianWagi = celZmianWagi;
                     break;
                 }
             }
 
             _context.ZapiszKlientow(klienci);
+            ZmienUstawieniaDni(celKalorii, celBialko, celTluszcze, celWegle);
             Powrot();
         }
 
-      
+        private void ZmienUstawieniaDni(int celKalorii, int celBialko, int celTluszcze, int celWegle)
+        {
+            if (!CzyPierwszeUruchomienie)
+            {
+                List<int> listaDniOdDzisID = new List<int>();
+                foreach (var dzien in _context.Dni())
+                {
+                    if (dzien.KlientId == KlientID && dzien.Dzien1.Date >= DateTime.Now.Date)
+                    {
+                        listaDniOdDzisID.Add(dzien.DzienId);
+                    }
+                }
+
+
+                List<Dzien> wszystkieDni = _context.Dni();
+                foreach (var dzienOdDzisID in listaDniOdDzisID)
+                {
+                    foreach (var dzienOdDzis in wszystkieDni)
+                    {
+                        if (dzienOdDzis.DzienId == dzienOdDzisID)
+                        {
+                            dzienOdDzis.CelKalorii = celKalorii;
+                            dzienOdDzis.CelBialko = celBialko;
+                            dzienOdDzis.CelTluszcze = celTluszcze;
+                            dzienOdDzis.CelWegle = celWegle;
+                        }
+                    }
+                }
+
+                _context.ZapiszDni(wszystkieDni);
+ 
+            }
+        }
+
     }
 }
