@@ -66,6 +66,12 @@
     <Compile Include="FormLogowania.Designer.cs">
       <DependentUpon>FormLogowania.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNowyProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNowyProdukt.Designer.cs">
+      <DependentUpon>FormNowyProdukt.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPodajIlosc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +97,7 @@
     <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StylFormDodawania.cs" />
+    <Compile Include="Style.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogowania.resx">
       <DependentUpon>FormLogowania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNowyProdukt.resx">
+      <DependentUpon>FormNowyProdukt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPodajIlosc.resx">
       <DependentUpon>FormPodajIlosc.cs</DependentUpon>
@@ -147,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

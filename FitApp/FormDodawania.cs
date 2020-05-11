@@ -8,7 +8,7 @@ namespace FitApp
     public partial class FormDodawania : Form
     {
         private readonly ModelXML _context = new ModelXML();
-        private readonly StylFormDodawania _style = new StylFormDodawania();
+        private readonly Style _style = new Style();
         public int DzienID { get; set; }
         public int WKtorym { get; set; }
 
@@ -84,20 +84,32 @@ namespace FitApp
 
         private void UtworzPanelProduktu(int produktID)
         {
+            Produkt produkt = _context.DajProdukt(produktID);
             Panel panel = new Panel()
             {
                 Size = new Size(369, 50),
                 BackColor = Color.GhostWhite,
-                Margin = new Padding(40, 0, 0, 0),
+                Margin = new Padding(40, 2, 0, 0),
                 Visible = true,
                 BorderStyle = BorderStyle.FixedSingle,
             };
-            Label label = new Label
+            Label labelNazwa = new Label
             {
-                Text = _context.DajProdukt(produktID).NazwaProduktu,
-                Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Bold, GraphicsUnit.Point),
-                Location = new Point(5, 5)
+                Text = produkt.NazwaProduktu,
+                Font = new Font("Microsoft Sans Serif", 11.5F, FontStyle.Bold, GraphicsUnit.Point),
+                Location = new Point(5, 3),
+                AutoSize = true
             };
+            Label labelParametry = new Label
+            {
+                Text = produkt.Kalorie + " kcal,  " + produkt.Bialko + "g. B,  "
+                + produkt.Weglowodany + "g. W,  " + produkt.Tluszcze + "g. T   / 100g",
+
+                Font = new Font("Microsoft Sans Serif", 9.5F),
+                Location = new Point(5, 27),
+                AutoSize = true
+            };
+
             Button button = new Button()
             {
                 Text = "Dodaj",
@@ -109,7 +121,8 @@ namespace FitApp
             };
 
             button.Click += new EventHandler((sender, e) => BtnAddClick(produktID));
-            panel.Controls.Add(label);
+            panel.Controls.Add(labelNazwa);
+            panel.Controls.Add(labelParametry);
             panel.Controls.Add(button);
             panelGlowny.Controls.Add(panel);
         }
@@ -135,6 +148,13 @@ namespace FitApp
             };
             form1.Show();
             Hide();
+        }
+
+        private void PaintBorder(object sender, PaintEventArgs e)
+        {
+            using (SolidBrush brush = new SolidBrush(BackColor))
+                e.Graphics.FillRectangle(brush, ClientRectangle);
+            e.Graphics.DrawRectangle(Pens.Gray, 0, 0, Border.Width, 1);
         }
     }
 }

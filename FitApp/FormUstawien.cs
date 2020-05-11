@@ -181,7 +181,6 @@ namespace FitApp
                     }
                 }
 
-
                 List<Dzien> wszystkieDni = _context.Dni();
                 foreach (var dzienOdDzisID in listaDniOdDzisID)
                 {
@@ -202,7 +201,7 @@ namespace FitApp
             }
         }
 
-        private void rbtnUtrzymanie_CheckedChanged(object sender, EventArgs e)
+        private void RbtnUtrzymanie_CheckedChanged(object sender, EventArgs e)
         {
             txtTempo.Enabled = !rbtnUtrzymanie.Checked;
         }

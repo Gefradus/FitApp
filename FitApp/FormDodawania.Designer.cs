@@ -30,16 +30,14 @@
         {
             this.NazwaPosilku = new System.Windows.Forms.Label();
             this.panelGlowny = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelGorny = new System.Windows.Forms.TableLayoutPanel();
             this.lblDzien = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnHidden = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelGlowny.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Border = new System.Windows.Forms.Panel();
             this.panelGorny.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.SuspendLayout();
@@ -58,37 +56,17 @@
             // panelGlowny
             // 
             this.panelGlowny.AutoScroll = true;
-            this.panelGlowny.Controls.Add(this.flowLayoutPanel2);
             this.panelGlowny.Location = new System.Drawing.Point(0, 149);
             this.panelGlowny.Name = "panelGlowny";
             this.panelGlowny.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panelGlowny.Size = new System.Drawing.Size(589, 448);
+            this.panelGlowny.Size = new System.Drawing.Size(589, 432);
             this.panelGlowny.TabIndex = 0;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Window;
-            this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(40, 15);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(40, 0, 3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(500, 69);
-            this.flowLayoutPanel2.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // panelGorny
             // 
             this.panelGorny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 589F));
-            this.panelGorny.Controls.Add(this.NazwaPosilku);
-            this.panelGorny.Controls.Add(this.lblDzien);
+            this.panelGorny.Controls.Add(this.NazwaPosilku, 0, 0);
+            this.panelGorny.Controls.Add(this.lblDzien, 0, 1);
             this.panelGorny.Location = new System.Drawing.Point(0, 0);
             this.panelGorny.Name = "panelGorny";
             this.panelGorny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
@@ -112,6 +90,7 @@
             this.panelSearch.Controls.Add(this.txtBoxSearch);
             this.panelSearch.Controls.Add(this.btnHidden);
             this.panelSearch.Location = new System.Drawing.Point(0, 75);
+            this.panelSearch.Margin = new System.Windows.Forms.Padding(0);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(589, 76);
             this.panelSearch.TabIndex = 2;
@@ -119,8 +98,8 @@
             // txtBoxSearch
             // 
             this.txtBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxSearch.Location = new System.Drawing.Point(106, 23);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(106, 23, 3, 3);
+            this.txtBoxSearch.Location = new System.Drawing.Point(104, 23);
+            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(104, 23, 0, 0);
             this.txtBoxSearch.Name = "txtBoxSearch";
             this.txtBoxSearch.Size = new System.Drawing.Size(378, 30);
             this.txtBoxSearch.TabIndex = 1;
@@ -128,26 +107,54 @@
             // 
             // btnHidden
             // 
-            this.btnHidden.Location = new System.Drawing.Point(490, 3);
+            this.btnHidden.Location = new System.Drawing.Point(485, 3);
             this.btnHidden.Name = "btnHidden";
             this.btnHidden.Size = new System.Drawing.Size(1, 0);
             this.btnHidden.TabIndex = 0;
             this.btnHidden.Text = "button1";
             this.btnHidden.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // label2
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 596);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(589, 50);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(217, 593);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.label2.Size = new System.Drawing.Size(210, 42);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Dodaj nowy produkt";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::FitApp.Properties.Resources.add;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(175, 593);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 42);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Border
+            // 
+            this.Border.Location = new System.Drawing.Point(0, 584);
+            this.Border.Name = "Border";
+            this.Border.Size = new System.Drawing.Size(589, 1);
+            this.Border.TabIndex = 0;
+            this.Border.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBorder);
             // 
             // FormDodawania
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 646);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.Border);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelGorny);
             this.Controls.Add(this.panelGlowny);
@@ -155,9 +162,6 @@
             this.Name = "FormDodawania";
             this.Text = "FItApp - Dodaj posiłek";
             this.Load += new System.EventHandler(this.FormDodawania_Load);
-            this.panelGlowny.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.panelGorny.ResumeLayout(false);
             this.panelGorny.PerformLayout();
             this.panelSearch.ResumeLayout(false);
@@ -174,9 +178,9 @@
         private System.Windows.Forms.FlowLayoutPanel panelSearch;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.Button btnHidden;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDzien;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel Border;
     }
 }

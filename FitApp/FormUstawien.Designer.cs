@@ -201,7 +201,7 @@
             this.rbtnUtrzymanie.TabIndex = 18;
             this.rbtnUtrzymanie.Text = "Chcę utrzymać wagę";
             this.rbtnUtrzymanie.UseVisualStyleBackColor = true;
-            this.rbtnUtrzymanie.CheckedChanged += new System.EventHandler(this.rbtnUtrzymanie_CheckedChanged);
+            this.rbtnUtrzymanie.CheckedChanged += new System.EventHandler(this.RbtnUtrzymanie_CheckedChanged);
             // 
             // rbtnPrzytyj
             // 

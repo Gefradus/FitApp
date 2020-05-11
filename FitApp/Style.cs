@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace FitApp
 {
-    class StylFormDodawania
+    class Style
     {
         private TextBox txtBoxSearch;
         private Panel panelGlowny;
@@ -66,5 +66,37 @@ namespace FitApp
                 txtBoxSearch.ForeColor = Color.Gray;
             }   
         }
+
+        public void UsunHorizontallScroll(Panel panel)
+        {
+            panel.HorizontalScroll.Maximum = 0;
+            panel.AutoScroll = false;
+            panel.VerticalScroll.Visible = false;
+            panel.AutoScroll = true;
+        }
+
+
+        public void WysrodkujLabelGorny(Panel panel, Label label)
+        {
+            label.Location = new Point((panel.Width - label.Width) / 2, 5);
+        }
+
+        public void WysrodkujLabelDolny(Panel panel, Label label)
+        {
+            label.Location = new Point((panel.Width - label.Width) / 2, 30);
+        }
+
+        public int DlugoscPaska(Panel pasek, double parametr, int cel)
+        {
+            if (!(cel == 0))
+            {
+                return (int)(pasek.Width * (parametr / cel));
+            }
+            else
+            {
+                return pasek.Width;
+            }
+        }
+
     }
 }

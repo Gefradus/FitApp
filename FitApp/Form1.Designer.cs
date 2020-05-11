@@ -77,6 +77,8 @@
             this.pasekKcal = new System.Windows.Forms.Panel();
             this.pnlKcal = new System.Windows.Forms.Panel();
             this.panelDnia = new System.Windows.Forms.Panel();
+            this.Border = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelUstawien = new System.Windows.Forms.Panel();
             this.lblSettings = new System.Windows.Forms.Label();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -93,7 +95,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPoprzedni1 = new System.Windows.Forms.Label();
             this.lblPoprzedni2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.Sniadanie.SuspendLayout();
             this.IISniadanie.SuspendLayout();
@@ -107,6 +108,7 @@
             this.pasekBialko.SuspendLayout();
             this.pasekKcal.SuspendLayout();
             this.panelDnia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelUstawien.SuspendLayout();
             this.pnlNastepny.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -117,10 +119,6 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.HorizontalScroll.Maximum = 0;
-            this.flowLayoutPanel1.AutoScroll = false;
-            this.flowLayoutPanel1.VerticalScroll.Visible = false;
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.flowLayoutPanel1.Controls.Add(this.Sniadanie);
             this.flowLayoutPanel1.Controls.Add(this.panelSniadanie);
@@ -134,10 +132,10 @@
             this.flowLayoutPanel1.Controls.Add(this.panelPrzekaska);
             this.flowLayoutPanel1.Controls.Add(this.Kolacja);
             this.flowLayoutPanel1.Controls.Add(this.panelKolacja);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 129);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 123);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(40, 3, 21, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 433);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(583, 439);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // Sniadanie
@@ -147,22 +145,23 @@
             this.Sniadanie.Controls.Add(this.btnSniadanie);
             this.Sniadanie.Controls.Add(this.lblSniadanieKcal);
             this.Sniadanie.Controls.Add(this.lblSniadanie);
-            this.Sniadanie.Location = new System.Drawing.Point(40, 20);
-            this.Sniadanie.Margin = new System.Windows.Forms.Padding(40, 20, 0, 3);
+            this.Sniadanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Sniadanie.Location = new System.Drawing.Point(40, 25);
+            this.Sniadanie.Margin = new System.Windows.Forms.Padding(40, 25, 0, 3);
             this.Sniadanie.Name = "Sniadanie";
             this.Sniadanie.Size = new System.Drawing.Size(500, 63);
             this.Sniadanie.TabIndex = 16;
             this.Sniadanie.Click += new System.EventHandler(this.Sniadanie_Click);
-            this.Sniadanie.MouseEnter += new System.EventHandler(this.MouseHand_Sniadanie);
-            this.Sniadanie.MouseHover += new System.EventHandler(this.MouseHand_Sniadanie);
             // 
             // btnSniadanie
             // 
             this.btnSniadanie.BackColor = System.Drawing.SystemColors.Window;
             this.btnSniadanie.BackgroundImage = global::FitApp.Properties.Resources.add;
             this.btnSniadanie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSniadanie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSniadanie.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSniadanie.FlatAppearance.BorderSize = 0;
+            this.btnSniadanie.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
             this.btnSniadanie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSniadanie.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSniadanie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -176,6 +175,7 @@
             // lblSniadanieKcal
             // 
             this.lblSniadanieKcal.AutoSize = true;
+            this.lblSniadanieKcal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSniadanieKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSniadanieKcal.Location = new System.Drawing.Point(11, 36);
             this.lblSniadanieKcal.Name = "lblSniadanieKcal";
@@ -186,6 +186,7 @@
             // lblSniadanie
             // 
             this.lblSniadanie.AutoSize = true;
+            this.lblSniadanie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSniadanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSniadanie.Location = new System.Drawing.Point(4, 3);
             this.lblSniadanie.Name = "lblSniadanie";
@@ -210,21 +211,22 @@
             this.IISniadanie.Controls.Add(this.btn2Sniad);
             this.IISniadanie.Controls.Add(this.lbl2SniadKcal);
             this.IISniadanie.Controls.Add(this.lbl2Sniadanie);
-            this.IISniadanie.Location = new System.Drawing.Point(40, 86);
+            this.IISniadanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IISniadanie.Location = new System.Drawing.Point(40, 91);
             this.IISniadanie.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.IISniadanie.Name = "IISniadanie";
             this.IISniadanie.Size = new System.Drawing.Size(500, 63);
             this.IISniadanie.TabIndex = 18;
             this.IISniadanie.Click += new System.EventHandler(this.IISniadanie_Click);
-            this.IISniadanie.MouseEnter += new System.EventHandler(this.MouseHand_2Sniadanie);
-            this.IISniadanie.MouseHover += new System.EventHandler(this.MouseHand_2Sniadanie);
             // 
             // btn2Sniad
             // 
             this.btn2Sniad.BackColor = System.Drawing.SystemColors.Window;
             this.btn2Sniad.BackgroundImage = global::FitApp.Properties.Resources.add;
             this.btn2Sniad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn2Sniad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2Sniad.FlatAppearance.BorderSize = 0;
+            this.btn2Sniad.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
             this.btn2Sniad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2Sniad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn2Sniad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -238,6 +240,7 @@
             // lbl2SniadKcal
             // 
             this.lbl2SniadKcal.AutoSize = true;
+            this.lbl2SniadKcal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl2SniadKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl2SniadKcal.Location = new System.Drawing.Point(11, 36);
             this.lbl2SniadKcal.Name = "lbl2SniadKcal";
@@ -248,6 +251,7 @@
             // lbl2Sniadanie
             // 
             this.lbl2Sniadanie.AutoSize = true;
+            this.lbl2Sniadanie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl2Sniadanie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl2Sniadanie.Location = new System.Drawing.Point(4, 3);
             this.lbl2Sniadanie.Name = "lbl2Sniadanie";
@@ -259,7 +263,7 @@
             // 
             this.panel2Sniadanie.AutoSize = true;
             this.panel2Sniadanie.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2Sniadanie.Location = new System.Drawing.Point(580, 86);
+            this.panel2Sniadanie.Location = new System.Drawing.Point(580, 91);
             this.panel2Sniadanie.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panel2Sniadanie.Name = "panel2Sniadanie";
             this.panel2Sniadanie.Size = new System.Drawing.Size(0, 0);
@@ -272,21 +276,22 @@
             this.Obiad.Controls.Add(this.btnObiad);
             this.Obiad.Controls.Add(this.lblObiadKcal);
             this.Obiad.Controls.Add(this.lblObiad);
-            this.Obiad.Location = new System.Drawing.Point(40, 152);
+            this.Obiad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Obiad.Location = new System.Drawing.Point(40, 157);
             this.Obiad.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Obiad.Name = "Obiad";
             this.Obiad.Size = new System.Drawing.Size(500, 63);
             this.Obiad.TabIndex = 20;
             this.Obiad.Click += new System.EventHandler(this.Obiad_Click);
-            this.Obiad.MouseEnter += new System.EventHandler(this.MouseHand_Obiad);
-            this.Obiad.MouseHover += new System.EventHandler(this.MouseHand_Obiad);
             // 
             // btnObiad
             // 
             this.btnObiad.BackColor = System.Drawing.SystemColors.Window;
             this.btnObiad.BackgroundImage = global::FitApp.Properties.Resources.add;
             this.btnObiad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnObiad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnObiad.FlatAppearance.BorderSize = 0;
+            this.btnObiad.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
             this.btnObiad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObiad.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObiad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -300,6 +305,7 @@
             // lblObiadKcal
             // 
             this.lblObiadKcal.AutoSize = true;
+            this.lblObiadKcal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblObiadKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObiadKcal.Location = new System.Drawing.Point(11, 36);
             this.lblObiadKcal.Name = "lblObiadKcal";
@@ -310,6 +316,7 @@
             // lblObiad
             // 
             this.lblObiad.AutoSize = true;
+            this.lblObiad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblObiad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObiad.Location = new System.Drawing.Point(4, 3);
             this.lblObiad.Name = "lblObiad";
@@ -321,7 +328,7 @@
             // 
             this.panelObiad.AutoSize = true;
             this.panelObiad.BackColor = System.Drawing.SystemColors.Window;
-            this.panelObiad.Location = new System.Drawing.Point(580, 152);
+            this.panelObiad.Location = new System.Drawing.Point(580, 157);
             this.panelObiad.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelObiad.Name = "panelObiad";
             this.panelObiad.Size = new System.Drawing.Size(0, 0);
@@ -334,21 +341,22 @@
             this.Deser.Controls.Add(this.btnDeser);
             this.Deser.Controls.Add(this.lblDeserKcal);
             this.Deser.Controls.Add(this.lblDeser);
-            this.Deser.Location = new System.Drawing.Point(40, 218);
+            this.Deser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Deser.Location = new System.Drawing.Point(40, 223);
             this.Deser.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Deser.Name = "Deser";
             this.Deser.Size = new System.Drawing.Size(500, 63);
             this.Deser.TabIndex = 22;
             this.Deser.Click += new System.EventHandler(this.Deser_Click);
-            this.Deser.MouseEnter += new System.EventHandler(this.MouseHand_Deser);
-            this.Deser.MouseHover += new System.EventHandler(this.MouseHand_Deser);
             // 
             // btnDeser
             // 
             this.btnDeser.BackColor = System.Drawing.SystemColors.Window;
             this.btnDeser.BackgroundImage = global::FitApp.Properties.Resources.add;
             this.btnDeser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeser.FlatAppearance.BorderSize = 0;
+            this.btnDeser.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
             this.btnDeser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeser.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDeser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -362,6 +370,7 @@
             // lblDeserKcal
             // 
             this.lblDeserKcal.AutoSize = true;
+            this.lblDeserKcal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDeserKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDeserKcal.Location = new System.Drawing.Point(11, 36);
             this.lblDeserKcal.Name = "lblDeserKcal";
@@ -372,6 +381,7 @@
             // lblDeser
             // 
             this.lblDeser.AutoSize = true;
+            this.lblDeser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDeser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDeser.Location = new System.Drawing.Point(4, 3);
             this.lblDeser.Name = "lblDeser";
@@ -383,7 +393,7 @@
             // 
             this.panelDeser.AutoSize = true;
             this.panelDeser.BackColor = System.Drawing.SystemColors.Window;
-            this.panelDeser.Location = new System.Drawing.Point(580, 218);
+            this.panelDeser.Location = new System.Drawing.Point(580, 223);
             this.panelDeser.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelDeser.Name = "panelDeser";
             this.panelDeser.Size = new System.Drawing.Size(0, 0);
@@ -396,21 +406,22 @@
             this.Przekaska.Controls.Add(this.btnPrzekaska);
             this.Przekaska.Controls.Add(this.lblPrzekaskaKcal);
             this.Przekaska.Controls.Add(this.lblPrzekaska);
-            this.Przekaska.Location = new System.Drawing.Point(40, 284);
+            this.Przekaska.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Przekaska.Location = new System.Drawing.Point(40, 289);
             this.Przekaska.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Przekaska.Name = "Przekaska";
             this.Przekaska.Size = new System.Drawing.Size(500, 63);
             this.Przekaska.TabIndex = 24;
             this.Przekaska.Click += new System.EventHandler(this.Przekaska_Click);
-            this.Przekaska.MouseEnter += new System.EventHandler(this.MouseHand_Przekaska);
-            this.Przekaska.MouseHover += new System.EventHandler(this.MouseHand_Przekaska);
             // 
             // btnPrzekaska
             // 
             this.btnPrzekaska.BackColor = System.Drawing.SystemColors.Window;
             this.btnPrzekaska.BackgroundImage = global::FitApp.Properties.Resources.add;
             this.btnPrzekaska.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrzekaska.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrzekaska.FlatAppearance.BorderSize = 0;
+            this.btnPrzekaska.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
             this.btnPrzekaska.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrzekaska.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPrzekaska.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -424,6 +435,7 @@
             // lblPrzekaskaKcal
             // 
             this.lblPrzekaskaKcal.AutoSize = true;
+            this.lblPrzekaskaKcal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPrzekaskaKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPrzekaskaKcal.Location = new System.Drawing.Point(11, 36);
             this.lblPrzekaskaKcal.Name = "lblPrzekaskaKcal";
@@ -434,6 +446,7 @@
             // lblPrzekaska
             // 
             this.lblPrzekaska.AutoSize = true;
+            this.lblPrzekaska.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPrzekaska.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPrzekaska.Location = new System.Drawing.Point(4, 3);
             this.lblPrzekaska.Name = "lblPrzekaska";
@@ -445,7 +458,7 @@
             // 
             this.panelPrzekaska.AutoSize = true;
             this.panelPrzekaska.BackColor = System.Drawing.SystemColors.Window;
-            this.panelPrzekaska.Location = new System.Drawing.Point(580, 284);
+            this.panelPrzekaska.Location = new System.Drawing.Point(580, 289);
             this.panelPrzekaska.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelPrzekaska.Name = "panelPrzekaska";
             this.panelPrzekaska.Size = new System.Drawing.Size(0, 0);
@@ -458,24 +471,24 @@
             this.Kolacja.Controls.Add(this.btnKolacja);
             this.Kolacja.Controls.Add(this.lblKolacjaKcal);
             this.Kolacja.Controls.Add(this.lblKolacja);
-            this.Kolacja.Location = new System.Drawing.Point(40, 350);
+            this.Kolacja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Kolacja.Location = new System.Drawing.Point(40, 355);
             this.Kolacja.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.Kolacja.Name = "Kolacja";
             this.Kolacja.Size = new System.Drawing.Size(500, 63);
             this.Kolacja.TabIndex = 26;
             this.Kolacja.Click += new System.EventHandler(this.Kolacja_Click);
-            this.Kolacja.MouseEnter += new System.EventHandler(this.MouseHand_Kolacja);
-            this.Kolacja.MouseHover += new System.EventHandler(this.MouseHand_Kolacja);
             // 
             // btnKolacja
             // 
             this.btnKolacja.BackColor = System.Drawing.SystemColors.Window;
             this.btnKolacja.BackgroundImage = global::FitApp.Properties.Resources.add;
             this.btnKolacja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKolacja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKolacja.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnKolacja.FlatAppearance.BorderSize = 0;
             this.btnKolacja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnKolacja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnKolacja.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Window;
             this.btnKolacja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKolacja.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKolacja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -489,6 +502,7 @@
             // lblKolacjaKcal
             // 
             this.lblKolacjaKcal.AutoSize = true;
+            this.lblKolacjaKcal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblKolacjaKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKolacjaKcal.Location = new System.Drawing.Point(11, 36);
             this.lblKolacjaKcal.Name = "lblKolacjaKcal";
@@ -499,6 +513,7 @@
             // lblKolacja
             // 
             this.lblKolacja.AutoSize = true;
+            this.lblKolacja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblKolacja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKolacja.Location = new System.Drawing.Point(4, 3);
             this.lblKolacja.Name = "lblKolacja";
@@ -510,7 +525,7 @@
             // 
             this.panelKolacja.AutoSize = true;
             this.panelKolacja.BackColor = System.Drawing.SystemColors.Window;
-            this.panelKolacja.Location = new System.Drawing.Point(580, 350);
+            this.panelKolacja.Location = new System.Drawing.Point(580, 355);
             this.panelKolacja.Margin = new System.Windows.Forms.Padding(40, 0, 0, 3);
             this.panelKolacja.Name = "panelKolacja";
             this.panelKolacja.Size = new System.Drawing.Size(0, 0);
@@ -692,22 +707,44 @@
             // panelDnia
             // 
             this.panelDnia.BackColor = System.Drawing.SystemColors.Window;
+            this.panelDnia.Controls.Add(this.Border);
+            this.panelDnia.Controls.Add(this.pictureBox3);
             this.panelDnia.Controls.Add(this.panelUstawien);
             this.panelDnia.Controls.Add(this.pnlNastepny);
             this.panelDnia.Controls.Add(this.splitter1);
             this.panelDnia.Controls.Add(this.pnlObecny);
             this.panelDnia.Controls.Add(this.pnlPoprzedni);
-            this.panelDnia.Controls.Add(this.label1);
-            this.panelDnia.Location = new System.Drawing.Point(1, 6);
+            this.panelDnia.Location = new System.Drawing.Point(0, 0);
             this.panelDnia.Name = "panelDnia";
-            this.panelDnia.Size = new System.Drawing.Size(586, 126);
+            this.panelDnia.Size = new System.Drawing.Size(583, 127);
             this.panelDnia.TabIndex = 5;
+            // 
+            // Border
+            // 
+            this.Border.Location = new System.Drawing.Point(-27, 60);
+            this.Border.Name = "Border";
+            this.Border.Size = new System.Drawing.Size(639, 1);
+            this.Border.TabIndex = 14;
+            this.Border.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBorder);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::FitApp.Properties.Resources.logo;
+            this.pictureBox3.Location = new System.Drawing.Point(200, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(186, 43);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.Logo_Click);
             // 
             // panelUstawien
             // 
             this.panelUstawien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelUstawien.Controls.Add(this.lblSettings);
             this.panelUstawien.Controls.Add(this.btnSettings);
+            this.panelUstawien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelUstawien.Location = new System.Drawing.Point(17, 14);
             this.panelUstawien.Name = "panelUstawien";
             this.panelUstawien.Size = new System.Drawing.Size(111, 34);
@@ -719,6 +756,7 @@
             // lblSettings
             // 
             this.lblSettings.AutoSize = true;
+            this.lblSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSettings.Location = new System.Drawing.Point(31, 6);
             this.lblSettings.Name = "lblSettings";
             this.lblSettings.Size = new System.Drawing.Size(76, 17);
@@ -733,7 +771,9 @@
             this.btnSettings.BackColor = System.Drawing.Color.White;
             this.btnSettings.BackgroundImage = global::FitApp.Properties.Resources.settings_black;
             this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSettings.Location = new System.Drawing.Point(3, 2);
@@ -750,6 +790,7 @@
             this.pnlNastepny.Controls.Add(this.lblNastepny1);
             this.pnlNastepny.Controls.Add(this.pictureBox2);
             this.pnlNastepny.Controls.Add(this.lblNastepny2);
+            this.pnlNastepny.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlNastepny.Location = new System.Drawing.Point(392, 60);
             this.pnlNastepny.Name = "pnlNastepny";
             this.pnlNastepny.Size = new System.Drawing.Size(197, 65);
@@ -762,6 +803,7 @@
             // lblNastepny1
             // 
             this.lblNastepny1.AutoSize = true;
+            this.lblNastepny1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNastepny1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNastepny1.Location = new System.Drawing.Point(75, 5);
             this.lblNastepny1.Margin = new System.Windows.Forms.Padding(0);
@@ -775,6 +817,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::FitApp.Properties.Resources.next;
             this.pictureBox2.Location = new System.Drawing.Point(156, 15);
             this.pictureBox2.Name = "pictureBox2";
@@ -789,6 +832,7 @@
             // lblNastepny2
             // 
             this.lblNastepny2.AutoSize = true;
+            this.lblNastepny2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNastepny2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNastepny2.Location = new System.Drawing.Point(79, 38);
             this.lblNastepny2.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
@@ -804,7 +848,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 126);
+            this.splitter1.Size = new System.Drawing.Size(3, 127);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
             // 
@@ -814,6 +858,7 @@
             this.pnlObecny.Controls.Add(this.panel1);
             this.pnlObecny.Controls.Add(this.lblObecny1);
             this.pnlObecny.Controls.Add(this.lblObecny2);
+            this.pnlObecny.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlObecny.Location = new System.Drawing.Point(196, 60);
             this.pnlObecny.Name = "pnlObecny";
             this.pnlObecny.Size = new System.Drawing.Size(197, 65);
@@ -837,6 +882,7 @@
             // lblObecny1
             // 
             this.lblObecny1.AutoSize = true;
+            this.lblObecny1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblObecny1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObecny1.Location = new System.Drawing.Point(67, 5);
             this.lblObecny1.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
@@ -851,6 +897,7 @@
             // lblObecny2
             // 
             this.lblObecny2.AutoSize = true;
+            this.lblObecny2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblObecny2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObecny2.Location = new System.Drawing.Point(75, 37);
             this.lblObecny2.Margin = new System.Windows.Forms.Padding(75, 5, 3, 0);
@@ -867,6 +914,7 @@
             this.pnlPoprzedni.Controls.Add(this.pictureBox1);
             this.pnlPoprzedni.Controls.Add(this.lblPoprzedni1);
             this.pnlPoprzedni.Controls.Add(this.lblPoprzedni2);
+            this.pnlPoprzedni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlPoprzedni.Location = new System.Drawing.Point(-2, 60);
             this.pnlPoprzedni.Name = "pnlPoprzedni";
             this.pnlPoprzedni.Size = new System.Drawing.Size(200, 65);
@@ -878,6 +926,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::FitApp.Properties.Resources.prev;
             this.pictureBox1.Location = new System.Drawing.Point(0, 15);
             this.pictureBox1.Name = "pictureBox1";
@@ -892,6 +941,7 @@
             // lblPoprzedni1
             // 
             this.lblPoprzedni1.AutoSize = true;
+            this.lblPoprzedni1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPoprzedni1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPoprzedni1.Location = new System.Drawing.Point(61, 5);
             this.lblPoprzedni1.Margin = new System.Windows.Forms.Padding(70, 5, 3, 0);
@@ -906,6 +956,7 @@
             // lblPoprzedni2
             // 
             this.lblPoprzedni2.AutoSize = true;
+            this.lblPoprzedni2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPoprzedni2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPoprzedni2.Location = new System.Drawing.Point(75, 35);
             this.lblPoprzedni2.Margin = new System.Windows.Forms.Padding(75, 15, 3, 0);
@@ -916,17 +967,6 @@
             this.lblPoprzedni2.Click += new System.EventHandler(this.PnlPoprzedni_Click);
             this.lblPoprzedni2.MouseEnter += new System.EventHandler(this.MouseHand_Poprzedni);
             this.lblPoprzedni2.MouseLeave += new System.EventHandler(this.WyczyscZaznaczenie);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label1.Location = new System.Drawing.Point(235, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 38);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "FitApp";
             // 
             // Form1
             // 
@@ -962,7 +1002,7 @@
             this.pasekBialko.ResumeLayout(false);
             this.pasekKcal.ResumeLayout(false);
             this.panelDnia.ResumeLayout(false);
-            this.panelDnia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelUstawien.ResumeLayout(false);
             this.panelUstawien.PerformLayout();
             this.pnlNastepny.ResumeLayout(false);
@@ -1042,9 +1082,10 @@
         private System.Windows.Forms.Panel pnlNastepny;
         private System.Windows.Forms.Label lblNastepny1;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSettings;
         private System.Windows.Forms.Panel panelUstawien;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel Border;
     }
 }
 

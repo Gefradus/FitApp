@@ -10,15 +10,19 @@ namespace FitApp
     public partial class Form1 : Form
     {
         private readonly ModelXML _context;
+        private readonly Style style;
         public int KlientID { get; set; }
         public int DzienID { get; set; }
 
         public Form1()
         {
+            style = new Style();
             _context = new ModelXML();
             InitializeComponent();
+            style.UsunHorizontallScroll(flowLayoutPanel1);
             FormClosing += new FormClosingEventHandler((sender, e) => CloseApplication(e));
         }
+
 
         private void CzyPierwszeUruchomienie()
         {
@@ -68,23 +72,12 @@ namespace FitApp
 
         private void WysrodkujLabele()
         {
-            WysrodkujLabelGorny(pnlPoprzedni, lblPoprzedni1);
-            WysrodkujLabelDolny(pnlPoprzedni, lblPoprzedni2);
-            WysrodkujLabelGorny(pnlObecny, lblObecny1);
-            WysrodkujLabelDolny(pnlObecny, lblObecny2);
-            WysrodkujLabelGorny(pnlNastepny, lblNastepny1);
-            WysrodkujLabelDolny(pnlNastepny, lblNastepny2);
-            
-        }
-
-        private void WysrodkujLabelGorny(Panel panel, Label label)
-        {
-            label.Location = new Point((panel.Width - label.Width) / 2, 5);
-        }
-
-        private void WysrodkujLabelDolny(Panel panel, Label label)
-        {
-            label.Location = new Point((panel.Width - label.Width) / 2, 30);
+            style.WysrodkujLabelGorny(pnlPoprzedni, lblPoprzedni1);
+            style.WysrodkujLabelDolny(pnlPoprzedni, lblPoprzedni2);
+            style.WysrodkujLabelGorny(pnlObecny, lblObecny1);
+            style.WysrodkujLabelDolny(pnlObecny, lblObecny2);
+            style.WysrodkujLabelGorny(pnlNastepny, lblNastepny1);
+            style.WysrodkujLabelDolny(pnlNastepny, lblNastepny2);
         }
 
         public void FormatDaty()
@@ -138,25 +131,13 @@ namespace FitApp
         private void NarysujPaski(int kcal, double bialko, double wegle, double tluszcze)
         {
             Dzien dzien = _context.DajDzien(DzienID);
-            pnlKcal.Width = DlugoscPaska(pasekKcal, kcal, dzien.CelKalorii);
-            pnlBialko.Width = DlugoscPaska(pasekBialko, bialko, dzien.CelBialko);
-            pnlWegle.Width = DlugoscPaska(pasekWegl, wegle, dzien.CelWegle);
-            pnlTluszcze.Width = DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze);
+            pnlKcal.Width = style.DlugoscPaska(pasekKcal, kcal, dzien.CelKalorii);
+            pnlBialko.Width = style.DlugoscPaska(pasekBialko, bialko, dzien.CelBialko);
+            pnlWegle.Width = style.DlugoscPaska(pasekWegl, wegle, dzien.CelWegle);
+            pnlTluszcze.Width = style.DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze);
         }
 
-        private int DlugoscPaska(Panel pasek, double parametr, int cel)
-        {
-            if (!(cel == 0))
-            {
-                return (int)(pasek.Width * (parametr / cel));
-            }
-            else
-            {
-                return pasek.Width;
-            }
-        }
-
-
+        
         private void ZaladujPosilki()
         {
             foreach (var item in _context.Posilki())
@@ -261,8 +242,8 @@ namespace FitApp
 
             Button btnDelete = new Button()
             {
-                Size = new Size(26, 26),
-                Location = new Point(334, 12),
+                Size = new Size(27, 27),
+                Location = new Point(333, 12),
                 Text = "X",
                 Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point),
                 BackColor = Color.FromArgb(233,32,32),
@@ -393,7 +374,6 @@ namespace FitApp
             
         }
 
-
         //--------------------------------- OTWIERANIE OKNA DODAWANIA --------------------------------
 
         private void btnSniadanie_Click(object sender, EventArgs e){ OtworzOknoDodawania(1);}
@@ -418,25 +398,15 @@ namespace FitApp
         }
 
         //------------------------ ZMIANA KURSORA NA 'RĄCZKĘ' PO NAJECHANIU ------------------------------
-
-        private void MouseHand_Sniadanie(object sender, EventArgs e){ Sniadanie.Cursor = Cursors.Hand; }
-        private void MouseHand_2Sniadanie(object sender, EventArgs e) { IISniadanie.Cursor = Cursors.Hand; }
-        private void MouseHand_Obiad(object sender, EventArgs e) { Obiad.Cursor = Cursors.Hand; }
-        private void MouseHand_Deser(object sender, EventArgs e) { Deser.Cursor = Cursors.Hand; }
-        private void MouseHand_Przekaska(object sender, EventArgs e) { Przekaska.Cursor = Cursors.Hand; }
-        private void MouseHand_Kolacja(object sender, EventArgs e) { Kolacja.Cursor = Cursors.Hand; }
         private void MouseHand_Poprzedni(object sender, EventArgs e) {
-            pnlPoprzedni.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
             pnlPoprzedni.BackColor = Color.FromArgb(230, 230, 230);
         }
         private void MouseHand_Obecny(object sender, EventArgs e) { 
-            pnlObecny.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
             pnlObecny.BackColor = Color.FromArgb(230, 230, 230);
         }
         private void MouseHand_Nastepny(object sender, EventArgs e) { 
-            pnlNastepny.Cursor = Cursors.Hand;
             WyczyscZaznaczenie(sender, e);
             pnlNastepny.BackColor = Color.FromArgb(230, 230, 230);
         }
@@ -449,8 +419,8 @@ namespace FitApp
 
         private void MouseHand_Settings(object sender, EventArgs e) { 
             panelUstawien.Cursor = Cursors.Hand;
-            panelUstawien.BackColor = Color.LightGray;
-            btnSettings.BackColor = Color.LightGray;
+            panelUstawien.BackColor = Color.GhostWhite;
+            btnSettings.BackColor = Color.GhostWhite;
         }
 
         private void MouseLeave_Settings(object sender, EventArgs e)
@@ -522,5 +492,18 @@ namespace FitApp
             PrzejdzDoUstawien(false);
         }
 
+
+        private void Logo_Click(object sender, EventArgs e)
+        {
+            DzienID = 0;
+            OnLoad();
+        }
+
+        private void PaintBorder(object sender, PaintEventArgs e)
+        {
+            using (SolidBrush brush = new SolidBrush(BackColor))
+                e.Graphics.FillRectangle(brush, ClientRectangle);
+            e.Graphics.DrawRectangle(Pens.LightGray, 0, 0, Border.Width, 1);
+        }
     }
 }
