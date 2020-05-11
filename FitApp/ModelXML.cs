@@ -255,6 +255,8 @@ namespace FitApp
             return dni;
         }
 
+
+
         public int DajKlientaPoDniuID(int dzienID)
         {
             foreach (var item in Dni())

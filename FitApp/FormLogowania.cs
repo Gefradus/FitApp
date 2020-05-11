@@ -34,7 +34,7 @@ namespace FitApp
             }
 
             if (!czyZalogowano)
-            {
+            { 
                 if (string.IsNullOrEmpty(txtHaslo.Text))
                 {
                     if (string.IsNullOrEmpty(cmbLogin.Text))
@@ -55,6 +55,8 @@ namespace FitApp
                 {
                     MessageBox.Show("Nieprawidłowy login i/lub hasło!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                txtHaslo.Text = "";
             }
         }
 

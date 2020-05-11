@@ -109,13 +109,8 @@ namespace FitApp
             MessageBox.Show("Pomyślna rejestracja.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             Hide();
-            FormUstawien formUstawien = new FormUstawien
-            {
-                DzienID = _context.DajDzisiajID(klientID),
-                KlientID = klientID,
-                CzyPierwszeUruchomienie = true
-            };
 
+            FormUstawien formUstawien = new FormUstawien(klientID, _context.DajDzisiajID(klientID), true);
             formUstawien.Show();
         }
 

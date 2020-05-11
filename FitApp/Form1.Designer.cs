@@ -699,7 +699,6 @@
             this.panelDnia.Name = "panelDnia";
             this.panelDnia.Size = new System.Drawing.Size(586, 126);
             this.panelDnia.TabIndex = 5;
-            this.panelDnia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDnia_Paint);
             // 
             // panelUstawien
             // 
@@ -710,7 +709,7 @@
             this.panelUstawien.Name = "panelUstawien";
             this.panelUstawien.Size = new System.Drawing.Size(111, 34);
             this.panelUstawien.TabIndex = 12;
-            this.panelUstawien.Click += new System.EventHandler(this.lblSettings_Click);
+            this.panelUstawien.Click += new System.EventHandler(this.Settings_Click);
             this.panelUstawien.MouseEnter += new System.EventHandler(this.MouseHand_Settings);
             this.panelUstawien.MouseLeave += new System.EventHandler(this.MouseLeave_Settings);
             // 
@@ -722,7 +721,7 @@
             this.lblSettings.Size = new System.Drawing.Size(76, 17);
             this.lblSettings.TabIndex = 11;
             this.lblSettings.Text = "Ustawienia";
-            this.lblSettings.Click += new System.EventHandler(this.lblSettings_Click);
+            this.lblSettings.Click += new System.EventHandler(this.Settings_Click);
             this.lblSettings.MouseEnter += new System.EventHandler(this.MouseHand_Settings);
             this.lblSettings.MouseLeave += new System.EventHandler(this.MouseLeave_Settings);
             // 
@@ -739,7 +738,7 @@
             this.btnSettings.Size = new System.Drawing.Size(26, 24);
             this.btnSettings.TabIndex = 8;
             this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.Click += new System.EventHandler(this.Settings_Click);
             this.btnSettings.MouseEnter += new System.EventHandler(this.MouseHand_Settings);
             this.btnSettings.MouseLeave += new System.EventHandler(this.MouseLeave_Settings);
             // 
@@ -938,7 +937,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FitApp";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.Sniadanie.ResumeLayout(false);

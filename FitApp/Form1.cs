@@ -20,7 +20,19 @@ namespace FitApp
             FormClosing += new FormClosingEventHandler((sender, e) => CloseApplication());
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void CzyPierwszeUruchomienie()
+        {
+            if (_context.DajKlienta(KlientID).CelBialko == 0) {
+                PrzejdzDoUstawien(true);
+            }
+            else
+            {
+                OnLoad();
+            }
+
+        }
+
+        private void OnLoad()
         {
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
@@ -28,19 +40,19 @@ namespace FitApp
             {
                 DzienID = _context.DajDzisiajID(KlientID);
             }
-            
+
             Zaladuj();
         }
 
-        private void PrzejdzDoUstawien()
+        private void Form1_Shown(object sender, EventArgs e)
         {
-            FormUstawien formUstawien = new FormUstawien
-            {
-                DzienID = DzienID,
-                KlientID = KlientID
-            };
+            CzyPierwszeUruchomienie();
+        }
 
+        private void PrzejdzDoUstawien(bool czyPierwsze)
+        {
             Hide();
+            FormUstawien formUstawien = new FormUstawien(KlientID, DzienID, czyPierwsze);
             formUstawien.Show();
         }
 
@@ -498,19 +510,10 @@ namespace FitApp
             Zaladuj();
         }
 
-        private void panelDnia_Paint(object sender, PaintEventArgs e)
+        private void Settings_Click(object sender, EventArgs e)
         {
-
+            PrzejdzDoUstawien(false);
         }
 
-        private void lblSettings_Click(object sender, EventArgs e)
-        {
-            PrzejdzDoUstawien();
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            PrzejdzDoUstawien();
-        }
     }
 }

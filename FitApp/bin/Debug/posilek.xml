@@ -77,4 +77,11 @@
     <DzienId>27</DzienId>
     <ProduktId>2</ProduktId>
   </Posilek>
+  <Posilek>
+    <PosilekId>20</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>175</Gramatura>
+    <DzienId>6</DzienId>
+    <ProduktId>1</ProduktId>
+  </Posilek>
 </ArrayOfPosilek>

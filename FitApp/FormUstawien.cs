@@ -11,18 +11,28 @@ namespace FitApp
         public int DzienID { get; set; }
         public bool CzyPierwszeUruchomienie { get; set; }
 
-        public FormUstawien()
+        public FormUstawien(int klientID, int dzienID, bool czyPierwsze)
         {
             _context = new ModelXML();
+            UstawSettery(klientID, dzienID, czyPierwsze);
             InitializeComponent();
             FormClosing += new FormClosingEventHandler(Form_Closing);
         }
 
+        private void UstawSettery(int klientID, int dzienID, bool czyPierwsze)
+        {
+            KlientID = klientID;
+            DzienID = dzienID;
+            CzyPierwszeUruchomienie = czyPierwsze;
+        }
+
+        private void FormUstawien_Load(object sender, EventArgs e)
+        {
+            WczytajUstawienia();
+        }
 
         private void Powrot()
         {
-            Hide();
-
             if (CzyPierwszeUruchomienie)
             {
                 new FormLogowania().Show();
@@ -37,6 +47,8 @@ namespace FitApp
 
                 form1.Show();
             }
+
+            Hide();
         }
 
         private void Form_Closing(object sender, EventArgs e)
@@ -133,9 +145,6 @@ namespace FitApp
             Powrot();
         }
 
-        private void FormUstawien_Load(object sender, EventArgs e)
-        {
-            WczytajUstawienia();
-        }
+      
     }
 }
