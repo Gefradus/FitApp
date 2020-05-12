@@ -27,10 +27,7 @@ namespace FitApp
 
         private void PodajLiczbeTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((!int.TryParse(e.KeyChar+"", out _) || (textBox1.Text.Length == 0 || textBox1.Text.Length > 3 ) && e.KeyChar == '0') && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            Walidacja.PodajLiczbeTextBox(textBox1, e);
         }
 
         private void BtnDodaj_Click(object sender, EventArgs e)
@@ -89,9 +86,10 @@ namespace FitApp
 
         private void Powrot()
         {
-            FormDodawania form = new FormDodawania { 
-                StartPosition = FormStartPosition.CenterScreen,
+            FormDodawania form = new FormDodawania
+            {
                 DzienID = DzienID,
+                WKtorym = WKtorym
             };
 
             form.FormClosing += new FormClosingEventHandler((sender, e) => form.ZamknijForme());

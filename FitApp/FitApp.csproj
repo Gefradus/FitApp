@@ -60,6 +60,12 @@
     <Compile Include="FormDodawania.Designer.cs">
       <DependentUpon>FormDodawania.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEdytujPosilek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdytujPosilek.Designer.cs">
+      <DependentUpon>FormEdytujPosilek.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogowania.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDodawania.resx">
       <DependentUpon>FormDodawania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdytujPosilek.resx">
+      <DependentUpon>FormEdytujPosilek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogowania.resx">
       <DependentUpon>FormLogowania.cs</DependentUpon>

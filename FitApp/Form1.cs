@@ -21,7 +21,6 @@ namespace FitApp
             FormClosing += new FormClosingEventHandler((sender, e) => CloseApplication(e));
         }
 
-
         private void CzyPierwszeUruchomienie()
         {
             if (_context.DajKlienta(KlientID).CelBialko == 0) {
@@ -58,7 +57,6 @@ namespace FitApp
             formUstawien.Show();
         }
 
-
         private void Zaladuj()
         {
             ResetPosilkow();
@@ -92,7 +90,6 @@ namespace FitApp
             lblObecny2.Text = dzienObecny.Day + DajMiesiac(dzienObecny.Month);
             lblNastepny2.Text = dzienNastepny.Day + DajMiesiac(dzienNastepny.Month);
         }
-
 
         private string DajDzienTygodnia(DateTime dzien)
         {
@@ -135,7 +132,6 @@ namespace FitApp
             pnlTluszcze.Width = style.DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze);
         }
 
-        
         private void ZaladujPosilki()
         {
             foreach (var item in _context.Posilki())
@@ -213,7 +209,6 @@ namespace FitApp
             NarysujPaski(kcal, Zaokraglij((decimal)bialko, 0), Zaokraglij((decimal)wegle, 0), Zaokraglij((decimal)tluszcze, 0));
         }
 
-
         private void StworzPanelPosilku(int produktID, int posilekID, FlowLayoutPanel panelPos)
         {
            
@@ -229,6 +224,11 @@ namespace FitApp
                 Text = prod.NazwaProduktu + ", " + gram + "g", 
                 Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point)
             };
+            LinkLabel linkEdytuj = new LinkLabel
+            {
+                Text = "Edytuj",
+                Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point)
+            };
             Label lblParametry = new Label
             {
                 AutoSize = true,
@@ -237,7 +237,7 @@ namespace FitApp
                 Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point),
                 Location = new Point(0, 30)
             };
-
+            
             Button btnDelete = new Button()
             {
                 Size = new Size(27, 27),
@@ -247,7 +247,8 @@ namespace FitApp
                 BackColor = Color.FromArgb(233,32,32),
                 ForeColor = Color.White
             };
-     
+
+            linkEdytuj.Click += new EventHandler((sender, e) => EdytujPosilek(sender, posilekID));
             btnDelete.Click += new EventHandler((sender, e) => BtnDeleteClick(sender, posilekID));
             panel.Controls.Add(lblParametry);
             panel.Controls.Add(lblNazwaIlosc);
@@ -255,6 +256,10 @@ namespace FitApp
             panelPos.Controls.Add(panel);
         }
 
+        private void EdytujPosilek(object sender, int posilekID)
+        {
+            Posilek posilek = _context.DajPosilek(posilekID);
+        }
 
         private void ResetPosilkow()
         {
@@ -265,7 +270,6 @@ namespace FitApp
             panelPrzekaska.Controls.Clear();
             panelKolacja.Controls.Clear();
         }
-
 
         private double Zaokraglij(decimal liczba, int ilePoPrzecinku)
         {
@@ -325,7 +329,6 @@ namespace FitApp
             _context.ZapiszDni(dni);
         }
 
-
         private void OtworzOknoDodawania(int ktoryPosilek)
         {
             var formDodawania = new FormDodawania
@@ -374,12 +377,12 @@ namespace FitApp
 
         //--------------------------------- OTWIERANIE OKNA DODAWANIA --------------------------------
 
-        private void btnSniadanie_Click(object sender, EventArgs e){ OtworzOknoDodawania(1);}
-        private void btn2Sniad_Click(object sender, EventArgs e){ OtworzOknoDodawania(2); }
-        private void btnObiad_Click(object sender, EventArgs e){ OtworzOknoDodawania(3); }
-        private void btnDeser_Click(object sender, EventArgs e) {OtworzOknoDodawania(4); }
-        private void btnPrzekaska_Click(object sender, EventArgs e){ OtworzOknoDodawania(5); }
-        private void btnKolacja_Click(object sender, EventArgs e){ OtworzOknoDodawania(6); }
+        private void BtnSniadanie_Click(object sender, EventArgs e){ OtworzOknoDodawania(1);}
+        private void Btn2Sniad_Click(object sender, EventArgs e){ OtworzOknoDodawania(2); }
+        private void BtnObiad_Click(object sender, EventArgs e){ OtworzOknoDodawania(3); }
+        private void BtnDeser_Click(object sender, EventArgs e) {OtworzOknoDodawania(4); }
+        private void BtnPrzekaska_Click(object sender, EventArgs e){ OtworzOknoDodawania(5); }
+        private void BtnKolacja_Click(object sender, EventArgs e){ OtworzOknoDodawania(6); }
 
         //------------------------------ UKRYJ / POKAŻ PANEL NA KLIKNIĘCIE --------------------------
 

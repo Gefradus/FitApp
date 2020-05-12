@@ -14,3 +14,4 @@ C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormLogowania.reso
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormRejestracji.resources
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormUstawien.resources
 C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormNowyProdukt.resources
+C:\Users\Krzysiek\source\repos\FitApp\FitApp\obj\Debug\FitApp.FormEdytujPosilek.resources

@@ -32,4 +32,36 @@
     <Tluszcze>15.5</Tluszcze>
     <Weglowodany>1</Weglowodany>
   </Produkt>
+  <Produkt>
+    <ProduktId>5</ProduktId>
+    <NazwaProduktu>Arbuz</NazwaProduktu>
+    <Kalorie>30</Kalorie>
+    <Bialko>0.6</Bialko>
+    <Tluszcze>0.2</Tluszcze>
+    <Weglowodany>8</Weglowodany>
+  </Produkt>
+  <Produkt>
+    <ProduktId>6</ProduktId>
+    <NazwaProduktu>Hamburger</NazwaProduktu>
+    <Kalorie>900</Kalorie>
+    <Bialko>100</Bialko>
+    <Tluszcze>100</Tluszcze>
+    <Weglowodany>100</Weglowodany>
+  </Produkt>
+  <Produkt>
+    <ProduktId>7</ProduktId>
+    <NazwaProduktu>DDDDDDDDDDDDDDD</NazwaProduktu>
+    <Kalorie>900</Kalorie>
+    <Bialko>100</Bialko>
+    <Tluszcze>100</Tluszcze>
+    <Weglowodany>100</Weglowodany>
+  </Produkt>
+  <Produkt>
+    <ProduktId>8</ProduktId>
+    <NazwaProduktu>Pomelo</NazwaProduktu>
+    <Kalorie>38</Kalorie>
+    <Bialko>0.8</Bialko>
+    <Tluszcze>0</Tluszcze>
+    <Weglowodany>10</Weglowodany>
+  </Produkt>
 </ArrayOfProdukt>

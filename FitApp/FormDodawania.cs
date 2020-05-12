@@ -62,7 +62,6 @@ namespace FitApp
         }
 
 
-
         private void TxtBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string wyszukiwanaFraza = txtBoxSearch.Text;

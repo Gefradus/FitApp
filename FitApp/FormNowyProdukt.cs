@@ -25,17 +25,9 @@ namespace FitApp
             InitializeComponent();
         }
 
-        private void Form_Closing(object sender1, FormClosingEventArgs e1)
+        private void Form_Closing(object sender, FormClosingEventArgs e)
         {
-            Hide();
-            FormDodawania form = new FormDodawania()
-            {
-                DzienID = DzienID,
-                WKtorym = WKtorym
-            };
-
-            form.FormClosing += new FormClosingEventHandler((sender, e) => form.ZamknijForme());
-            form.Show();
+            Powrot();
         }
 
         private void BtnAddProduct_Click(object sender, EventArgs e)
@@ -83,6 +75,7 @@ namespace FitApp
                     });
 
                     _context.ZapiszProdukty(produkty);
+                    Powrot();
                 }
                 else
                 {
@@ -100,6 +93,20 @@ namespace FitApp
                 }
             }
         }
+
+        private void Powrot()
+        {
+            Hide();
+            FormDodawania form = new FormDodawania()
+            {
+                DzienID = DzienID,
+                WKtorym = WKtorym
+            };
+
+            form.FormClosing += new FormClosingEventHandler((sender, e) => form.ZamknijForme());
+            form.Show();
+        }
+
 
         private bool CzyNiePodano()
         {

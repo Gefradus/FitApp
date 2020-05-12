@@ -80,5 +80,15 @@ namespace FitApp
             TextBox textBox = (TextBox)sender;
             textBox.Text = UsunBialeZnakiZeStringa(textBox.Text);
         }
+
+        public static void PodajLiczbeTextBox(TextBox textBox, KeyPressEventArgs e) 
+        {
+            if ((!int.TryParse(e.KeyChar + "", out _) || (textBox.Text.Length == 0 || textBox.Text.Length > 3) && e.KeyChar == '0') && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

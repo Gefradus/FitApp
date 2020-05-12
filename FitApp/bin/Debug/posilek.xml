@@ -91,4 +91,25 @@
     <DzienId>6</DzienId>
     <ProduktId>2</ProduktId>
   </Posilek>
+  <Posilek>
+    <PosilekId>22</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>125</Gramatura>
+    <DzienId>11</DzienId>
+    <ProduktId>5</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>23</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>350</Gramatura>
+    <DzienId>13</DzienId>
+    <ProduktId>8</ProduktId>
+  </Posilek>
+  <Posilek>
+    <PosilekId>24</PosilekId>
+    <WKtorym>1</WKtorym>
+    <Gramatura>75</Gramatura>
+    <DzienId>11</DzienId>
+    <ProduktId>8</ProduktId>
+  </Posilek>
 </ArrayOfPosilek>

@@ -876,7 +876,7 @@
             this.btnSniadanie.Size = new System.Drawing.Size(43, 40);
             this.btnSniadanie.TabIndex = 10;
             this.btnSniadanie.UseVisualStyleBackColor = false;
-            this.btnSniadanie.Click += new System.EventHandler(this.btnSniadanie_Click);
+            this.btnSniadanie.Click += new System.EventHandler(this.BtnSniadanie_Click);
             // 
             // btn2Sniad
             // 
@@ -895,7 +895,7 @@
             this.btn2Sniad.Size = new System.Drawing.Size(43, 40);
             this.btn2Sniad.TabIndex = 10;
             this.btn2Sniad.UseVisualStyleBackColor = false;
-            this.btn2Sniad.Click += new System.EventHandler(this.btn2Sniad_Click);
+            this.btn2Sniad.Click += new System.EventHandler(this.Btn2Sniad_Click);
             // 
             // btnObiad
             // 
@@ -914,7 +914,7 @@
             this.btnObiad.Size = new System.Drawing.Size(43, 40);
             this.btnObiad.TabIndex = 10;
             this.btnObiad.UseVisualStyleBackColor = false;
-            this.btnObiad.Click += new System.EventHandler(this.btnObiad_Click);
+            this.btnObiad.Click += new System.EventHandler(this.BtnObiad_Click);
             // 
             // btnDeser
             // 
@@ -933,7 +933,7 @@
             this.btnDeser.Size = new System.Drawing.Size(43, 40);
             this.btnDeser.TabIndex = 10;
             this.btnDeser.UseVisualStyleBackColor = false;
-            this.btnDeser.Click += new System.EventHandler(this.btnDeser_Click);
+            this.btnDeser.Click += new System.EventHandler(this.BtnDeser_Click);
             // 
             // btnPrzekaska
             // 
@@ -952,7 +952,7 @@
             this.btnPrzekaska.Size = new System.Drawing.Size(43, 40);
             this.btnPrzekaska.TabIndex = 10;
             this.btnPrzekaska.UseVisualStyleBackColor = false;
-            this.btnPrzekaska.Click += new System.EventHandler(this.btnPrzekaska_Click);
+            this.btnPrzekaska.Click += new System.EventHandler(this.BtnPrzekaska_Click);
             // 
             // btnKolacja
             // 
@@ -972,7 +972,7 @@
             this.btnKolacja.Size = new System.Drawing.Size(43, 40);
             this.btnKolacja.TabIndex = 10;
             this.btnKolacja.UseVisualStyleBackColor = false;
-            this.btnKolacja.Click += new System.EventHandler(this.btnKolacja_Click);
+            this.btnKolacja.Click += new System.EventHandler(this.BtnKolacja_Click);
             // 
             // Form1
             // 
