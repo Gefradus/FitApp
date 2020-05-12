@@ -90,10 +90,11 @@
             // 
             this.txtWaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtWaga.Location = new System.Drawing.Point(155, 202);
-            this.txtWaga.MaxLength = 4;
+            this.txtWaga.MaxLength = 5;
             this.txtWaga.Name = "txtWaga";
             this.txtWaga.Size = new System.Drawing.Size(170, 26);
             this.txtWaga.TabIndex = 8;
+            this.txtWaga.TextChanged += new System.EventHandler(this.TxtWaga_TextChanged);
             // 
             // label2
             // 
@@ -113,6 +114,7 @@
             this.txtWzrost.Name = "txtWzrost";
             this.txtWzrost.Size = new System.Drawing.Size(171, 26);
             this.txtWzrost.TabIndex = 10;
+            this.txtWzrost.TextChanged += new System.EventHandler(this.TxtWzrost_TextChanged);
             // 
             // label3
             // 
@@ -310,7 +312,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormUstawien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FitApp - Ustawienia";
+            this.Text = "FitnessApp - ustawienia";
             this.Load += new System.EventHandler(this.FormUstawien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

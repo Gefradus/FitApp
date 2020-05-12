@@ -160,7 +160,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormLogowania";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FitApp - logowanie";
+            this.Text = "FitnessApp - logowanie";
             this.Load += new System.EventHandler(this.FormLogowania_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

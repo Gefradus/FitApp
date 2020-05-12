@@ -35,7 +35,7 @@ namespace FitApp
             if (WKtorym == 5) { NazwaPosilku.Text = "Przekąska"; }
             if (WKtorym == 6) { NazwaPosilku.Text = "Kolacja"; }
 
-            NazwaPosilku.Margin = new Padding((panelGorny.Width - NazwaPosilku.Width)/2,5,0,0);
+            NazwaPosilku.Location = new Point((panelGorny.Width - NazwaPosilku.Width) / 2, 5);
         }
 
         private void NazwaDniaNapisz()
@@ -58,12 +58,12 @@ namespace FitApp
                 lblDzien.Text = dzien.Day + " " + miesiac;
             }
 
-            lblDzien.Margin = new Padding((panelGorny.Width - lblDzien.Width) / 2, 5, 0, 0);
+            lblDzien.Location = new Point((panelGorny.Width - lblDzien.Width) / 2, 40);
         }
 
 
 
-        private void txtBoxSearch_TextChanged(object sender, EventArgs e)
+        private void TxtBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string wyszukiwanaFraza = txtBoxSearch.Text;
 
@@ -155,6 +155,17 @@ namespace FitApp
             using (SolidBrush brush = new SolidBrush(BackColor))
                 e.Graphics.FillRectangle(brush, ClientRectangle);
             e.Graphics.DrawRectangle(Pens.Gray, 0, 0, Border.Width, 1);
+        }
+
+        private void BtnAddProduct_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FormNowyProdukt(DzienID, WKtorym).Show();
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            ZamknijForme();
         }
     }
 }

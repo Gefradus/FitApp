@@ -5,16 +5,16 @@
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>2749</CelKalorii>
-    <CelBialko>76</CelBialko>
-    <CelWegle>411</CelWegle>
-    <CelTluszcze>105</CelTluszcze>
+    <CelKalorii>3253</CelKalorii>
+    <CelBialko>90</CelBialko>
+    <CelWegle>460</CelWegle>
+    <CelTluszcze>150</CelTluszcze>
     <CelZmianWagi>2</CelZmianWagi>
     <DataUrodzenia>1998-12-03T00:39:33</DataUrodzenia>
     <TempoZmian>0.3</TempoZmian>
     <Plec>true</Plec>
-    <Wzrost>190</Wzrost>
-    <Waga>70</Waga>
+    <Wzrost>175</Wzrost>
+    <Waga>100</Waga>
   </Klient>
   <Klient>
     <KlientID>3</KlientID>

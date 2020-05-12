@@ -20,7 +20,7 @@ namespace FitApp
             ControlsSetter(txtBoxSearch, panelGlowny, panelGorny, panelSearch, NazwaPosilku, btnHidden);
             LostFocusWhenClickOutside();
             txtBoxSearch.Text = "Szukaj produktu";
-            txtBoxSearch.ForeColor = System.Drawing.Color.Gray;
+            txtBoxSearch.ForeColor = Color.Gray;
             txtBoxSearch.GotFocus += new EventHandler(RemoveText);
             txtBoxSearch.LostFocus += new EventHandler(AddText);
         }
@@ -67,6 +67,29 @@ namespace FitApp
             }   
         }
 
+
+        public void RysujLubZresetuj(bool coZle, TextBox txt, PaintEventArgs e)
+        {
+            if (coZle)
+            {
+                RysujRamke(txt, e);
+            }
+            else
+            {
+                txt.BorderStyle = BorderStyle.FixedSingle;
+            }
+        }
+
+        public void RysujRamke(TextBox txt, PaintEventArgs e)
+        {
+            txt.BorderStyle = BorderStyle.None;
+            Pen p = new Pen(Color.Red);
+            Graphics g = e.Graphics;
+            int variance = 2;
+            g.DrawRectangle(p, new Rectangle(txt.Location.X - variance, txt.Location.Y - variance,
+                txt.Width + variance, txt.Height + variance));
+        }
+
         public void UsunHorizontallScroll(Panel panel)
         {
             panel.HorizontalScroll.Maximum = 0;
@@ -74,7 +97,6 @@ namespace FitApp
             panel.VerticalScroll.Visible = false;
             panel.AutoScroll = true;
         }
-
 
         public void WysrodkujLabelGorny(Panel panel, Label label)
         {

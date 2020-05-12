@@ -14,6 +14,7 @@ namespace FitApp
     public partial class FormPodajIlosc : Form
     {
         private readonly ModelXML _context = new ModelXML();
+        private readonly Walidacja walidacja = new Walidacja();
         public int ProduktID { get; set; }
         public int WKtorym { get; set; }
         public int DzienID { get; set; }
@@ -38,7 +39,7 @@ namespace FitApp
             }
         }
 
-        private void btnDodaj_Click(object sender, EventArgs e)
+        private void BtnDodaj_Click(object sender, EventArgs e)
         {
             int dodawanyProduktID = 0;
 
@@ -103,39 +104,12 @@ namespace FitApp
             form.Show();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TxtBoxPodajIlosc_TextChanged(object sender, EventArgs e)
         {
-            WalidacjaTextBoxa();
+            walidacja.WalidacjaTextBoxa(textBox1, 4, false, 9999);
             WyswietlKcalIMakro();
         }
 
-        private void WalidacjaTextBoxa()
-        {
-            char[] text = textBox1.Text.ToCharArray();
-            List<char> textPoWalidacji = new List<char>();
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (int.TryParse(text[i] + "", out _))
-                {
-                    textPoWalidacji.Add(text[i]);
-                }
-            }
-
-            string textPoWal = "";
-            int ileWypisano = 0;
-            foreach (var znak in textPoWalidacji)
-            {
-                textPoWal += znak;
-                ileWypisano++;
-                if (ileWypisano >= 4)
-                {
-                    break;
-                }
-            }
-
-            textBox1.Text = textPoWal;
-        }
 
         private void WyswietlKcalIMakro()
         {

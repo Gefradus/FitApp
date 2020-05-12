@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FitApp
 {
     public partial class FormRejestracji : Form
     {
+        private readonly Style style;
         private readonly ModelXML _context;
-        bool czyLoginZly = false;
-        bool czyHasloZle = false;
-        bool czyPotwierdzZle = false;
+        private bool czyLoginZly = false;
+        private bool czyHasloZle = false;
+        private bool czyPotwierdzZle = false;
 
         public FormRejestracji()
         {
+            style = new Style();
             _context = new ModelXML();
             InitializeComponent();
             FormClosing += new FormClosingEventHandler((sender, e) => Frm_FormClosing());
@@ -31,10 +28,9 @@ namespace FitApp
             new FormLogowania().Show();
         }
 
-
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            JesliPodanoZle();
+            JesliNiePodano();
             Zarejestruj();
         }
 
@@ -83,7 +79,6 @@ namespace FitApp
                 {
                     DodajKlienta();
                 }
-
             }
             else
             {
@@ -107,80 +102,34 @@ namespace FitApp
 
             _context.ZapiszKlientow(klienci);
             MessageBox.Show("Pomyślna rejestracja.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             Hide();
-
             FormUstawien formUstawien = new FormUstawien(klientID, _context.DajDzisiajID(klientID), true);
             formUstawien.Show();
         }
 
 
-        private void JesliPodanoZle()
+        private void JesliNiePodano()
         {
             if (string.IsNullOrEmpty(txtLogin.Text) || string.IsNullOrWhiteSpace(txtLogin.Text))
-            {
-                lblLogin.ForeColor = Color.Red;
-                czyLoginZly = true;
-            }
-            else
-            {
-                czyLoginZly = false;
-                lblLogin.ForeColor = Color.White;
-            }
+                 { lblLogin.ForeColor = Color.Red; czyLoginZly = true; }
+            else { lblLogin.ForeColor = Color.White; czyLoginZly = false; }
 
             if (string.IsNullOrEmpty(txtPass1.Text) || string.IsNullOrWhiteSpace(txtPass1.Text))
-            {
-                lblHaslo.ForeColor = Color.Red;
-                czyHasloZle = true;
-            }
-            else
-            {
-                lblHaslo.ForeColor = Color.White;
-                czyHasloZle = false;
-            }
+                 { lblHaslo.ForeColor = Color.Red; czyHasloZle = true; }
+            else { lblHaslo.ForeColor = Color.White; czyHasloZle = false; }
 
             if (string.IsNullOrEmpty(txtPass2.Text) || string.IsNullOrWhiteSpace(txtPass2.Text))
-            {
-                lblPotwierdz.ForeColor = Color.Red;
-                czyPotwierdzZle = true;
-
-            }
-            else
-            {
-                lblPotwierdz.ForeColor = Color.White;
-                czyPotwierdzZle = false;
-            }
+                 { lblPotwierdz.ForeColor = Color.Red; czyPotwierdzZle = true; }
+            else { lblPotwierdz.ForeColor = Color.White; czyPotwierdzZle = false; }
 
             Refresh();
         }
 
         private void Form1_Paint(PaintEventArgs e)
         {
-            RysujLubZresetuj(czyHasloZle, txtPass1, e);
-            RysujLubZresetuj(czyPotwierdzZle, txtPass2, e);
-            RysujLubZresetuj(czyLoginZly, txtLogin, e);
-        }
-
-        private void RysujLubZresetuj(bool coZle, TextBox txt, PaintEventArgs e)
-        {
-            if (coZle)
-            {
-                RysujRamke(txt, e);
-            }
-            else
-            {
-                txt.BorderStyle = BorderStyle.FixedSingle;
-            }
-        }
-
-        private void RysujRamke(TextBox txt, PaintEventArgs e)
-        {
-            txt.BorderStyle = BorderStyle.None;
-            Pen p = new Pen(Color.Red);
-            Graphics g = e.Graphics;
-            int variance = 2;
-            g.DrawRectangle(p, new Rectangle(txt.Location.X - variance, txt.Location.Y - variance,
-                txt.Width + variance, txt.Height + variance));
+            style.RysujLubZresetuj(czyHasloZle, txtPass1, e);
+            style.RysujLubZresetuj(czyPotwierdzZle, txtPass2, e);
+            style.RysujLubZresetuj(czyLoginZly, txtLogin, e);
         }
 
     }

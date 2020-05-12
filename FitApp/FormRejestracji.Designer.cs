@@ -66,12 +66,12 @@
             // 
             // txtPass2
             // 
-            this.txtPass2.MaxLength = 15;
-            this.txtPass2.PasswordChar = '*';
             this.txtPass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPass2.Location = new System.Drawing.Point(176, 244);
             this.txtPass2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass2.MaxLength = 15;
             this.txtPass2.Name = "txtPass2";
+            this.txtPass2.PasswordChar = '*';
             this.txtPass2.Size = new System.Drawing.Size(249, 30);
             this.txtPass2.TabIndex = 13;
             // 
@@ -113,21 +113,21 @@
             // 
             // txtPass1
             // 
-            this.txtPass1.MaxLength = 15;
-            this.txtPass1.PasswordChar = '*';
             this.txtPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPass1.Location = new System.Drawing.Point(176, 181);
             this.txtPass1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass1.MaxLength = 15;
             this.txtPass1.Name = "txtPass1";
+            this.txtPass1.PasswordChar = '*';
             this.txtPass1.Size = new System.Drawing.Size(249, 30);
             this.txtPass1.TabIndex = 9;
             // 
             // txtLogin
             // 
-            this.txtLogin.MaxLength = 15;
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtLogin.Location = new System.Drawing.Point(176, 118);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLogin.MaxLength = 15;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(249, 30);
             this.txtLogin.TabIndex = 8;
@@ -149,7 +149,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormRejestracji";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FitApp - załóż konto";
+            this.Text = "FitnessApp - załóż konto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

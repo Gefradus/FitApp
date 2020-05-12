@@ -6,6 +6,7 @@ namespace FitApp
 {
     public partial class FormUstawien : Form
     {
+        private readonly Walidacja walidacja;
         private readonly ModelXML _context;
         public int KlientID { get; set; }
         public int DzienID { get; set; }
@@ -13,6 +14,7 @@ namespace FitApp
 
         public FormUstawien(int klientID, int dzienID, bool czyPierwsze)
         {
+            walidacja = new Walidacja();
             _context = new ModelXML();
             UstawSettery(klientID, dzienID, czyPierwsze);
             InitializeComponent();
@@ -204,6 +206,16 @@ namespace FitApp
         private void RbtnUtrzymanie_CheckedChanged(object sender, EventArgs e)
         {
             txtTempo.Enabled = !rbtnUtrzymanie.Checked;
+        }
+
+        private void TxtWaga_TextChanged(object sender, EventArgs e)
+        {
+            walidacja.WalidacjaTextBoxa(txtWaga, 4, true, 600);
+        }
+
+        private void TxtWzrost_TextChanged(object sender, EventArgs e)
+        {
+            walidacja.WalidacjaTextBoxa(txtWzrost, 3, true, 300);
         }
     }
 }

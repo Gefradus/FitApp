@@ -30,14 +30,15 @@
         {
             this.NazwaPosilku = new System.Windows.Forms.Label();
             this.panelGlowny = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelGorny = new System.Windows.Forms.TableLayoutPanel();
+            this.panelGorny = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.lblDzien = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
             this.btnHidden = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.Border = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelGorny.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.SuspendLayout();
@@ -64,15 +65,30 @@
             // 
             // panelGorny
             // 
-            this.panelGorny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 589F));
-            this.panelGorny.Controls.Add(this.NazwaPosilku, 0, 0);
-            this.panelGorny.Controls.Add(this.lblDzien, 0, 1);
+            this.panelGorny.AutoSize = true;
+            this.panelGorny.Controls.Add(this.button2);
+            this.panelGorny.Controls.Add(this.NazwaPosilku);
+            this.panelGorny.Controls.Add(this.lblDzien);
             this.panelGorny.Location = new System.Drawing.Point(0, 0);
             this.panelGorny.Name = "panelGorny";
-            this.panelGorny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.panelGorny.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.panelGorny.Size = new System.Drawing.Size(589, 78);
             this.panelGorny.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::FitApp.Properties.Resources.back;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(18, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 51);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // lblDzien
             // 
@@ -103,7 +119,7 @@
             this.txtBoxSearch.Name = "txtBoxSearch";
             this.txtBoxSearch.Size = new System.Drawing.Size(378, 30);
             this.txtBoxSearch.TabIndex = 1;
-            this.txtBoxSearch.TextChanged += new System.EventHandler(this.txtBoxSearch_TextChanged);
+            this.txtBoxSearch.TextChanged += new System.EventHandler(this.TxtBoxSearch_TextChanged);
             // 
             // btnHidden
             // 
@@ -124,6 +140,15 @@
             this.label2.Size = new System.Drawing.Size(210, 42);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dodaj nowy produkt";
+            this.label2.Click += new System.EventHandler(this.BtnAddProduct_Click);
+            // 
+            // Border
+            // 
+            this.Border.Location = new System.Drawing.Point(0, 584);
+            this.Border.Name = "Border";
+            this.Border.Size = new System.Drawing.Size(589, 1);
+            this.Border.TabIndex = 0;
+            this.Border.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBorder);
             // 
             // button1
             // 
@@ -138,14 +163,7 @@
             this.button1.Size = new System.Drawing.Size(42, 42);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Border
-            // 
-            this.Border.Location = new System.Drawing.Point(0, 584);
-            this.Border.Name = "Border";
-            this.Border.Size = new System.Drawing.Size(589, 1);
-            this.Border.TabIndex = 0;
-            this.Border.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBorder);
+            this.button1.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
             // FormDodawania
             // 
@@ -160,13 +178,15 @@
             this.Controls.Add(this.panelGlowny);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDodawania";
-            this.Text = "FItApp - Dodaj posiłek";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FItApp - dodaj posiłek";
             this.Load += new System.EventHandler(this.FormDodawania_Load);
             this.panelGorny.ResumeLayout(false);
             this.panelGorny.PerformLayout();
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -174,7 +194,7 @@
 
         private System.Windows.Forms.Label NazwaPosilku;
         private System.Windows.Forms.FlowLayoutPanel panelGlowny;
-        private System.Windows.Forms.TableLayoutPanel panelGorny;
+        private System.Windows.Forms.Panel panelGorny;
         private System.Windows.Forms.FlowLayoutPanel panelSearch;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.Button btnHidden;
@@ -182,5 +202,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Border;
+        private System.Windows.Forms.Button button2;
     }
 }
