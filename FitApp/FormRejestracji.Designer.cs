@@ -1,4 +1,6 @@
-﻿namespace FitApp
+﻿using System;
+
+namespace FitApp
 {
     partial class FormRejestracji
     {
@@ -74,6 +76,7 @@
             this.txtPass2.PasswordChar = '*';
             this.txtPass2.Size = new System.Drawing.Size(249, 30);
             this.txtPass2.TabIndex = 13;
+            this.txtPass2.TextChanged += new System.EventHandler(this.NiePozwalajNaBialeZnaki);
             // 
             // lblHaslo
             // 
@@ -121,6 +124,7 @@
             this.txtPass1.PasswordChar = '*';
             this.txtPass1.Size = new System.Drawing.Size(249, 30);
             this.txtPass1.TabIndex = 9;
+            this.txtPass1.TextChanged += new System.EventHandler(this.NiePozwalajNaBialeZnaki);
             // 
             // txtLogin
             // 
@@ -131,6 +135,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(249, 30);
             this.txtLogin.TabIndex = 8;
+            this.txtLogin.TextChanged += new System.EventHandler(this.NiePozwalajNaBialeZnaki);
             // 
             // FormRejestracji
             // 
@@ -154,6 +159,8 @@
             this.PerformLayout();
 
         }
+
+        
 
         #endregion
 

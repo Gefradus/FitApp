@@ -109,5 +109,16 @@ namespace FitApp
             Hide();
             new FormRejestracji().Show();
         }
+
+        private void NiePozwalajNaBialeZnaki(object sender, EventArgs e)
+        {
+            Walidacja.NiePozwalajNaBialeZnaki(sender);
+        }
+
+        private void CmbBoxLoginUsunBialeZnaki(object sender, EventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            comboBox.Text = Walidacja.UsunBialeZnakiZeStringa(comboBox.Text);
+        }
     }
 }

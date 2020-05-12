@@ -173,7 +173,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FitnessApp - dodawanie produktu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
-            this.Load += new System.EventHandler(this.FormNowyProdukt_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();

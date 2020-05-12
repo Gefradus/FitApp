@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -17,14 +18,12 @@ namespace FitApp
         public int DzienID { get; set; }
         public int WKtorym { get; set; }
 
-
         public FormNowyProdukt(int dzienID, int wKtorym)
         {
             DzienID = dzienID;
             WKtorym = wKtorym;
             InitializeComponent();
         }
-
 
         private void Form_Closing(object sender1, FormClosingEventArgs e1)
         {
@@ -36,43 +35,77 @@ namespace FitApp
             };
 
             form.FormClosing += new FormClosingEventHandler((sender, e) => form.ZamknijForme());
-
             form.Show();
         }
 
         private void BtnAddProduct_Click(object sender, EventArgs e)
         {
             JesliNiePodano();
+            DodajProdukt();
         }
 
         private void JesliNiePodano()
         {
-            if (string.IsNullOrEmpty(txtKcal.Text) || string.IsNullOrWhiteSpace(txtKcal.Text))
-                 { lblKcal.ForeColor = Color.Red; CzyKcalZle = true; }
+            if (string.IsNullOrWhiteSpace(txtKcal.Text)) { lblKcal.ForeColor = Color.Red; CzyKcalZle = true; }
             else { lblKcal.ForeColor = Color.Black; CzyKcalZle = false;  }
 
-            if (string.IsNullOrEmpty(txtBialko.Text) || string.IsNullOrWhiteSpace(txtBialko.Text))
-                 { lblBialko.ForeColor = Color.Red; CzyBialkoZle = true; }
+            if (string.IsNullOrWhiteSpace(txtBialko.Text)) { lblBialko.ForeColor = Color.Red; CzyBialkoZle = true; }
             else { lblBialko.ForeColor = Color.Black; CzyBialkoZle = false; }
 
-            if (string.IsNullOrEmpty(txtWegl.Text) || string.IsNullOrWhiteSpace(txtWegl.Text))
-                 { lblWegle.ForeColor = Color.Red; CzyWegleZle = true; }
+            if (string.IsNullOrWhiteSpace(txtWegl.Text)) { lblWegle.ForeColor = Color.Red; CzyWegleZle = true; }
             else { lblWegle.ForeColor = Color.Black; CzyWegleZle = false; }
 
-            if (string.IsNullOrEmpty(txtTluszcz.Text) || string.IsNullOrWhiteSpace(txtTluszcz.Text))
-                 { lblTluszcze.ForeColor = Color.Red; CzyTluszczeZle = true; }
+            if (string.IsNullOrWhiteSpace(txtTluszcz.Text)) { lblTluszcze.ForeColor = Color.Red; CzyTluszczeZle = true; }
             else { lblTluszcze.ForeColor = Color.Black; CzyTluszczeZle = false; }
 
-            if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrWhiteSpace(txtNazwa.Text))
-                 { lblNazwa.ForeColor = Color.Red; CzyNazwaZle = true; }
+            if (string.IsNullOrWhiteSpace(txtNazwa.Text)) { lblNazwa.ForeColor = Color.Red; CzyNazwaZle = true; }
             else { lblNazwa.ForeColor = Color.Black; CzyNazwaZle = false; }
 
             Refresh();
         }
 
-        private void FormNowyProdukt_Load(object sender, EventArgs e)
+        private void DodajProdukt()
         {
+            try
+            {
+                string nazwaBezBialychZnakow = Walidacja.UsunBialeZnakiZeStringa(txtNazwa.Text);
+                if (nazwaBezBialychZnakow.Length >= 3)
+                {
+                    List<Produkt> produkty = _context.Produkty();
+                    produkty.Add(new Produkt()
+                    {
+                        ProduktId = _context.AutoIncrementProdukty(produkty),
+                        NazwaProduktu = nazwaBezBialychZnakow,
+                        Kalorie = int.Parse(txtKcal.Text),
+                        Bialko = double.Parse(txtBialko.Text),
+                        Tluszcze = double.Parse(txtTluszcz.Text),
+                        Weglowodany = double.Parse(txtWegl.Text)
+                    });
 
+                    _context.ZapiszProdukty(produkty);
+                }
+                else
+                {
+                    if (!CzyNiePodano())
+                    {
+                        MessageBox.Show("Nazwa produktu musi liczyć co najmniej 3 znaki!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtNazwa.Text = nazwaBezBialychZnakow;
+                    }
+                }
+            }
+            catch
+            {
+                if(!CzyNiePodano()){
+                    MessageBox.Show("Błędnie podane dane!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private bool CzyNiePodano()
+        {
+            return string.IsNullOrWhiteSpace(txtKcal.Text) || string.IsNullOrWhiteSpace(txtBialko.Text)  ||
+                   string.IsNullOrWhiteSpace(txtWegl.Text) || string.IsNullOrWhiteSpace(txtTluszcz.Text) ||
+                   string.IsNullOrWhiteSpace(txtNazwa.Text);
         }
 
         private void Form_Paint(object sender, PaintEventArgs e)

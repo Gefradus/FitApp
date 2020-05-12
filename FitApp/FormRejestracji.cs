@@ -110,16 +110,13 @@ namespace FitApp
 
         private void JesliNiePodano()
         {
-            if (string.IsNullOrEmpty(txtLogin.Text) || string.IsNullOrWhiteSpace(txtLogin.Text))
-                 { lblLogin.ForeColor = Color.Red; czyLoginZly = true; }
+            if (string.IsNullOrWhiteSpace(txtLogin.Text)) { lblLogin.ForeColor = Color.Red; czyLoginZly = true; }
             else { lblLogin.ForeColor = Color.White; czyLoginZly = false; }
 
-            if (string.IsNullOrEmpty(txtPass1.Text) || string.IsNullOrWhiteSpace(txtPass1.Text))
-                 { lblHaslo.ForeColor = Color.Red; czyHasloZle = true; }
+            if (string.IsNullOrWhiteSpace(txtPass1.Text)) { lblHaslo.ForeColor = Color.Red; czyHasloZle = true; }
             else { lblHaslo.ForeColor = Color.White; czyHasloZle = false; }
 
-            if (string.IsNullOrEmpty(txtPass2.Text) || string.IsNullOrWhiteSpace(txtPass2.Text))
-                 { lblPotwierdz.ForeColor = Color.Red; czyPotwierdzZle = true; }
+            if (string.IsNullOrWhiteSpace(txtPass2.Text)) { lblPotwierdz.ForeColor = Color.Red; czyPotwierdzZle = true; }
             else { lblPotwierdz.ForeColor = Color.White; czyPotwierdzZle = false; }
 
             Refresh();
@@ -132,5 +129,9 @@ namespace FitApp
             style.RysujLubZresetuj(czyLoginZly, txtLogin, e);
         }
 
+        private void NiePozwalajNaBialeZnaki(object sender, EventArgs e)
+        {
+            Walidacja.NiePozwalajNaBialeZnaki(sender);
+        }
     }
 }

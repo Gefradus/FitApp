@@ -24,4 +24,12 @@
     <Tluszcze>0</Tluszcze>
     <Weglowodany>24</Weglowodany>
   </Produkt>
+  <Produkt>
+    <ProduktId>4</ProduktId>
+    <NazwaProduktu>k</NazwaProduktu>
+    <Kalorie>111</Kalorie>
+    <Bialko>1.1</Bialko>
+    <Tluszcze>15.5</Tluszcze>
+    <Weglowodany>1</Weglowodany>
+  </Produkt>
 </ArrayOfProdukt>

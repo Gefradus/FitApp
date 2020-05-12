@@ -43,7 +43,7 @@ namespace FitApp
             }
             else
             {
-                return (int)zapotrzebowanie;
+                return zapotrzebowanie;
             }
         }
 

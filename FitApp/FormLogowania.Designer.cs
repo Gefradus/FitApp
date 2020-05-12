@@ -47,6 +47,7 @@
             this.cmbLogin.Name = "cmbLogin";
             this.cmbLogin.Size = new System.Drawing.Size(247, 27);
             this.cmbLogin.TabIndex = 0;
+            this.cmbLogin.TextChanged += new System.EventHandler(this.CmbBoxLoginUsunBialeZnaki);
             // 
             // txtHaslo
             // 
@@ -57,6 +58,7 @@
             this.txtHaslo.PasswordChar = '*';
             this.txtHaslo.Size = new System.Drawing.Size(247, 27);
             this.txtHaslo.TabIndex = 1;
+            this.txtHaslo.TextChanged += new System.EventHandler(this.NiePozwalajNaBialeZnaki);
             // 
             // label1
             // 

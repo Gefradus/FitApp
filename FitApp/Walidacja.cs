@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace FitApp
 {
     class Walidacja
     {
-
-        public bool CzyZnakToPrzecinek(char c)
-        {
-            return c.ToString().Contains(',') || c.ToString().Contains('.');
+        public bool CzyZnakToPrzecinek(char c) { 
+            return c.ToString().Contains(',') || c.ToString().Contains('.'); 
         }
 
         public void WalidacjaTextBoxa(TextBox textBox, int maxZnakow, bool czyPrzecinkiDozwolone, int max)
@@ -42,7 +38,6 @@ namespace FitApp
                     textPoWalidacji.Add(text[i]);
                 }
             }
-            
 
             if (czyJestPrzecinek) { maxZnakow += 2; }
 
@@ -65,18 +60,25 @@ namespace FitApp
                 }
             }
 
-            try
-            {
-                if (double.Parse(textPoWal) > max)
-                {
-                    textPoWal = max.ToString();
+            try { 
+                if (double.Parse(textPoWal) > max) { 
+                    textPoWal = max.ToString(); 
                 }
-            }
+            } 
             catch {}
 
             textBox.Text = textPoWal;
-
         }
 
+        public static string UsunBialeZnakiZeStringa(string s)
+        {
+            return Regex.Replace(s, @"\s+", "");
+        }
+
+        public static void NiePozwalajNaBialeZnaki(object sender)
+        {
+            TextBox textBox = (TextBox)sender;
+            textBox.Text = UsunBialeZnakiZeStringa(textBox.Text);
+        }
     }
 }
