@@ -33,7 +33,7 @@ namespace FitApp
 
         }
 
-        private void OnLoad()
+        public void OnLoad()
         {
             _context.CreateXMLIfNotExists();
             DodajDzisiajJesliNieMa();
@@ -224,11 +224,7 @@ namespace FitApp
                 Text = prod.NazwaProduktu + ", " + gram + "g", 
                 Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point)
             };
-            LinkLabel linkEdytuj = new LinkLabel
-            {
-                Text = "Edytuj",
-                Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point)
-            };
+
             Label lblParametry = new Label
             {
                 AutoSize = true,
@@ -237,7 +233,17 @@ namespace FitApp
                 Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point),
                 Location = new Point(0, 30)
             };
-            
+
+            Button btnEdytuj = new Button()
+            {
+                Size = new Size(60, 27),
+                Location = new Point(270, 12),
+                Text = "Edytuj",
+                Font = new Font("Arial", 9.5F, GraphicsUnit.Point),
+                BackColor = Color.Gray,
+                ForeColor = Color.White
+            };
+
             Button btnDelete = new Button()
             {
                 Size = new Size(27, 27),
@@ -248,18 +254,24 @@ namespace FitApp
                 ForeColor = Color.White
             };
 
-            linkEdytuj.Click += new EventHandler((sender, e) => EdytujPosilek(sender, posilekID));
+            btnEdytuj.Click += new EventHandler((sender, e) => EdytujPosilek(posilekID));
             btnDelete.Click += new EventHandler((sender, e) => BtnDeleteClick(sender, posilekID));
             panel.Controls.Add(lblParametry);
+            panel.Controls.Add(btnEdytuj);
             panel.Controls.Add(lblNazwaIlosc);
             panel.Controls.Add(btnDelete);
             panelPos.Controls.Add(panel);
         }
 
-        private void EdytujPosilek(object sender, int posilekID)
+        private void EdytujPosilek(int posilekID)
         {
-            Posilek posilek = _context.DajPosilek(posilekID);
+            FormEdytujPosilek formEdytuj = new FormEdytujPosilek { 
+                PosilekID = posilekID, 
+                Form1 = this
+            };
+            formEdytuj.ShowDialog(this);
         }
+
 
         private void ResetPosilkow()
         {

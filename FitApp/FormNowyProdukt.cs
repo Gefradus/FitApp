@@ -63,19 +63,26 @@ namespace FitApp
                 string nazwaBezBialychZnakow = Walidacja.UsunBialeZnakiZeStringa(txtNazwa.Text);
                 if (nazwaBezBialychZnakow.Length >= 3)
                 {
-                    List<Produkt> produkty = _context.Produkty();
-                    produkty.Add(new Produkt()
+                    if (CzySumaMakroNieWiekszaNiz100g())
                     {
-                        ProduktId = _context.AutoIncrementProdukty(produkty),
-                        NazwaProduktu = nazwaBezBialychZnakow,
-                        Kalorie = int.Parse(txtKcal.Text),
-                        Bialko = double.Parse(txtBialko.Text),
-                        Tluszcze = double.Parse(txtTluszcz.Text),
-                        Weglowodany = double.Parse(txtWegl.Text)
-                    });
+                        List<Produkt> produkty = _context.Produkty();
+                        produkty.Add(new Produkt()
+                        {
+                            ProduktId = _context.AutoIncrementProdukty(produkty),
+                            NazwaProduktu = nazwaBezBialychZnakow,
+                            Kalorie = int.Parse(txtKcal.Text),
+                            Bialko = double.Parse(txtBialko.Text),
+                            Tluszcze = double.Parse(txtTluszcz.Text),
+                            Weglowodany = double.Parse(txtWegl.Text)
+                        });
 
-                    _context.ZapiszProdukty(produkty);
-                    Powrot();
+                        _context.ZapiszProdukty(produkty);
+                        Powrot();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Suma tłuszczów, węglowodanów i białka przekracza 100g", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -94,6 +101,11 @@ namespace FitApp
             }
         }
 
+        private bool CzySumaMakroNieWiekszaNiz100g()
+        {
+            return (double.Parse(txtBialko.Text) + double.Parse(txtTluszcz.Text) + double.Parse(txtWegl.Text)) <= 100;
+        }
+
         private void Powrot()
         {
             Hide();
@@ -106,7 +118,6 @@ namespace FitApp
             form.FormClosing += new FormClosingEventHandler((sender, e) => form.ZamknijForme());
             form.Show();
         }
-
 
         private bool CzyNiePodano()
         {

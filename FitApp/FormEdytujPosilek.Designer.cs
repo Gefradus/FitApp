@@ -67,6 +67,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(101, 26);
             this.textBox1.TabIndex = 10;
+            this.textBox1.TextChanged += new System.EventHandler(this.PodajLiczbeTextBox_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PodajLiczbeTextBox_KeyPress);
             // 
             // label1
             // 
@@ -90,6 +92,7 @@
             this.btnDodaj.TabIndex = 8;
             this.btnDodaj.Text = "Zapisz";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.BtnEdytuj_Click);
             // 
             // lblKcal
             // 
@@ -131,8 +134,11 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.lblMakro);
             this.Controls.Add(this.panelParametrow);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormEdytujPosilek";
-            this.Text = "FormEdytujProdukt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edycja posiłku";
+            this.Load += new System.EventHandler(this.FormEdytujPosilek_Load);
             this.panelParametrow.ResumeLayout(false);
             this.panelParametrow.PerformLayout();
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace FitApp
 {
@@ -95,6 +96,24 @@ namespace FitApp
             int age = DateTime.Today.Year - dataUrodzenia.Year;
             if (dataUrodzenia.Date > DateTime.Today.AddYears(-age)) age--;
             return age;
+        }
+
+        public void WyswietlKcalIMakro(Label lblKcal, Label lblMakro, TextBox textBox, int produktID, ModelXML _context)
+        {
+            int kalorie = 0, bialko = 0, wegle = 0, tluszcze = 0;
+            try
+            {
+                Produkt produkt = _context.DajProdukt(produktID);
+                int podanaIlosc = int.Parse(textBox.Text);
+                kalorie = (produkt.Kalorie * podanaIlosc) / 100;
+                bialko = (int)(produkt.Bialko * podanaIlosc / 100);
+                tluszcze = (int)(produkt.Tluszcze * podanaIlosc / 100);
+                wegle = (int)(produkt.Weglowodany * podanaIlosc / 100);
+            }
+            catch { }
+
+            lblKcal.Text = "Kcal: " + kalorie + " kcal";
+            lblMakro.Text = "B: " + bialko + "g, W: " + wegle + "g, T: " + tluszcze + "g";
         }
     }
 }
