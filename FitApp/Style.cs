@@ -108,17 +108,31 @@ namespace FitApp
             label.Location = new Point((panel.Width - label.Width) / 2, 30);
         }
 
-        public int DlugoscPaska(Panel pasek, double parametr, int cel)
+        public int DlugoscPaska(Panel pasek, double parametr, int cel, Panel panelPostepu, Color kolorDomyslny)
         {
             if (!(cel == 0))
             {
+                if ((parametr / cel) > 1)
+                {
+                    panelPostepu.BackColor = Color.Red;
+                }
+                else
+                {
+                    panelPostepu.BackColor = kolorDomyslny;
+                }
+
                 return (int)(pasek.Width * (parametr / cel));
             }
             else
             {
                 return pasek.Width;
             }
+
+            
+
         }
+
+       
 
     }
 }

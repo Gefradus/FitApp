@@ -126,10 +126,10 @@ namespace FitApp
         private void NarysujPaski(int kcal, double bialko, double wegle, double tluszcze)
         {
             Dzien dzien = _context.DajDzien(DzienID);
-            pnlKcal.Width = style.DlugoscPaska(pasekKcal, kcal, dzien.CelKalorii);
-            pnlBialko.Width = style.DlugoscPaska(pasekBialko, bialko, dzien.CelBialko);
-            pnlWegle.Width = style.DlugoscPaska(pasekWegl, wegle, dzien.CelWegle);
-            pnlTluszcze.Width = style.DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze);
+            pnlKcal.Width = style.DlugoscPaska(pasekKcal, kcal, dzien.CelKalorii, pnlKcal, Color.LimeGreen);
+            pnlBialko.Width = style.DlugoscPaska(pasekBialko, bialko, dzien.CelBialko, pnlBialko, Color.RoyalBlue);
+            pnlWegle.Width = style.DlugoscPaska(pasekWegl, wegle, dzien.CelWegle, pnlWegle, Color.Crimson);
+            pnlTluszcze.Width = style.DlugoscPaska(pasekTluszcze, tluszcze, dzien.CelTluszcze, pnlTluszcze, Color.Gold);
         }
 
         private void ZaladujPosilki()
@@ -384,7 +384,6 @@ namespace FitApp
             };
 
             form1.Show();
-            
         }
 
         //--------------------------------- OTWIERANIE OKNA DODAWANIA --------------------------------
@@ -429,13 +428,11 @@ namespace FitApp
             pnlObecny.BackColor = Color.White;
             pnlNastepny.BackColor = Color.White;
         }
-
         private void MouseHand_Settings(object sender, EventArgs e) { 
             panelUstawien.Cursor = Cursors.Hand;
             panelUstawien.BackColor = Color.GhostWhite;
             btnSettings.BackColor = Color.GhostWhite;
         }
-
         private void MouseLeave_Settings(object sender, EventArgs e)
         {
             panelUstawien.BackColor = Color.White;

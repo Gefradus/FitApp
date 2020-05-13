@@ -112,11 +112,4 @@
     <DzienId>11</DzienId>
     <ProduktId>8</ProduktId>
   </Posilek>
-  <Posilek>
-    <PosilekId>25</PosilekId>
-    <WKtorym>1</WKtorym>
-    <Gramatura>2125</Gramatura>
-    <DzienId>9</DzienId>
-    <ProduktId>1</ProduktId>
-  </Posilek>
 </ArrayOfPosilek>
