@@ -103,8 +103,13 @@ namespace FitApp
             _context.ZapiszKlientow(klienci);
             MessageBox.Show("Pomyślna rejestracja.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Hide();
-            FormUstawien formUstawien = new FormUstawien(klientID, _context.DajDzisiajID(klientID), true);
-            formUstawien.Show();
+            // FormUstawien formUstawien = new FormUstawien(klientID, _context.DajDzisiajID(klientID), true);
+            // formUstawien.Show();
+            Form1 form1 = new Form1()
+            {
+                KlientID = klientID
+            };
+            form1.Show();
         }
 
 

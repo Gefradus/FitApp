@@ -64,4 +64,20 @@
     <Tluszcze>0</Tluszcze>
     <Weglowodany>10</Weglowodany>
   </Produkt>
+  <Produkt>
+    <ProduktId>9</ProduktId>
+    <NazwaProduktu>Bułka</NazwaProduktu>
+    <Kalorie>310</Kalorie>
+    <Bialko>11</Bialko>
+    <Tluszcze>6</Tluszcze>
+    <Weglowodany>52</Weglowodany>
+  </Produkt>
+  <Produkt>
+    <ProduktId>10</ProduktId>
+    <NazwaProduktu>Cebula</NazwaProduktu>
+    <Kalorie>39</Kalorie>
+    <Bialko>1.1</Bialko>
+    <Tluszcze>0.1</Tluszcze>
+    <Weglowodany>9</Weglowodany>
+  </Produkt>
 </ArrayOfProdukt>
