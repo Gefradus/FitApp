@@ -139,10 +139,10 @@
     <DzienId>16</DzienId>
     <KlientId>2</KlientId>
     <Dzien1>2020-05-17T00:00:00+02:00</Dzien1>
-    <CelKalorii>2610</CelKalorii>
+    <CelKalorii>3160</CelKalorii>
     <CelBialko>135</CelBialko>
-    <CelWegle>355</CelWegle>
-    <CelTluszcze>72</CelTluszcze>
+    <CelWegle>459</CelWegle>
+    <CelTluszcze>87</CelTluszcze>
   </Dzien>
   <Dzien>
     <DzienId>17</DzienId>
@@ -314,5 +314,23 @@
     <CelBialko>76</CelBialko>
     <CelWegle>411</CelWegle>
     <CelTluszcze>105</CelTluszcze>
+  </Dzien>
+  <Dzien>
+    <DzienId>36</DzienId>
+    <KlientId>2</KlientId>
+    <Dzien1>2020-05-18T00:00:00+02:00</Dzien1>
+    <CelKalorii>3160</CelKalorii>
+    <CelBialko>135</CelBialko>
+    <CelWegle>459</CelWegle>
+    <CelTluszcze>87</CelTluszcze>
+  </Dzien>
+  <Dzien>
+    <DzienId>37</DzienId>
+    <KlientId>2</KlientId>
+    <Dzien1>2020-05-19T00:00:00+02:00</Dzien1>
+    <CelKalorii>3160</CelKalorii>
+    <CelBialko>135</CelBialko>
+    <CelWegle>459</CelWegle>
+    <CelTluszcze>87</CelTluszcze>
   </Dzien>
 </ArrayOfDzien>

@@ -118,7 +118,21 @@ namespace FitApp
 
                 if (czyPowodzenie)
                 {
-                    UstawieniaKlienta();
+                    if(int.Parse(txtWzrost.Text) < 120)
+                    {
+                        MessageBox.Show("Wzrost musi wynosić przynajmniej 120cm!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if(double.Parse(txtWaga.Text) < 15)
+                        {
+                            MessageBox.Show("Waga musi wynosić przynajmniej 15kg!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            UstawieniaKlienta();
+                        }
+                    }
                 }
             }
         }

@@ -1,0 +1,11 @@
+<!ELEMENT ArrayOfDzien (Dzien*)>
+<!ELEMENT Dzien (DzienId,KlientId,Dzien1,CelKalorii?,CelBialko?,CelWegle?,CelTluszcze?)>
+<!ELEMENT DzienId (#PCDATA)>
+<!ELEMENT KlientId (#PCDATA)>
+<!ELEMENT Dzien1 (#PCDATA)>
+<!ELEMENT CelKalorii (#PCDATA)>
+<!ELEMENT CelBialko (#PCDATA)>
+<!ELEMENT CelWegle (#PCDATA)>
+<!ELEMENT CelTluszcze (#PCDATA)>
+<!ATTLIST ArrayOfDzien xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST ArrayOfDzien xmlns:xsd CDATA #IMPLIED>

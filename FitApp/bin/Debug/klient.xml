@@ -5,11 +5,11 @@
     <Login>aaaaaaa</Login>
     <Haslo>bbbbbbb</Haslo>
     <CzyPamietac>true</CzyPamietac>
-    <CelKalorii>2610</CelKalorii>
-    <CelBialko>72</CelBialko>
-    <CelWegle>355</CelWegle>
+    <CelKalorii>3160</CelKalorii>
+    <CelBialko>87</CelBialko>
+    <CelWegle>459</CelWegle>
     <CelTluszcze>135</CelTluszcze>
-    <CelZmianWagi>1</CelZmianWagi>
+    <CelZmianWagi>2</CelZmianWagi>
     <DataUrodzenia>1998-12-03T00:39:33</DataUrodzenia>
     <TempoZmian>0.5</TempoZmian>
     <Plec>true</Plec>
@@ -207,5 +207,21 @@
     <Plec>true</Plec>
     <Wzrost>565</Wzrost>
     <Waga>5656</Waga>
+  </Klient>
+  <Klient>
+    <KlientID>15</KlientID>
+    <Login>Krzysiu</Login>
+    <Haslo>4444444</Haslo>
+    <CzyPamietac>false</CzyPamietac>
+    <CelKalorii>1000</CelKalorii>
+    <CelBialko>27</CelBialko>
+    <CelWegle>189</CelWegle>
+    <CelTluszcze>0</CelTluszcze>
+    <CelZmianWagi>1</CelZmianWagi>
+    <DataUrodzenia>2010-06-16T15:20:55</DataUrodzenia>
+    <TempoZmian>0.5</TempoZmian>
+    <Plec>true</Plec>
+    <Wzrost>0</Wzrost>
+    <Waga>0</Waga>
   </Klient>
 </ArrayOfKlient>
