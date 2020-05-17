@@ -81,14 +81,14 @@ namespace FitApp
                     }
                     else
                     {
-                        MessageBox.Show("Suma tłuszczów, węglowodanów i białka przekracza 100g", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Suma tłuszczów, węglowodanów i białka przekracza 100g");
                     }
                 }
                 else
                 {
                     if (!CzyNiePodano())
                     {
-                        MessageBox.Show("Nazwa produktu musi liczyć co najmniej 3 znaki!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Nazwa produktu musi liczyć co najmniej 3 znaki!");
                         txtNazwa.Text = nazwaBezBialychZnakow;
                     }
                 }
@@ -96,7 +96,7 @@ namespace FitApp
             catch
             {
                 if(!CzyNiePodano()){
-                    MessageBox.Show("Błędnie podane dane!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Walidacja.Error("Błędnie podane dane!");
                 }
             }
         }

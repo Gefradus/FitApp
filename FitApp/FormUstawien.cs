@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Build.Tasks;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -83,7 +84,7 @@ namespace FitApp
         {
             if (!double.TryParse(txtWaga.Text, out _) && !int.TryParse(txtWzrost.Text, out _))
             {
-                MessageBox.Show("Podaj wagę i wzrost!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Walidacja.Error("Podaj wagę i wzrost!");
             }
             else
             {
@@ -93,11 +94,11 @@ namespace FitApp
                 else { 
                     if (string.IsNullOrEmpty(txtWaga.Text))
                     {
-                        MessageBox.Show("Podaj swoją wagę w kg!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Podaj swoją wagę w kg!");
                     }
                     else
                     {
-                        MessageBox.Show("Waga podana nieprawidłowo!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Waga podana nieprawidłowo!");
                     }
                     czyPowodzenie = false;
                 }
@@ -107,11 +108,11 @@ namespace FitApp
                 {
                     if (string.IsNullOrEmpty(txtWaga.Text))
                     {
-                        MessageBox.Show("Podaj swój wzrost w cm!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Podaj swój wzrost w cm!");
                     }
                     else
                     {
-                        MessageBox.Show("Wzrost podany nieprawidłowo!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Wzrost podany nieprawidłowo!");
                     }
                     czyPowodzenie = false;
                 }
@@ -120,13 +121,13 @@ namespace FitApp
                 {
                     if(int.Parse(txtWzrost.Text) < 120)
                     {
-                        MessageBox.Show("Wzrost musi wynosić przynajmniej 120cm!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Wzrost musi wynosić przynajmniej 120cm!");
                     }
                     else
                     {
                         if(double.Parse(txtWaga.Text) < 15)
                         {
-                            MessageBox.Show("Waga musi wynosić przynajmniej 15kg!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Walidacja.Error("Waga musi wynosić przynajmniej 15kg!");
                         }
                         else
                         {

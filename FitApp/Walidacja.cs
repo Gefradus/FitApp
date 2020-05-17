@@ -89,9 +89,15 @@ namespace FitApp
             }
         }
 
+        public static void Error(string s)
+        {
+            MessageBox.Show(s, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
         public void PokazBlad()
         {
-            MessageBox.Show("Należy podać ilość produktu w gramach!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Error("Należy podać ilość produktu w gramach!");
         }
 
     }

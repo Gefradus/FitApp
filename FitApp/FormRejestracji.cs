@@ -64,16 +64,16 @@ namespace FitApp
                 {
                     if (txtLogin.Text.Length < 7)
                     {
-                        MessageBox.Show("Haslo i login muszą zawierać co najmniej 7 znaków!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Haslo i login muszą zawierać co najmniej 7 znaków!");
                     }
                     else
                     {
-                        MessageBox.Show("Haslo musi zawierać co najmniej 7 znaków!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Walidacja.Error("Haslo musi zawierać co najmniej 7 znaków!");
                     }
                 }
                 else if (txtLogin.Text.Length < 7)
                 {
-                    MessageBox.Show("Login musi zawierać co najmniej 7 znaków!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Walidacja.Error("Login musi zawierać co najmniej 7 znaków!");
                 }
                 else
                 {
@@ -82,7 +82,7 @@ namespace FitApp
             }
             else
             {
-                MessageBox.Show("Podane hasła nie zgadzają się ze sobą!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Walidacja.Error("Podane hasła nie zgadzają się ze sobą!");
                 txtPass1.Text = "";
                 txtPass2.Text = "";
             }

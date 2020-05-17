@@ -1,0 +1,10 @@
+<!ELEMENT ArrayOfProdukt (Produkt*)>
+<!ELEMENT Produkt (ProduktId,NazwaProduktu,Kalorie,Bialko,Tluszcze,Weglowodany)>
+<!ELEMENT ProduktId (#PCDATA)>
+<!ELEMENT NazwaProduktu (#PCDATA)>
+<!ELEMENT Kalorie (#PCDATA)>
+<!ELEMENT Bialko (#PCDATA)>
+<!ELEMENT Weglowodany (#PCDATA)>
+
+<!ATTLIST ArrayOfProdukt xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST ArrayOfProdukt xmlns:xsd CDATA #IMPLIED>

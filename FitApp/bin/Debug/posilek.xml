@@ -1,4 +1,17 @@
 <?xml version="1.0"?>
+<!DOCTYPE ArrayOfPosilek
+[
+<!ELEMENT ArrayOfPosilek (Posilek*)>
+<!ELEMENT Posilek (PosilekId,WKtorym,Gramatura,DzienId,ProduktId)>
+<!ELEMENT PosilekId (#PCDATA)>
+<!ELEMENT WKtorym (#PCDATA)>
+<!ELEMENT Gramatura (#PCDATA)>
+<!ELEMENT DzienId (#PCDATA)>
+<!ELEMENT ProduktId (#PCDATA)>
+
+<!ATTLIST ArrayOfPosilek xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST ArrayOfPosilek xmlns:xsd CDATA #IMPLIED>
+]>
 <ArrayOfPosilek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Posilek>
     <PosilekId>1</PosilekId>

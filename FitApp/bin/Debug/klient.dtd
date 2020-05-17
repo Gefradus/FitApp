@@ -1,6 +1,6 @@
 <!ELEMENT ArrayOfKlient (Klient*)>
-<!ELEMENT Klient (KlientID,Login,Haslo,CzyPamietac?,CelKalorii?,CelBialko?,
-  CelWegle?,CelTluszcze?,CelZmianWagi?,DataUrodzenia?,TempoZmian?,Plec?,Wzrost?,Waga?)>
+<!ELEMENT Klient (KlientID,Login,Haslo,CzyPamietac?,CelKalorii?,CelBialko?,CelWegle?,CelTluszcze?,
+CelZmianWagi?,DataUrodzenia?,TempoZmian?,Plec?,Wzrost?,Waga?)>
 <!ELEMENT KlientID (#PCDATA)>
 <!ELEMENT Login (#PCDATA)>
 <!ELEMENT Haslo (#PCDATA)>
@@ -15,5 +15,5 @@
 <!ELEMENT Plec (#PCDATA)>
 <!ELEMENT Wzrost (#PCDATA)>
 <!ELEMENT Waga (#PCDATA)>
-<!ATTLIST ArrayOfDzien xmlns:xsi CDATA #IMPLIED>
-<!ATTLIST ArrayOfDzien xmlns:xsd CDATA #IMPLIED>
+<!ATTLIST ArrayOfKlient xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST ArrayOfKlient xmlns:xsd CDATA #IMPLIED>

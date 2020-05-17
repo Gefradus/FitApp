@@ -53,7 +53,7 @@ namespace FitApp
                 }
                 else
                 {
-                    MessageBox.Show("Nieprawidłowy login i/lub hasło!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Walidacja.Error("Nieprawidłowy login i/lub hasło!");
                 }
 
                 txtHaslo.Text = "";

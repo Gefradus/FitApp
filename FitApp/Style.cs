@@ -128,11 +128,7 @@ namespace FitApp
                 return pasek.Width;
             }
 
-            
-
         }
-
-       
 
     }
 }
