@@ -89,9 +89,9 @@ namespace FitApp
             }
         }
 
-        public static void Error(string s)
+        public static void Error(string message)
         {
-            MessageBox.Show(s, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(message, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

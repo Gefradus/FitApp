@@ -69,7 +69,7 @@ namespace FitApp
                         produkty.Add(new Produkt()
                         {
                             ProduktId = _context.AutoIncrementProdukty(produkty),
-                            NazwaProduktu = nazwaBezBialychZnakow,
+                            NazwaProduktu = txtNazwa.Text,
                             Kalorie = int.Parse(txtKcal.Text),
                             Bialko = double.Parse(txtBialko.Text),
                             Tluszcze = double.Parse(txtTluszcz.Text),

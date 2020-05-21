@@ -68,7 +68,7 @@ namespace FitApp
 
             List<Produkt> wyszukaneProdukty = new List<Produkt>();
             foreach (var produkt in _context.Produkty()){
-                if (produkt.NazwaProduktu.ToLower().StartsWith(wyszukiwanaFraza.ToLower()) && !string.IsNullOrWhiteSpace(wyszukiwanaFraza))
+                if (produkt.NazwaProduktu.ToLower().Contains(wyszukiwanaFraza.ToLower()) && !string.IsNullOrWhiteSpace(wyszukiwanaFraza))
                 {
                     wyszukaneProdukty.Add(produkt);
                 }
@@ -165,6 +165,11 @@ namespace FitApp
         private void BtnBack_Click(object sender, EventArgs e)
         {
             ZamknijForme();
+        }
+
+        private void panelGlowny_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

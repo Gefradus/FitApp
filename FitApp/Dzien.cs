@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace FitApp
 {
     public class Dzien
     {
+        [XmlAttribute]
         public int DzienId { get; set; }
+        [XmlAttribute]
         public int KlientId { get; set; }
         public DateTime Dzien1 { get; set; }
         public int CelKalorii { get; set; }

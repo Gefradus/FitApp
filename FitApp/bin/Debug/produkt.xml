@@ -1,98 +1,73 @@
 <?xml version="1.0"?>
-<!DOCTYPE ArrayOfProdukt
-[
-<!ELEMENT ArrayOfProdukt (Produkt*)>
-<!ELEMENT Produkt (ProduktId,NazwaProduktu,Kalorie,Bialko,Tluszcze,Weglowodany)>
-<!ELEMENT ProduktId (#PCDATA)>
-<!ELEMENT NazwaProduktu (#PCDATA)>
-<!ELEMENT Kalorie (#PCDATA)>
-<!ELEMENT Bialko (#PCDATA)>
-<!ELEMENT Tluszcze (#PCDATA)>
-<!ELEMENT Weglowodany (#PCDATA)>
-
-<!ATTLIST ArrayOfProdukt xmlns:xsi CDATA #IMPLIED>
-<!ATTLIST ArrayOfProdukt xmlns:xsd CDATA #IMPLIED>
-]>
-
 <ArrayOfProdukt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Produkt>
-    <ProduktId>1</ProduktId>
+  <Produkt ProduktId="1">
     <NazwaProduktu>Banan</NazwaProduktu>
     <Kalorie>100</Kalorie>
     <Bialko>1</Bialko>
     <Tluszcze>0</Tluszcze>
     <Weglowodany>24</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>2</ProduktId>
+  <Produkt ProduktId="2">
     <NazwaProduktu>Ziemniak</NazwaProduktu>
     <Kalorie>70</Kalorie>
     <Bialko>1</Bialko>
     <Tluszcze>1</Tluszcze>
     <Weglowodany>21</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>3</ProduktId>
+  <Produkt ProduktId="3">
     <NazwaProduktu>Bakłażan</NazwaProduktu>
     <Kalorie>100</Kalorie>
     <Bialko>1</Bialko>
     <Tluszcze>0</Tluszcze>
     <Weglowodany>24</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>4</ProduktId>
+  <Produkt ProduktId="4">
     <NazwaProduktu>k</NazwaProduktu>
     <Kalorie>111</Kalorie>
     <Bialko>1.1</Bialko>
     <Tluszcze>15.5</Tluszcze>
     <Weglowodany>1</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>5</ProduktId>
+  <Produkt ProduktId="5">
     <NazwaProduktu>Arbuz</NazwaProduktu>
     <Kalorie>30</Kalorie>
     <Bialko>0.6</Bialko>
     <Tluszcze>0.2</Tluszcze>
     <Weglowodany>8</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>6</ProduktId>
-    <NazwaProduktu>Hamburger</NazwaProduktu>
-    <Kalorie>900</Kalorie>
-    <Bialko>100</Bialko>
-    <Tluszcze>100</Tluszcze>
-    <Weglowodany>100</Weglowodany>
-  </Produkt>
-  <Produkt>
-    <ProduktId>7</ProduktId>
-    <NazwaProduktu>DDDDDDDDDDDDDDD</NazwaProduktu>
-    <Kalorie>900</Kalorie>
-    <Bialko>100</Bialko>
-    <Tluszcze>100</Tluszcze>
-    <Weglowodany>100</Weglowodany>
-  </Produkt>
-  <Produkt>
-    <ProduktId>8</ProduktId>
+  <Produkt ProduktId="6">
     <NazwaProduktu>Pomelo</NazwaProduktu>
     <Kalorie>38</Kalorie>
     <Bialko>0.8</Bialko>
     <Tluszcze>0</Tluszcze>
     <Weglowodany>10</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>9</ProduktId>
+  <Produkt ProduktId="7">
     <NazwaProduktu>Bułka</NazwaProduktu>
     <Kalorie>310</Kalorie>
     <Bialko>11</Bialko>
     <Tluszcze>6</Tluszcze>
     <Weglowodany>52</Weglowodany>
   </Produkt>
-  <Produkt>
-    <ProduktId>10</ProduktId>
+  <Produkt ProduktId="8">
     <NazwaProduktu>Cebula</NazwaProduktu>
     <Kalorie>39</Kalorie>
     <Bialko>1.1</Bialko>
     <Tluszcze>0.1</Tluszcze>
     <Weglowodany>9</Weglowodany>
+  </Produkt>
+  <Produkt ProduktId="9">
+    <NazwaProduktu>Fasolabiała</NazwaProduktu>
+    <Kalorie>300</Kalorie>
+    <Bialko>27</Bialko>
+    <Tluszcze>1</Tluszcze>
+    <Weglowodany>50</Weglowodany>
+  </Produkt>
+  <Produkt ProduktId="10">
+    <NazwaProduktu>Fasola biała</NazwaProduktu>
+    <Kalorie>300</Kalorie>
+    <Bialko>1</Bialko>
+    <Tluszcze>12</Tluszcze>
+    <Weglowodany>45</Weglowodany>
   </Produkt>
 </ArrayOfProdukt>

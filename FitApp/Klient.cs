@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace FitApp
 {
     public class Klient
     {
+        [XmlAttribute]
         public int KlientID { get; set; }
         public string Login { get; set; }
         public string Haslo { get; set; }

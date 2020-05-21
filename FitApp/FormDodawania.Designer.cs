@@ -57,10 +57,9 @@
             // panelGlowny
             // 
             this.panelGlowny.AutoScroll = true;
-            this.panelGlowny.Location = new System.Drawing.Point(0, 149);
+            this.panelGlowny.Location = new System.Drawing.Point(0, 171);
             this.panelGlowny.Name = "panelGlowny";
-            this.panelGlowny.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panelGlowny.Size = new System.Drawing.Size(589, 432);
+            this.panelGlowny.Size = new System.Drawing.Size(589, 410);
             this.panelGlowny.TabIndex = 0;
             // 
             // panelGorny
